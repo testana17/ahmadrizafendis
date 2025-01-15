@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Modern Portfolio</title>
+  <title>Education Section</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -37,34 +37,58 @@
     }
   </script>
 </head>
-<body class="bg-gradient-to-r from-orange-100 to-blue-100 font-sans">
+<body class="bg-gradient-to-r from-blue-100 to-orange-100 font-sans">
 
-   
     
+  <!-- Main Content -->
   <main class="container mx-auto px-4 py-12">
-    <section id="home" class="mb-24 text-center">
-      <!-- Profile Picture -->
-      <img src="img/rz.JPG" alt="John Doe" class="mx-auto rounded-full w-40 h-40 object-cover mb-6 md:w-48 md:h-48">
-      
-      <!-- Status -->
-      <p class="text-md text-gray-500 font-semibold">Ahmad Rizal E.S</p>
-      <p class="text-md text-blue-500 mb-8">Undergraduate Student / Web Developer</p>
-      
-      <!-- Introduction Text -->
-      <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden md:max-w-3xl">
-        <div class="p-6">
-            <p class="text-gray-600 mb-6 text-justify">
-            Saya adalah seorang mahasiswa jurusan Teknik Informatika yang memiliki ketertarikan khusus dalam pengembangan web, 
-            terutama di bidang backend menggunakan teknologi seperti Laravel dan Vue.js. Saya memiliki pemahaman 
-            dasar tentang konsep-konsep dasar pengembangan backend dan frontend, serta saya memiliki motivasi yang tinggi untuk 
-            terus belajar dan berkembang dalam industri teknologi informasi.
-          </p>
+    <!-- Education Section -->
+    <section id="education" class="mb-24">
+  
+      <!-- SD Pandanrejo 02 -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-school h-8 w-8 text-indigo-600 mr-4"></i> <!-- SD -->
+          <h3 class="text-xl font-semibold text-gray-800">SDN Pandanrejo 02</h3>
         </div>
+        <p class="text-gray-600 mb-2">2009 - 2014</p>
       </div>
+  
+      <!-- SMP Negeri 06 Batu -->
+      <div class="bg-white rounded-lg shadow-lg p-8 mt-4">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-university h-8 w-8 text-green-600 mr-4"></i> <!-- SMP -->
+          <h3 class="text-xl font-semibold text-gray-800">SMP Negeri 06 Batu</h3>
+        </div>
+        <p class="text-gray-600 mb-2">2015 - 2018</p>
+      </div>
+  
+      <!-- SMK Islam Batu (Kelas RPL) -->
+      <div class="bg-white rounded-lg shadow-lg p-8 mt-4">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-graduation-cap h-8 w-8 text-yellow-600 mr-4"></i> <!-- SMK -->
+          <h3 class="text-xl font-semibold text-gray-800">SMK Islam Batu (Kelas RPL)</h3>
+        </div>
+        <p class="text-gray-600 mb-2">2018 - 2021</p>
+        <p class="text-gray-600">Rekayasa Perangkat Lunak (RPL)</p>
+      </div>
+  
+      <!-- Institut Teknologi dan Bisnis Asia Malang (S1 Teknik Informatika) -->
+      <div class="bg-white rounded-lg shadow-lg p-8 mt-4">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-university h-8 w-8 text-blue-600 mr-4"></i> <!-- ITB Asia -->
+          <h3 class="text-xl font-semibold text-gray-800">Institut Teknologi dan Bisnis Asia Malang</h3>
+        </div>
+        <p class="text-gray-600 mb-2">2021 - Sekarang</p>
+        <p class="text-gray-600">S1 Teknik Informatika</p>
+      </div>
+  
     </section>
   </main>
   
+  
 
+  <!-- Footer fixed at the bottom -->
   <footer class="bg-white border-t fixed bottom-0 w-full h-16">
     <nav class="flex justify-around">
       <!-- Home Link -->
