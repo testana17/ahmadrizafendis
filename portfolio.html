@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    .page {
+        display: none;
+    }
+    .page.active {
+        display: block;
+    }
+    .active-link {
+        color: rgb(42, 122, 220) !important; /* Orange color with !important */
+    }
+
+    /* Ensure the content area can scroll if there is more content than the available space */
+    .scrollable-content {
+        max-height: calc(100vh - 80px); /* Subtract the height of the footer */
+        overflow-y: auto;
+    }
+    
+</style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-orange-100 font-sans">
+
+ 
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    <!-- Education Section -->
+    <section id="projects" class="mb-24">
+        <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="img/depari.jpg" alt="Project 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <!-- Title of the project -->
+              <h4 class="text-body text-gray-800">Laravel Vue Inertia JS</h4>
+              <h1 class="display-6 mb-0 text-xl font-semibold text-gray-800">Inventaris Toko Percetakan</h1>
+              
+              <!-- Project Description -->
+              <p class="mt-3 text-gray-600" style="text-align: justify;">
+                Sistem manajemen inventori yang dirancang khusus untuk mengelola stok barang di toko percetakan. 
+                Sistem ini bertujuan untuk membantu pemilik dan karyawan dalam memantau dan mengelola barang-barang yang masuk 
+                dan keluar dari inventori secara efektif dan efisien.
+              </p>
+          
+              <!-- Link to project -->
+              <a href="projeks/inventars.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Project</a>
+            </div>
+          </div>
+
+          
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="img/mood.png" alt="Project 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <!-- Title of the project -->
+              <h4 class="text-body text-gray-800">Laravel Tailwind</h4>
+              <h1 class="display-6 mb-0 text-xl font-semibold text-gray-800">Mood KU</h1>
+              
+              <!-- Project Description -->
+              <p class="mt-3 text-gray-600" style="text-align: justify;">
+                Sebuah konsep di mana kita secara rutin mencatat dan melacak suasana hati kita sehari-hari.
+              </p>
+          
+              <!-- Link to project -->
+              <a href="projeks/inventars.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Project</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="img/depari.jpg" alt="Project 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <!-- Title of the project -->
+              <h4 class="text-body text-gray-800">Laravel Vue Inertia JS</h4>
+              <h1 class="display-6 mb-0 text-xl font-semibold text-gray-800">Rental Mobil</h1>
+              
+              <!-- Project Description -->
+              <p class="mt-3 text-gray-600" style="text-align: justify;">
+                Layanan penyewaan kendaraan bermotor untuk jangka waktu tertentu dengan periode sewa bisa mulai dari beberapa hari hingga beberapa bulan. 
+              </p>
+          
+              <!-- Link to project -->
+              <a href="projeks/inventars.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Project</a>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+  </main>
+
+  <!-- Footer fixed at the bottom -->
+  <footer class="bg-white border-t fixed bottom-0 w-full h-16">
+    <nav class="flex justify-around">
+      <!-- Home Link -->
+      <a href="index.html" id="home-link" onclick="showPage('home')" class="flex flex-col items-center p-2 text-gray-600 hover:text-blue-600">
+        <i class="fas fa-home text-xl"></i>
+        <span class="text-xs mt-1">Home</span>
+      </a>
+  
+      <!-- About Link -->
+      <a href="about.html" id="about-link" onclick="showPage('about')" class="flex flex-col items-center p-2 text-gray-600 hover:text-blue-600">
+        <i class="fas fa-user text-xl"></i>
+        <span class="text-xs mt-1">About</span>
+      </a>
+  
+      <!-- Education Link -->
+      <a href="education.html" id="education-link" onclick="showPage('education')" class="flex flex-col items-center p-2 text-gray-600 hover:text-blue-600">
+        <i class="fas fa-graduation-cap text-xl"></i>
+        <span class="text-xs mt-1">Education</span>
+      </a>
+  
+      <!-- Projects Link -->
+      <a href="portfolio.html" id="projects-link" onclick="showPage('projects')" class="flex flex-col items-center p-2 text-gray-600 hover:text-blue-600">
+        <i class="fas fa-project-diagram text-xl"></i>
+        <span class="text-xs mt-1">Projects</span>
+      </a>
+    </nav>
+  </footer>
+  
+  
+  <script>
+    function showPage(page) {
+      // Hide all content sections
+      const sections = document.querySelectorAll('.page-content');
+      sections.forEach(section => section.classList.add('hidden'));
+  
+      // Show the selected page
+      const selectedPage = document.getElementById(page);
+      if (selectedPage) {
+        selectedPage.classList.remove('hidden');
+      }
+    }
+  </script>
+  
+</body>
+</html>
