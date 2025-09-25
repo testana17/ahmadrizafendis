@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Ahmad Rizal E.S</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)', opacity: '0.4' },
+              '50%': { transform: 'translateY(-20px) rotate(180deg)', opacity: '0.9' }
+            },
+            fadeIn: {
+              'to': { opacity: '1' }
+            },
+            slideUp: {
+              'to': { opacity: '1', transform: 'translateY(0)' }
+            },
+            glow: {
+              'from': { 'box-shadow': '0 0 20px rgba(255, 255, 255, 0.1)' },
+              'to': { 'box-shadow': '0 0 30px rgba(255, 255, 255, 0.3)' }
+            }
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-black via-gray-900 to-black min-h-screen text-white font-sans overflow-x-hidden">
+
+  <!-- Added animated background particles matching index theme -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute w-1 h-1 bg-white/20 rounded-full animate-float" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+    <div class="absolute w-1 h-1 bg-gray-300/30 rounded-full animate-float" style="left: 20%; top: 60%; animation-delay: 1s;"></div>
+    <div class="absolute w-1 h-1 bg-white/25 rounded-full animate-float" style="left: 30%; top: 40%; animation-delay: 2s;"></div>
+    <div class="absolute w-1 h-1 bg-gray-400/30 rounded-full animate-float" style="left: 40%; top: 80%; animation-delay: 3s;"></div>
+    <div class="absolute w-1 h-1 bg-white/20 rounded-full animate-float" style="left: 50%; top: 30%; animation-delay: 4s;"></div>
+    <div class="absolute w-1 h-1 bg-gray-300/25 rounded-full animate-float" style="left: 60%; top: 70%; animation-delay: 5s;"></div>
+    <div class="absolute w-1 h-1 bg-white/30 rounded-full animate-float" style="left: 70%; top: 50%; animation-delay: 0.5s;"></div>
+    <div class="absolute w-1 h-1 bg-gray-400/20 rounded-full animate-float" style="left: 80%; top: 25%; animation-delay: 1.5s;"></div>
+    <div class="absolute w-1 h-1 bg-white/25 rounded-full animate-float" style="left: 90%; top: 65%; animation-delay: 2.5s;"></div>
+  </div>
+
+  <!-- Updated main content with black theme styling -->
+  <main class="container mx-auto px-4 py-12 relative z-10 max-h-screen overflow-y-auto pb-24">
+    
+    <!-- Added page title with gradient text -->
+    <div class="text-center mb-12 opacity-0 animate-fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-300 bg-clip-text text-transparent">
+     Experiences & Certificates
+      </h1>
+      <p class="text-gray-300 text-lg">My journey in web development and technology</p>
+    </div>
+
+    <!-- Experience Section -->
+    <section id="experience" class="mb-24">
+
+      <!-- Updated BANTU card with black theme glassmorphism -->
+      <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <div class="relative z-10">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-code-branch text-2xl text-white mr-4 animate-glow"></i>
+            <h3 class="text-xl font-semibold text-white">Backend Developer · BANTU (Internship)</h3>
+          </div>
+          <p class="text-gray-300 mb-4">Apr 2025 - Jun 2025 · 3 months · Remote</p>
+          <ul class="list-disc list-inside text-gray-200 space-y-2 mb-4">
+            <li>Developed secure login API with authentication and token management.</li>
+            <li>Implemented refresh token mechanism for access token renewal.</li>
+            <li>Built freelancer order creation with validation and database handling.</li>
+            <li>Integrated RabbitMQ for asynchronous tasks:
+              <ul class="list-disc list-inside ml-6 mt-2">
+                <li>Create Complaint</li>
+                <li>Create Negotiation</li>
+              </ul>
+            </li>
+            <li>Conducted full feature testing and validation before deployment.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">Laravel</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">API Development</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">RabbitMQ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated Brand In card with black theme -->
+      <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden mt-6 opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <div class="relative z-10">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-laptop-code text-2xl text-white mr-4 animate-glow"></i>
+            <h3 class="text-xl font-semibold text-white">Frontend Web Developer · Brand In (Internship)</h3>
+          </div>
+          <p class="text-gray-300 mb-4">Sep 2024 - Dec 2024 · 4 months · Remote</p>
+          
+          <!-- Project Gallery -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+            <div class="flex flex-col">
+              <img src="img/projek3.png" alt="HOME BASED ORGANIC SKIN CARE" class="w-full h-48 object-cover rounded-md shadow-lg border border-white/20 hover:border-white/40 transition-all duration-300">
+              <a href="https://template03-five.vercel.app/" target="_blank" class="mt-2 inline-flex items-center text-white hover:text-gray-300 text-sm font-medium transition-colors duration-300">
+                <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+              </a>
+            </div>
+          </div>
+
+          <ul class="list-disc list-inside text-gray-200 space-y-2 mb-4">
+            <li>Developed and optimized landing pages with responsive design.</li>
+            <li>Designed and implemented intuitive UI components for web projects.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">React.js</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">UI/UX Design</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">Web Development</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated Dicoding card with black theme -->
+      <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden mt-6 opacity-0 animate-slide-up" style="animation-delay: 0.6s;">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <div class="relative z-10">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-graduation-cap text-2xl text-white mr-4 animate-glow"></i>
+            <h3 class="text-xl font-semibold text-white">Student · Dicoding Indonesia (Apprenticeship)</h3>
+          </div>
+          <p class="text-gray-300 mb-4">Feb 2024 - Jul 2024 · 6 months</p>
+          <p class="text-gray-200 mb-4">Participated in intensive training for web development with React.js and backend technologies, including project-based learning and software development best practices.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">React.js</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">Project Management</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">Backend Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated GarapDigital card with black theme -->
+      <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden mt-6 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <div class="relative z-10">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-globe text-2xl text-white mr-4 animate-glow"></i>
+            <h3 class="text-xl font-semibold text-white">Web Developer · GarapDigital.id (Internship)</h3>
+          </div>
+          <p class="text-gray-300 mb-4">Aug 2023 - Oct 2023 · 3 months · Remote</p>
+          <p class="text-gray-200 text-justify mb-4">Designed and developed a village information system web application, focusing on efficient data management and user-friendly interface for local community services.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">Laravel</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">MySQL</span>
+            <span class="px-3 py-1 bg-white/10 text-white rounded-full text-sm border border-white/30 hover:bg-white/20 transition-all duration-300">Web System Design</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Updated Certificate Section with black theme -->
+    <section id="certificate" class="mb-24">
+      <h2 class="text-3xl font-bold text-white mb-8 flex items-center opacity-0 animate-fade-in" style="animation-delay: 1s;">
+        <i class="fas fa-certificate text-white mr-3 animate-glow"></i> 
+        <span class="bg-gradient-to-r from-white via-gray-200 to-gray-300 bg-clip-text text-transparent">Certificates</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Updated all certificate cards with black theme glassmorphism -->
+        <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 1.2s;">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative z-10">
+            <img src="img/dico.png" alt="Certificate Dicoding" class="w-full h-40 object-contain rounded-md mb-4 shadow-lg border border-white/10">
+            <h3 class="text-lg font-semibold text-white mb-2">Dicoding - React & Backend MSIB 6</h3>
+            <p class="text-sm text-gray-300 mb-3 text-justify">Training in modern web application development using React for the frontend and backend integration. The curriculum covers JavaScript fundamentals, React Hooks, and hands-on practice building fullstack applications.</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 1.4s;">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative z-10">
+            <img src="img/serti2.png" alt="Certificate Dicoding" class="w-full h-40 object-contain rounded-md mb-4 shadow-lg border border-white/10">
+            <h3 class="text-lg font-semibold text-white mb-2">React Web Developer Expert</h3>
+            <p class="text-sm text-gray-300 mb-3 text-justify">Advanced training to master React.js, including complex state management, performance optimization, and the application of best practices in modern web application development.</p>
+            <a href="https://www.dicoding.com/certificates/98XWLG3R4ZM3" target="_blank" class="mt-auto inline-flex items-center text-white hover:text-gray-300 text-sm font-medium transition-colors duration-300">
+              <i class="fas fa-external-link-alt mr-1"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 1.6s;">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative z-10">
+            <img src="img/serti3.png" alt="Certificate 3" class="w-full h-40 object-contain rounded-md mb-4 shadow-lg border border-white/10">
+            <h3 class="text-lg font-semibold text-white mb-2">Certiport - IT Specialist</h3>
+            <p class="text-sm text-gray-300 mb-3 text-justify">IT Certiport HTML and CSS certification confirms expertise in HTML and CSS website development.</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 1.8s;">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative z-10">
+            <img src="img/serti4.png" alt="Certificate Dicoding" class="w-full h-40 object-contain rounded-md mb-4 shadow-lg border border-white/10">
+            <h3 class="text-lg font-semibold text-white mb-2">Learn the Fundamentals of Web Applications with React</h3>
+            <p class="text-sm text-gray-300 mb-3 text-justify">Comprehensive training on building web applications using React.js, covering component-based architecture, state management, and best practices for modern frontend development.</p>
+            <a href="https://www.dicoding.com/certificates/GRX5Q51QRZ0M" target="_blank" class="mt-auto inline-flex items-center text-white hover:text-gray-300 text-sm font-medium transition-colors duration-300">
+              <i class="fas fa-external-link-alt mr-1"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 2s;">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative z-10">
+            <img src="img/serti5.png" alt="Certificate Dicoding" class="w-full h-40 object-contain rounded-md mb-4 shadow-lg border border-white/10">
+            <h3 class="text-lg font-semibold text-white mb-2">Learn Fundamental Backend App</h3>
+            <p class="text-sm text-gray-300 mb-3 text-justify">Training on backend application development fundamentals, including server-side programming, database management, and API creation using modern backend frameworks.</p>
+            <a href="https://www.dicoding.com/certificates/N9ZOM70D6PG5" target="_blank" class="mt-auto inline-flex items-center text-white hover:text-gray-300 text-sm font-medium transition-colors duration-300">
+              <i class="fas fa-external-link-alt mr-1"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 group relative overflow-hidden opacity-0 animate-slide-up" style="animation-delay: 2.2s;">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative z-10">
+            <img src="img/serti6.png" alt="Certificate Dicoding" class="w-full h-40 object-contain rounded-md mb-4 shadow-lg border border-white/10">
+            <h3 class="text-lg font-semibold text-white mb-2">Learn Fundamental of Web Programming</h3>
+            <p class="text-sm text-gray-300 mb-3 text-justify">Training on the basics of web programming, covering HTML, CSS, and JavaScript to build foundational skills for creating interactive and responsive web applications.</p>
+            <a href="https://www.dicoding.com/certificates/N9ZOORG70ZG5" target="_blank" class="mt-auto inline-flex items-center text-white hover:text-gray-300 text-sm font-medium transition-colors duration-300">
+              <i class="fas fa-external-link-alt mr-1"></i> View Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Updated footer navigation with black theme matching index -->
+  <footer class="fixed bottom-0 w-full h-20 z-20">
+    <div class="bg-black/90 backdrop-blur-xl border-t border-white/20 h-full">
+      <nav class="flex justify-around items-center h-full px-4">
+        <a href="index.html" class="flex flex-col items-center p-3 text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110 group relative">
+          <div class="absolute -top-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300 transform -translate-x-1/2"></div>
+          <i class="fas fa-home text-xl mb-1 group-hover:animate-bounce-slow"></i>
+          <span class="text-xs font-medium">Home</span>
+        </a>
+       
+        <a href="experience.html" class="nav-active flex flex-col items-center p-3 text-white hover:text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:scale-110 group relative">
+          <div class="absolute -top-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300 transform -translate-x-1/2"></div>
+          <i class="fas fa-briefcase text-xl mb-1 group-hover:animate-bounce-slow"></i>
+          <span class="text-xs font-medium">Experience</span>
+        </a>
+        <a href="portfolio.html" class="flex flex-col items-center p-3 text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110 group relative">
+          <div class="absolute -top-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300 transform -translate-x-1/2"></div>
+          <i class="fas fa-project-diagram text-xl mb-1 group-hover:animate-bounce-slow"></i>
+          <span class="text-xs font-medium">Projects</span>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Added enhanced JavaScript with smooth interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add staggered animation delays to elements
+      const animatedElements = document.querySelectorAll('[class*="animate-"]');
+      animatedElements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+      });
+
+      // Enhanced navigation interactions
+      const navItems = document.querySelectorAll('footer nav a');
+      navItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-4px) scale(1.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Add dynamic particle movement
+      const particles = document.querySelectorAll('[class*="animate-float"]');
+      particles.forEach((particle, index) => {
+        setInterval(() => {
+          const randomX = Math.random() * 20 - 10;
+          const randomY = Math.random() * 20 - 10;
+          particle.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }, 3000 + index * 500);
+      });
+
+      // Smooth scroll behavior for better UX
+      document.documentElement.style.scrollBehavior = 'smooth';
+    });
+  </script>
+</body>
+</html>
