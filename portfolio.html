@@ -88,7 +88,7 @@
 
       <header class="hero-in">
         <h1 class="font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">My Projects</h1>
-        <p class="mt-4 max-w-xl text-lg text-ink/70">A few projects I've built with Laravel and React.</p>
+        <p class="mt-4 max-w-xl text-lg text-ink/70">Web, mobile, and data projects I've built, from point-of-sale systems to sentiment analysis.</p>
       </header>
 
       <!-- Daftar proyek dirender dari data di bawah -->
@@ -154,14 +154,195 @@
       },
     ];
 
+
+    // Proyek privat (bukan open source) belum punya screenshot, jadi memakai ilustrasi.
+    // Kalau sudah ada screenshot asli, ganti `cover`/`coverBg` dengan:
+    //   images: ['img/pos-1.png', 'img/pos-2.png']   (nomor seperti 5, 6, 7 juga boleh)
+    const privateProjects = [
+      {
+        stack: 'Point of Sale',
+        title: 'Aplikasi POS',
+        desc: 'Aplikasi kasir (Point of Sale) untuk mencatat dan mengelola transaksi penjualan.',
+        cover: 'pos', coverBg: 'bg-sun-soft',
+        block: 'bg-[#FF7A66]', chip: 'bg-[#FFE3DE] text-[#9A2E1F]',
+        private: true, links: [],
+      },
+      {
+        stack: 'Web Application',
+        title: 'Web Booking Nikah',
+        desc: 'Website untuk melakukan pemesanan (booking) layanan pernikahan secara online.',
+        cover: 'wedding', coverBg: 'bg-[#FFE3DE]',
+        block: 'bg-sun', chip: 'bg-sun-soft text-[#6B5200]',
+        private: true, links: [],
+      },
+      {
+        stack: 'Company Profile',
+        title: 'Website Company Profile',
+        desc: 'Website company profile untuk memperkenalkan profil, layanan, dan informasi perusahaan.',
+        cover: 'company', coverBg: 'bg-brand-soft',
+        block: 'bg-mint', chip: 'bg-mint-soft text-[#0F6048]',
+        private: true, links: [],
+      },
+      {
+        stack: 'Sentiment Analysis',
+        title: 'Analisis Sentimen Performa Dosen',
+        desc: 'Sistem analisis sentimen untuk menilai performa dosen berdasarkan umpan balik yang diberikan.',
+        cover: 'sentiment', coverBg: 'bg-mint-soft',
+        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
+        private: true, links: [],
+      },
+      {
+        stack: 'Mobile App',
+        title: 'Aplikasi Mobile Ujian &amp; Fasilitas Kampus',
+        desc: 'Aplikasi mobile untuk kebutuhan ujian dan fasilitas di lingkungan kampus.',
+        cover: 'mobile', coverBg: 'bg-brand-soft',
+        block: 'bg-[#FF7A66]', chip: 'bg-[#FFE3DE] text-[#9A2E1F]',
+        private: true, links: [],
+      },
+    ];
+    projects.push(...privateProjects);
+
+    // Ilustrasi SVG sederhana sebagai pengganti screenshot
+    const face = (cx, cy, color, mouth) => `
+      <circle cx="${cx}" cy="${cy}" r="24" fill="${color}"/>
+      <circle cx="${cx - 8}" cy="${cy - 7}" r="3" fill="#fff"/><circle cx="${cx + 8}" cy="${cy - 7}" r="3" fill="#fff"/>
+      <path d="${mouth}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+
+    const covers = {
+      pos: () => {
+        const cols = ['#2B50FF', '#FF7A66', '#2FBF8F'];
+        let tiles = '';
+        for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+          const x = 60 + c * 140, y = 70 + r * 125;
+          tiles += `<rect x="${x}" y="${y}" width="120" height="105" rx="20" fill="#fff"/>
+            <circle cx="${x + 60}" cy="${y + 40}" r="22" fill="${cols[(r + c) % 3]}"/>
+            <rect x="${x + 24}" y="${y + 76}" width="72" height="10" rx="5" fill="#0F1B3D" opacity=".15"/>`;
+        }
+        const rows = [0, 1, 2].map((i) => `
+          <rect x="520" y="${140 + i * 44}" width="${120 - i * 14}" height="10" rx="5" fill="#fff" opacity=".45"/>
+          <rect x="660" y="${140 + i * 44}" width="50" height="10" rx="5" fill="#FFD43B"/>`).join('');
+        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">${tiles}
+          <rect x="490" y="50" width="250" height="400" rx="28" fill="#0F1B3D"/>
+          <rect x="520" y="86" width="120" height="14" rx="7" fill="#fff" opacity=".9"/>${rows}
+          <rect x="520" y="290" width="190" height="2" fill="#fff" opacity=".2"/>
+          <rect x="520" y="316" width="90" height="16" rx="8" fill="#fff"/>
+          <rect x="630" y="316" width="80" height="16" rx="8" fill="#FFD43B"/>
+          <rect x="520" y="376" width="190" height="48" rx="24" fill="#2B50FF"/>
+        </svg>`;
+      },
+
+      wedding: () => {
+        let days = '';
+        for (let r = 0; r < 4; r++) for (let c = 0; c < 7; c++) {
+          const cx = 258 + c * 47, cy = 220 + r * 56;
+          days += (r === 1 && c === 3)
+            ? `<circle cx="${cx}" cy="${cy}" r="22" fill="#FF7A66"/>
+               <path transform="translate(${cx} ${cy - 12}) scale(.5)" d="M0,12 C-4,2 -22,4 -22,18 C-22,32 -4,40 0,46 C4,40 22,32 22,18 C22,4 4,2 0,12 Z" fill="#fff"/>`
+            : `<circle cx="${cx}" cy="${cy}" r="6" fill="#0F1B3D" opacity=".18"/>`;
+        }
+        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
+          <defs><clipPath id="wedding-clip"><rect x="210" y="60" width="380" height="380" rx="32"/></clipPath></defs>
+          <g clip-path="url(#wedding-clip)">
+            <rect x="210" y="60" width="380" height="380" fill="#fff"/>
+            <rect x="210" y="60" width="380" height="100" fill="#FF7A66"/>
+          </g>
+          <rect x="300" y="40" width="16" height="48" rx="8" fill="#0F1B3D"/>
+          <rect x="484" y="40" width="16" height="48" rx="8" fill="#0F1B3D"/>
+          <rect x="250" y="106" width="150" height="16" rx="8" fill="#fff" opacity=".9"/>
+          ${days}
+        </svg>`;
+      },
+
+      company: () => `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
+        <rect x="80" y="55" width="640" height="390" rx="24" fill="#fff"/>
+        <rect x="80" y="55" width="640" height="56" rx="24" fill="#E3EAFF"/>
+        <rect x="80" y="85" width="640" height="26" fill="#E3EAFF"/>
+        <circle cx="112" cy="83" r="7" fill="#0F1B3D" opacity=".25"/><circle cx="134" cy="83" r="7" fill="#0F1B3D" opacity=".25"/><circle cx="156" cy="83" r="7" fill="#0F1B3D" opacity=".25"/>
+        <rect x="520" y="77" width="50" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="584" y="77" width="50" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="648" y="77" width="44" height="12" rx="6" fill="#0F1B3D" opacity=".2"/>
+        <rect x="120" y="150" width="300" height="22" rx="11" fill="#0F1B3D"/>
+        <rect x="120" y="186" width="240" height="22" rx="11" fill="#0F1B3D"/>
+        <rect x="120" y="232" width="300" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
+        <rect x="120" y="252" width="260" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
+        <rect x="120" y="290" width="130" height="44" rx="22" fill="#2B50FF"/>
+        <circle cx="570" cy="235" r="85" fill="#FFD43B"/>
+        <circle cx="625" cy="292" r="46" fill="#2FBF8F"/>
+        <circle cx="520" cy="190" r="22" fill="#fff" opacity=".7"/>
+        <rect x="120" y="366" width="170" height="60" rx="16" fill="#E3EAFF"/>
+        <rect x="315" y="366" width="170" height="60" rx="16" fill="#FFF2B8"/>
+        <rect x="510" y="366" width="170" height="60" rx="16" fill="#D3F5E6"/>
+      </svg>`,
+
+      sentiment: () => `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
+        <rect x="50" y="70" width="320" height="100" rx="30" fill="#fff"/>
+        ${face(102, 120, '#2FBF8F', 'M90 122 Q102 136 114 122')}
+        <rect x="146" y="104" width="190" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="146" y="128" width="130" height="12" rx="6" fill="#0F1B3D" opacity=".12"/>
+        <rect x="50" y="190" width="320" height="100" rx="30" fill="#fff"/>
+        ${face(102, 240, '#FFD43B', 'M91 244 L113 244')}
+        <rect x="146" y="224" width="170" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="146" y="248" width="110" height="12" rx="6" fill="#0F1B3D" opacity=".12"/>
+        <rect x="50" y="310" width="320" height="100" rx="30" fill="#fff"/>
+        ${face(102, 360, '#FF7A66', 'M90 368 Q102 354 114 368')}
+        <rect x="146" y="344" width="200" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="146" y="368" width="120" height="12" rx="6" fill="#0F1B3D" opacity=".12"/>
+        <rect x="420" y="60" width="320" height="380" rx="28" fill="#fff"/>
+        <rect x="460" y="95" width="120" height="14" rx="7" fill="#0F1B3D" opacity=".2"/>
+        <rect x="460" y="150" width="64" height="230" rx="14" fill="#2FBF8F"/>
+        <rect x="555" y="240" width="64" height="140" rx="14" fill="#FFD43B"/>
+        <rect x="650" y="300" width="64" height="80" rx="14" fill="#FF7A66"/>
+        <rect x="450" y="388" width="270" height="3" rx="1.5" fill="#0F1B3D" opacity=".15"/>
+      </svg>`,
+
+      mobile: () => {
+        const rows = [0, 1, 2, 3].map((i) => {
+          const y = 164 + i * 58;
+          return `<circle cx="334" cy="${y + 14}" r="14" fill="${i < 2 ? '#2FBF8F' : '#0F1B3D'}" ${i < 2 ? '' : 'opacity=".12"'}/>
+            ${i < 2 ? `<path d="M327 ${y + 14} l5 5 l9 -10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>` : ''}
+            <rect x="360" y="${y + 8}" width="${110 - i * 10}" height="12" rx="6" fill="#0F1B3D" opacity=".2"/>`;
+        }).join('');
+        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
+          <rect x="80" y="150" width="170" height="76" rx="22" fill="#fff"/>
+          <circle cx="120" cy="188" r="18" fill="#FFD43B"/>
+          <rect x="150" y="174" width="80" height="10" rx="5" fill="#0F1B3D" opacity=".25"/><rect x="150" y="194" width="56" height="10" rx="5" fill="#0F1B3D" opacity=".15"/>
+          <rect x="550" y="290" width="170" height="76" rx="22" fill="#fff"/>
+          <circle cx="590" cy="328" r="18" fill="#2FBF8F"/>
+          <rect x="620" y="314" width="80" height="10" rx="5" fill="#0F1B3D" opacity=".25"/><rect x="620" y="334" width="56" height="10" rx="5" fill="#0F1B3D" opacity=".15"/>
+          <rect x="290" y="30" width="220" height="440" rx="40" fill="#0F1B3D"/>
+          <rect x="302" y="42" width="196" height="416" rx="30" fill="#fff"/>
+          <rect x="302" y="42" width="196" height="100" rx="30" fill="#2B50FF"/>
+          <rect x="302" y="100" width="196" height="42" fill="#2B50FF"/>
+          <rect x="352" y="54" width="96" height="10" rx="5" fill="#0F1B3D"/>
+          <rect x="326" y="92" width="110" height="14" rx="7" fill="#fff"/>
+          ${rows}
+          <rect x="326" y="404" width="148" height="40" rx="20" fill="#2B50FF"/>
+        </svg>`;
+      },
+    };
+
     const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand';
+
+    const swiperHtml = (p) => {
+      const slides = p.images.map((n, k) => {
+        const src = typeof n === 'number' ? `img/${n}.png` : n;
+        return `
+        <div class="swiper-slide">
+          <img src="${src}" alt="${p.title}, screenshot ${k + 1}" loading="lazy" class="h-full w-full object-cover">
+        </div>`;
+      }).join('');
+      return `
+        <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-ink/10 bg-white">
+          <div class="swiper-wrapper">${slides}</div>
+          <div class="swiper-button-prev" role="button" aria-label="Previous screenshot"></div>
+          <div class="swiper-button-next" role="button" aria-label="Next screenshot"></div>
+          <div class="swiper-pagination"></div>
+        </div>`;
+    };
+
+    const coverHtml = (p) => `
+        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-ink/10 ${p.coverBg}">${covers[p.cover]()}</div>`;
+
+    const privateNote = `
+        <p class="mt-6 flex items-center gap-2 text-sm text-ink/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
 
     const render = (p, i) => {
       const flip = i % 2 === 1;
-      const slides = p.images.map((n) => `
-        <div class="swiper-slide">
-          <img src="img/${n}.png" alt="${p.title}, screenshot ${n}" loading="lazy" class="h-full w-full object-cover">
-        </div>`).join('');
 
       const links = p.links.map((l) => `
         <a href="${l.href}" target="_blank" rel="noopener"
@@ -173,12 +354,7 @@
         <article class="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <div class="relative lg:col-span-7 ${flip ? 'lg:order-2' : ''}">
             <div aria-hidden="true" class="absolute -bottom-3 h-full w-full rounded-[2rem] ${flip ? '-left-3' : '-right-3'} ${p.block}"></div>
-            <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-ink/10 bg-white">
-              <div class="swiper-wrapper">${slides}</div>
-              <div class="swiper-button-prev" role="button" aria-label="Previous screenshot"></div>
-              <div class="swiper-button-next" role="button" aria-label="Next screenshot"></div>
-              <div class="swiper-pagination"></div>
-            </div>
+            ${p.images ? swiperHtml(p) : coverHtml(p)}
           </div>
 
           <div class="lg:col-span-5">
@@ -186,6 +362,7 @@
             <h2 class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">${p.title}</h2>
             <p lang="id" class="mt-4 max-w-md leading-relaxed text-ink/70">${p.desc}</p>
             ${links ? `<div class="mt-7 flex flex-wrap gap-3">${links}</div>` : ''}
+            ${p.private ? privateNote : ''}
           </div>
         </article>`;
     };
