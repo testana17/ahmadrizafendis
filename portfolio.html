@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Proyek-proyek Ahmad Rizal E.S: aplikasi POS, sistem inventaris stok, sistem informasi desa, web booking nikah, company profile, analisis sentimen, dan aplikasi mobile kampus.">
-  <meta name="theme-color" content="#F3F7FF">
+  <meta name="theme-color" content="#F6F3FE">
   <title>Ahmad Rizal E.S - Full Stack Developer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,10 +23,12 @@
           display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
         },
         colors: {
-          paper: '#F3F7FF',
-          ink: '#0B1B4D',
-          brand: { DEFAULT: '#2457FF', deep: '#1237C4', soft: '#E4ECFF', mid: '#B9CCFF' },
-          crimson: { DEFAULT: '#DC143C', deep: '#A80F2E', soft: '#FFE1E7' },
+          paper: '#F6F3FE',
+          ink: '#241B4E',
+          brand: { DEFAULT: '#6366F1', deep: '#4338CA', soft: '#EAE8FD', mid: '#C9C3F7' },
+          violet: { DEFAULT: '#A855F7', deep: '#7E22CE', soft: '#F3E8FF', mid: '#DCC9FB' },
+          aqua: { DEFAULT: '#22D3EE', deep: '#0E7490', soft: '#DEFAFF', mid: '#A8ECFA' },
+          blush: { DEFAULT: '#F472B6', deep: '#DB2777', soft: '#FDE6F3' },
         },
       } },
     }
@@ -34,7 +36,14 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #F3F7FF; }
+    body {
+      background:
+        radial-gradient(1100px 560px at 8% -8%, rgba(199,195,247,.55) 0%, rgba(246,243,254,0) 60%),
+        radial-gradient(900px 540px at 108% 8%, rgba(253,230,243,.5) 0%, rgba(246,243,254,0) 55%),
+        radial-gradient(900px 620px at 50% 115%, rgba(222,250,255,.5) 0%, rgba(246,243,254,0) 55%),
+        #F6F3FE;
+      background-attachment: fixed;
+    }
     .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
 
@@ -46,12 +55,12 @@
     @media (min-width: 640px) { .cube-wrap { --s: 120px; } }
     .cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: spin 16s linear infinite; }
     .face { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: calc(var(--s) * .32); border-radius: calc(var(--s) * .16); border: 2px solid rgba(255,255,255,.4); }
-    .face:nth-child(1) { background: #2457FF; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(2) { background: #DC143C; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(3) { background: #1237C4; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(4) { background: #A80F2E; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(5) { background: #5B8CFF; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(6) { background: #FF5C7E; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(1) { background: #6366F1; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(2) { background: #F472B6; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(3) { background: #4338CA; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(4) { background: #DB2777; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(5) { background: #A855F7; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(6) { background: #22D3EE; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
     @keyframes spin { from { transform: rotateX(-22deg) rotateY(0deg); } to { transform: rotateX(-22deg) rotateY(360deg); } }
 
     @media (prefers-reduced-motion: reduce) {
@@ -63,20 +72,20 @@
 
     /* Tampilan carousel Swiper */
     .project-swiper .swiper-button-prev,
-    .project-swiper .swiper-button-next { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; color: #0B1B4D; box-shadow: 0 4px 14px rgba(11,27,77,.25); --swiper-navigation-size: 14px; }
+    .project-swiper .swiper-button-next { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; color: #241B4E; box-shadow: 0 4px 14px rgba(11,27,77,.25); --swiper-navigation-size: 14px; }
     .project-swiper .swiper-button-prev { left: .75rem; }
     .project-swiper .swiper-button-next { right: .75rem; }
     .project-swiper .swiper-button-prev:focus-visible,
-    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #DC143C; outline-offset: 2px; }
+    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #F472B6; outline-offset: 2px; }
     .project-swiper > .swiper-pagination { bottom: .75rem; left: auto; right: .75rem; width: auto; padding: .25rem .75rem; border-radius: 9999px; background: rgba(11,27,77,.8); color: #fff; font-size: .75rem; font-weight: 600; }
   </style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-crimson selection:text-white">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-blush selection:text-white">
 
   <main class="relative overflow-hidden pb-40">
     <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[70rem] -right-32 h-[24rem] w-[24rem] rounded-full bg-crimson-soft"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[70rem] -right-32 h-[24rem] w-[24rem] rounded-full bg-blush-soft"></div>
 
     <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
 
@@ -106,15 +115,15 @@
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
     <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
       <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
@@ -134,14 +143,14 @@
         title: 'Aplikasi POS',
         desc: 'Aplikasi kasir (Point of Sale) untuk mencatat dan mengelola transaksi penjualan.',
         cover: 'pos', coverBg: 'bg-brand-soft',
-        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
+        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
         private: true, links: [],
       },
       {
         stack: 'Inventory System',
         title: 'Sistem Inventaris Stok',
         desc: 'Aplikasi untuk mencatat dan memantau stok barang, termasuk barang masuk dan keluar.',
-        cover: 'inventory', coverBg: 'bg-crimson-soft',
+        cover: 'inventory', coverBg: 'bg-blush-soft',
         block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
         private: true, links: [],
       },
@@ -150,14 +159,14 @@
         title: 'Sistem Informasi Desa',
         desc: 'Aplikasi web sistem informasi desa untuk pengelolaan data dan pelayanan kepada masyarakat desa.',
         cover: 'village', coverBg: 'bg-brand-soft',
-        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
+        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
         private: true, links: [],
       },
       {
         stack: 'Web Application',
         title: 'Web Booking Nikah',
         desc: 'Website untuk melakukan pemesanan (booking) layanan pernikahan secara online.',
-        cover: 'wedding', coverBg: 'bg-crimson-soft',
+        cover: 'wedding', coverBg: 'bg-blush-soft',
         block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
         private: true, links: [],
       },
@@ -166,14 +175,14 @@
         title: 'Website Company Profile',
         desc: 'Website company profile untuk memperkenalkan profil, layanan, dan informasi perusahaan.',
         cover: 'company', coverBg: 'bg-brand-soft',
-        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
+        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
         private: true, links: [],
       },
       {
         stack: 'Sentiment Analysis',
         title: 'Analisis Sentimen Performa Dosen',
         desc: 'Sistem analisis sentimen untuk menilai performa dosen berdasarkan umpan balik yang diberikan.',
-        cover: 'sentiment', coverBg: 'bg-crimson-soft',
+        cover: 'sentiment', coverBg: 'bg-blush-soft',
         block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
         private: true, links: [],
       },
@@ -182,18 +191,18 @@
         title: 'Aplikasi Mobile Ujian &amp; Fasilitas Kampus',
         desc: 'Aplikasi mobile untuk kebutuhan ujian dan fasilitas di lingkungan kampus.',
         cover: 'mobile', coverBg: 'bg-brand-soft',
-        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
+        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
         private: true, links: [],
       },
     ];
 
-    // Ilustrasi SVG sederhana sebagai pengganti screenshot (warna disesuaikan ke palet biru + crimson lewat `tint`)
+    // Ilustrasi SVG sederhana sebagai pengganti screenshot (warna disesuaikan ke palet biru + blush lewat `tint`)
     const face = (cx, cy, color, mouth) => `
       <circle cx="${cx}" cy="${cy}" r="24" fill="${color}"/>
       <circle cx="${cx - 8}" cy="${cy - 7}" r="3" fill="#fff"/><circle cx="${cx + 8}" cy="${cy - 7}" r="3" fill="#fff"/>
       <path d="${mouth}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`;
 
-    const TINT = { '#2B50FF': '#2457FF', '#FFD43B': '#DC143C', '#2FBF8F': '#5B8CFF', '#FF7A66': '#FF5C7E', '#0F1B3D': '#0B1B4D', '#FFF2B8': '#FFE1E7', '#D3F5E6': '#DCE6FF' };
+    const TINT = { '#2B50FF': '#6366F1', '#FFD43B': '#F472B6', '#2FBF8F': '#22D3EE', '#FF7A66': '#A855F7', '#0F1B3D': '#241B4E', '#FFF2B8': '#FDE6F3', '#D3F5E6': '#EAE8FD' };
     const tint = (svg) => svg.replace(/#(2B50FF|FFD43B|2FBF8F|FF7A66|0F1B3D|FFF2B8|D3F5E6)/gi, (m) => TINT[m.toUpperCase()]);
 
     const covers = {
@@ -345,7 +354,7 @@
       },
     };
 
-    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson';
+    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush';
 
     const swiperHtml = (p) => {
       const slides = p.images.map((n, k) => {
@@ -365,7 +374,7 @@
     };
 
     const coverHtml = (p) => `
-        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-brand/15 shadow-[0_40px_70px_-30px_rgba(36,87,255,.6)] ${p.coverBg}">${tint(covers[p.cover]())}</div>`;
+        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-brand/15 shadow-[0_40px_70px_-30px_rgba(99,102,241,.6)] ${p.coverBg}">${tint(covers[p.cover]())}</div>`;
 
     const privateNote = `
         <p class="mt-6 flex items-center gap-2 text-sm text-ink/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
