@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Proyek-proyek Ahmad Rizal E.S: sistem inventaris, sistem pembelajaran sekolah, dan forum diskusi.">
-  <meta name="theme-color" content="#060A1A">
+  <meta name="description" content="Proyek-proyek Ahmad Rizal E.S: aplikasi POS, sistem inventaris stok, sistem informasi desa, web booking nikah, company profile, analisis sentimen, dan aplikasi mobile kampus.">
+  <meta name="theme-color" content="#F3F7FF">
   <title>Ahmad Rizal E.S - Full Stack Developer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,10 +23,10 @@
           display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
         },
         colors: {
-          night: '#060A1A',
-          brand: { DEFAULT: '#2B50FF', soft: '#E3EAFF', deep: '#1C36C9' },
-          sun: { DEFAULT: '#FFD43B', soft: '#FFF2B8' },
-          mint: { DEFAULT: '#2FBF8F', soft: '#D3F5E6' },
+          paper: '#F3F7FF',
+          ink: '#0B1B4D',
+          brand: { DEFAULT: '#2457FF', deep: '#1237C4', soft: '#E4ECFF', mid: '#B9CCFF' },
+          crimson: { DEFAULT: '#DC143C', deep: '#A80F2E', soft: '#FFE1E7' },
         },
       } },
     }
@@ -34,40 +34,67 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #060A1A; }
+    body { background: #F3F7FF; }
     .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
-    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out; will-change: transform; }
+
     .stage3d { perspective: 1400px; }
-    .glass { background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out; will-change: transform; }
+
+    /* kubus 3D murni CSS untuk hiasan header */
+    .cube-wrap { --s: 84px; width: var(--s); height: var(--s); perspective: 700px; flex-shrink: 0; }
+    @media (min-width: 640px) { .cube-wrap { --s: 120px; } }
+    .cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: spin 16s linear infinite; }
+    .face { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: calc(var(--s) * .32); border-radius: calc(var(--s) * .16); border: 2px solid rgba(255,255,255,.4); }
+    .face:nth-child(1) { background: #2457FF; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(2) { background: #DC143C; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(3) { background: #1237C4; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(4) { background: #A80F2E; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(5) { background: #5B8CFF; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(6) { background: #FF5C7E; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+    @keyframes spin { from { transform: rotateX(-22deg) rotateY(0deg); } to { transform: rotateX(-22deg) rotateY(360deg); } }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero-in { animation: none; opacity: 1; transform: none; }
       .tilt { transform: none !important; transition: none; }
+      .cube { animation: none; transform: rotateX(-22deg) rotateY(-30deg); }
     }
 
     /* Tampilan carousel Swiper */
     .project-swiper .swiper-button-prev,
-    .project-swiper .swiper-button-next { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; color: #0F1B3D; box-shadow: 0 4px 14px rgba(15,27,61,.2); --swiper-navigation-size: 14px; }
+    .project-swiper .swiper-button-next { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; color: #0B1B4D; box-shadow: 0 4px 14px rgba(11,27,77,.25); --swiper-navigation-size: 14px; }
     .project-swiper .swiper-button-prev { left: .75rem; }
     .project-swiper .swiper-button-next { right: .75rem; }
     .project-swiper .swiper-button-prev:focus-visible,
-    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #FFD43B; outline-offset: 2px; }
-    .project-swiper > .swiper-pagination { bottom: .75rem; left: auto; right: .75rem; width: auto; padding: .25rem .75rem; border-radius: 9999px; background: rgba(15,27,61,.78); color: #fff; font-size: .75rem; font-weight: 600; }
+    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #DC143C; outline-offset: 2px; }
+    .project-swiper > .swiper-pagination { bottom: .75rem; left: auto; right: .75rem; width: auto; padding: .25rem .75rem; border-radius: 9999px; background: rgba(11,27,77,.8); color: #fff; font-size: .75rem; font-weight: 600; }
   </style>
 </head>
 
-<body class="bg-night text-white font-sans antialiased selection:bg-sun selection:text-night">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-crimson selection:text-white">
 
   <main class="relative overflow-hidden pb-40">
-    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[34rem] w-[34rem] rounded-full bg-brand/30 blur-[120px]"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[70rem] -right-40 h-[30rem] w-[30rem] rounded-full bg-sun/10 blur-[120px]"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[70rem] -right-32 h-[24rem] w-[24rem] rounded-full bg-crimson-soft"></div>
 
     <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
 
-      <header class="hero-in">
-        <h1 class="font-display text-[2.5rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl sm:leading-[1.05]">My Projects</h1>
-        <p class="mt-4 max-w-xl text-lg text-white/70">Web, mobile, and data projects I've built, from point-of-sale systems to sentiment analysis.</p>
+      <header class="hero-in flex items-center justify-between gap-6">
+        <div>
+          <h1 class="font-display text-[2.5rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl sm:leading-[1.05]">My Projects</h1>
+          <p class="mt-4 max-w-xl text-lg text-ink/70">Web, mobile, and data projects I've built, from point-of-sale systems to sentiment analysis.</p>
+        </div>
+        <div class="cube-wrap hidden min-[420px]:block" aria-hidden="true">
+          <div class="cube">
+            <div class="face"><i class="fas fa-laptop-code"></i></div>
+            <div class="face"><i class="fas fa-mobile-screen-button"></i></div>
+            <div class="face"><i class="fas fa-database"></i></div>
+            <div class="face"><i class="fas fa-server"></i></div>
+            <div class="face"><i class="fas fa-code"></i></div>
+            <div class="face"><i class="fas fa-layer-group"></i></div>
+          </div>
+        </div>
       </header>
 
       <!-- Daftar proyek dirender dari data di bawah -->
@@ -77,17 +104,17 @@
 
   <!-- Navigasi bawah -->
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="glass flex gap-0.5 rounded-3xl p-1.5 shadow-xl shadow-black/40 sm:gap-1 sm:rounded-full" style="background: rgba(10,16,40,.7)">
+    <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
       <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
+         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
@@ -106,15 +133,15 @@
         stack: 'Point of Sale',
         title: 'Aplikasi POS',
         desc: 'Aplikasi kasir (Point of Sale) untuk mencatat dan mengelola transaksi penjualan.',
-        cover: 'pos', coverBg: 'bg-sun-soft',
-        block: 'bg-[#FF7A66]', chip: 'bg-[#FFE3DE] text-[#9A2E1F]',
+        cover: 'pos', coverBg: 'bg-brand-soft',
+        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
         private: true, links: [],
       },
       {
         stack: 'Inventory System',
         title: 'Sistem Inventaris Stok',
         desc: 'Aplikasi untuk mencatat dan memantau stok barang, termasuk barang masuk dan keluar.',
-        cover: 'inventory', coverBg: 'bg-brand-soft',
+        cover: 'inventory', coverBg: 'bg-crimson-soft',
         block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
         private: true, links: [],
       },
@@ -122,16 +149,16 @@
         stack: 'Information System',
         title: 'Sistem Informasi Desa',
         desc: 'Aplikasi web sistem informasi desa untuk pengelolaan data dan pelayanan kepada masyarakat desa.',
-        cover: 'village', coverBg: 'bg-mint-soft',
-        block: 'bg-sun', chip: 'bg-sun-soft text-[#6B5200]',
+        cover: 'village', coverBg: 'bg-brand-soft',
+        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
         private: true, links: [],
       },
       {
         stack: 'Web Application',
         title: 'Web Booking Nikah',
         desc: 'Website untuk melakukan pemesanan (booking) layanan pernikahan secara online.',
-        cover: 'wedding', coverBg: 'bg-[#FFE3DE]',
-        block: 'bg-mint', chip: 'bg-mint-soft text-[#0F6048]',
+        cover: 'wedding', coverBg: 'bg-crimson-soft',
+        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
         private: true, links: [],
       },
       {
@@ -139,32 +166,35 @@
         title: 'Website Company Profile',
         desc: 'Website company profile untuk memperkenalkan profil, layanan, dan informasi perusahaan.',
         cover: 'company', coverBg: 'bg-brand-soft',
-        block: 'bg-[#FF7A66]', chip: 'bg-[#FFE3DE] text-[#9A2E1F]',
+        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
         private: true, links: [],
       },
       {
         stack: 'Sentiment Analysis',
         title: 'Analisis Sentimen Performa Dosen',
         desc: 'Sistem analisis sentimen untuk menilai performa dosen berdasarkan umpan balik yang diberikan.',
-        cover: 'sentiment', coverBg: 'bg-mint-soft',
-        block: 'bg-sun', chip: 'bg-sun-soft text-[#6B5200]',
+        cover: 'sentiment', coverBg: 'bg-crimson-soft',
+        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
         private: true, links: [],
       },
       {
         stack: 'Mobile App',
         title: 'Aplikasi Mobile Ujian &amp; Fasilitas Kampus',
         desc: 'Aplikasi mobile untuk kebutuhan ujian dan fasilitas di lingkungan kampus.',
-        cover: 'mobile', coverBg: 'bg-sun-soft',
-        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
+        cover: 'mobile', coverBg: 'bg-brand-soft',
+        block: 'bg-crimson', chip: 'bg-crimson-soft text-crimson-deep',
         private: true, links: [],
       },
     ];
 
-    // Ilustrasi SVG sederhana sebagai pengganti screenshot
+    // Ilustrasi SVG sederhana sebagai pengganti screenshot (warna disesuaikan ke palet biru + crimson lewat `tint`)
     const face = (cx, cy, color, mouth) => `
       <circle cx="${cx}" cy="${cy}" r="24" fill="${color}"/>
       <circle cx="${cx - 8}" cy="${cy - 7}" r="3" fill="#fff"/><circle cx="${cx + 8}" cy="${cy - 7}" r="3" fill="#fff"/>
       <path d="${mouth}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+
+    const TINT = { '#2B50FF': '#2457FF', '#FFD43B': '#DC143C', '#2FBF8F': '#5B8CFF', '#FF7A66': '#FF5C7E', '#0F1B3D': '#0B1B4D', '#FFF2B8': '#FFE1E7', '#D3F5E6': '#DCE6FF' };
+    const tint = (svg) => svg.replace(/#(2B50FF|FFD43B|2FBF8F|FF7A66|0F1B3D|FFF2B8|D3F5E6)/gi, (m) => TINT[m.toUpperCase()]);
 
     const covers = {
       pos: () => {
@@ -204,7 +234,7 @@
           return `<rect x="500" y="${y}" width="40" height="40" rx="10" fill="${['#2B50FF', '#FFD43B', '#FF7A66', '#2FBF8F'][i]}"/>
             <rect x="556" y="${y + 6}" width="90" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
             <rect x="556" y="${y + 24}" width="60" height="8" rx="4" fill="#0F1B3D" opacity=".12"/>
-            <rect x="664" y="${y + 7}" width="50" height="26" rx="13" fill="${low ? '#FF7A66' : '#D3F5E6'}"/>`;
+            <rect x="664" y="${y + 7}" width="50" height="26" rx="13" fill="${low ? '#FFD43B' : '#D3F5E6'}"/>`;
         }).join('');
         return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">${shelfSvg}
           <rect x="470" y="60" width="270" height="380" rx="28" fill="#fff"/>
@@ -235,7 +265,7 @@
         for (let r = 0; r < 4; r++) for (let c = 0; c < 7; c++) {
           const cx = 258 + c * 47, cy = 220 + r * 56;
           days += (r === 1 && c === 3)
-            ? `<circle cx="${cx}" cy="${cy}" r="22" fill="#FF7A66"/>
+            ? `<circle cx="${cx}" cy="${cy}" r="22" fill="#FFD43B"/>
                <path transform="translate(${cx} ${cy - 12}) scale(.5)" d="M0,12 C-4,2 -22,4 -22,18 C-22,32 -4,40 0,46 C4,40 22,32 22,18 C22,4 4,2 0,12 Z" fill="#fff"/>`
             : `<circle cx="${cx}" cy="${cy}" r="6" fill="#0F1B3D" opacity=".18"/>`;
         }
@@ -243,7 +273,7 @@
           <defs><clipPath id="wedding-clip"><rect x="210" y="60" width="380" height="380" rx="32"/></clipPath></defs>
           <g clip-path="url(#wedding-clip)">
             <rect x="210" y="60" width="380" height="380" fill="#fff"/>
-            <rect x="210" y="60" width="380" height="100" fill="#FF7A66"/>
+            <rect x="210" y="60" width="380" height="100" fill="#2B50FF"/>
           </g>
           <rect x="300" y="40" width="16" height="48" rx="8" fill="#0F1B3D"/>
           <rect x="484" y="40" width="16" height="48" rx="8" fill="#0F1B3D"/>
@@ -264,7 +294,7 @@
         <rect x="120" y="252" width="260" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
         <rect x="120" y="290" width="130" height="44" rx="22" fill="#2B50FF"/>
         <circle cx="570" cy="235" r="85" fill="#FFD43B"/>
-        <circle cx="625" cy="292" r="46" fill="#2FBF8F"/>
+        <circle cx="625" cy="292" r="46" fill="#2B50FF"/>
         <circle cx="520" cy="190" r="22" fill="#fff" opacity=".7"/>
         <rect x="120" y="366" width="170" height="60" rx="16" fill="#E3EAFF"/>
         <rect x="315" y="366" width="170" height="60" rx="16" fill="#FFF2B8"/>
@@ -310,12 +340,12 @@
           <rect x="352" y="54" width="96" height="10" rx="5" fill="#0F1B3D"/>
           <rect x="326" y="92" width="110" height="14" rx="7" fill="#fff"/>
           ${rows}
-          <rect x="326" y="404" width="148" height="40" rx="20" fill="#2B50FF"/>
+          <rect x="326" y="404" width="148" height="40" rx="20" fill="#FFD43B"/>
         </svg>`;
       },
     };
 
-    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun';
+    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson';
 
     const swiperHtml = (p) => {
       const slides = p.images.map((n, k) => {
@@ -326,7 +356,7 @@
         </div>`;
       }).join('');
       return `
-        <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white/15 bg-white" style="transform: translateZ(0)">
+        <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-brand/20 bg-white" style="transform: translateZ(0)">
           <div class="swiper-wrapper">${slides}</div>
           <div class="swiper-button-prev" role="button" aria-label="Previous screenshot"></div>
           <div class="swiper-button-next" role="button" aria-label="Next screenshot"></div>
@@ -335,10 +365,10 @@
     };
 
     const coverHtml = (p) => `
-        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white/20 shadow-[0_40px_80px_-30px_rgba(0,0,0,.8)] ${p.coverBg}">${covers[p.cover]()}</div>`;
+        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-brand/15 shadow-[0_40px_70px_-30px_rgba(36,87,255,.6)] ${p.coverBg}">${tint(covers[p.cover]())}</div>`;
 
     const privateNote = `
-        <p class="mt-6 flex items-center gap-2 text-sm text-white/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
+        <p class="mt-6 flex items-center gap-2 text-sm text-ink/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
 
     const render = (p, i) => {
       const flip = i % 2 === 1;
@@ -360,7 +390,7 @@
           <div class="lg:col-span-5">
             <p class="inline-block rounded-full px-3.5 py-1.5 text-sm font-semibold ${p.chip}">${p.stack}</p>
             <h2 class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">${p.title}</h2>
-            <p lang="id" class="mt-4 max-w-md leading-relaxed text-white/70">${p.desc}</p>
+            <p lang="id" class="mt-4 max-w-md leading-relaxed text-ink/70">${p.desc}</p>
             ${links ? `<div class="mt-7 flex flex-wrap gap-3">${links}</div>` : ''}
             ${p.private ? privateNote : ''}
           </div>
@@ -381,7 +411,7 @@
       el.addEventListener('pointerleave', () => { el.style.transform = ''; });
     });
 
-    // Satu instance Swiper per proyek, tombol navigasinya terpisah
+    // Satu instance Swiper per proyek (dipakai kalau proyek punya `images`)
     document.querySelectorAll('.project-swiper').forEach((el) => {
       new Swiper(el, {
         loop: true,
