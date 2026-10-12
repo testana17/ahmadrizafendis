@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Proyek-proyek Ahmad Rizal E.S: sistem inventaris, sistem pembelajaran sekolah, dan forum diskusi.">
-  <meta name="theme-color" content="#F5F8FF">
+  <meta name="theme-color" content="#060A1A">
   <title>Ahmad Rizal E.S - Full Stack Developer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,78 +17,57 @@
 
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            paper: '#F5F8FF',
-            ink: '#0F1B3D',
-            brand: { DEFAULT: '#2B50FF', soft: '#E3EAFF', deep: '#1C36C9' },
-            sun: { DEFAULT: '#FFD43B', soft: '#FFF2B8' },
-            mint: { DEFAULT: '#2FBF8F', soft: '#D3F5E6' },
-          },
+      theme: { extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
         },
-      },
+        colors: {
+          night: '#060A1A',
+          brand: { DEFAULT: '#2B50FF', soft: '#E3EAFF', deep: '#1C36C9' },
+          sun: { DEFAULT: '#FFD43B', soft: '#FFF2B8' },
+          mint: { DEFAULT: '#2FBF8F', soft: '#D3F5E6' },
+        },
+      } },
     }
   </script>
 
   <style>
     html { scroll-behavior: smooth; }
-    .hero-in {
-      opacity: 0;
-      transform: translateY(16px);
-      animation: rise .7s cubic-bezier(.2, .7, .2, 1) forwards;
-      animation-delay: var(--d, 0s);
-    }
+    body { background: #060A1A; }
+    .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
+    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out; will-change: transform; }
+    .stage3d { perspective: 1400px; }
+    .glass { background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero-in { animation: none; opacity: 1; transform: none; }
+      .tilt { transform: none !important; transition: none; }
     }
 
     /* Tampilan carousel Swiper */
     .project-swiper .swiper-button-prev,
-    .project-swiper .swiper-button-next {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 9999px;
-      background: #fff;
-      color: #0F1B3D;
-      box-shadow: 0 4px 14px rgba(15, 27, 61, .2);
-      --swiper-navigation-size: 14px;
-    }
+    .project-swiper .swiper-button-next { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; color: #0F1B3D; box-shadow: 0 4px 14px rgba(15,27,61,.2); --swiper-navigation-size: 14px; }
     .project-swiper .swiper-button-prev { left: .75rem; }
     .project-swiper .swiper-button-next { right: .75rem; }
     .project-swiper .swiper-button-prev:focus-visible,
-    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #2B50FF; outline-offset: 2px; }
-    .project-swiper > .swiper-pagination {
-      bottom: .75rem;
-      left: auto;
-      right: .75rem;
-      width: auto;
-      padding: .25rem .75rem;
-      border-radius: 9999px;
-      background: rgba(15, 27, 61, .78);
-      color: #fff;
-      font-size: .75rem;
-      font-weight: 600;
-    }
+    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #FFD43B; outline-offset: 2px; }
+    .project-swiper > .swiper-pagination { bottom: .75rem; left: auto; right: .75rem; width: auto; padding: .25rem .75rem; border-radius: 9999px; background: rgba(15,27,61,.78); color: #fff; font-size: .75rem; font-weight: 600; }
   </style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-sun selection:text-ink">
+<body class="bg-night text-white font-sans antialiased selection:bg-sun selection:text-night">
 
   <main class="relative overflow-hidden pb-40">
-    <div aria-hidden="true" class="pointer-events-none absolute -top-48 -left-40 h-[30rem] w-[30rem] rounded-full bg-brand-soft"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[34rem] w-[34rem] rounded-full bg-brand/30 blur-[120px]"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[70rem] -right-40 h-[30rem] w-[30rem] rounded-full bg-sun/10 blur-[120px]"></div>
 
     <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
 
       <header class="hero-in">
         <h1 class="font-display text-[2.5rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl sm:leading-[1.05]">My Projects</h1>
-        <p class="mt-4 max-w-xl text-lg text-ink/70">Web, mobile, and data projects I've built, from point-of-sale systems to sentiment analysis.</p>
+        <p class="mt-4 max-w-xl text-lg text-white/70">Web, mobile, and data projects I've built, from point-of-sale systems to sentiment analysis.</p>
       </header>
 
       <!-- Daftar proyek dirender dari data di bawah -->
@@ -98,17 +77,17 @@
 
   <!-- Navigasi bawah -->
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="flex gap-0.5 rounded-3xl border border-ink/10 bg-white/85 p-1.5 shadow-xl shadow-ink/10 backdrop-blur-xl sm:gap-1 sm:rounded-full">
+    <div class="glass flex gap-0.5 rounded-3xl p-1.5 shadow-xl shadow-black/40 sm:gap-1 sm:rounded-full" style="background: rgba(10,16,40,.7)">
       <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
@@ -336,7 +315,7 @@
       },
     };
 
-    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand';
+    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun';
 
     const swiperHtml = (p) => {
       const slides = p.images.map((n, k) => {
@@ -347,7 +326,7 @@
         </div>`;
       }).join('');
       return `
-        <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-ink/10 bg-white">
+        <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white/15 bg-white" style="transform: translateZ(0)">
           <div class="swiper-wrapper">${slides}</div>
           <div class="swiper-button-prev" role="button" aria-label="Previous screenshot"></div>
           <div class="swiper-button-next" role="button" aria-label="Next screenshot"></div>
@@ -356,10 +335,10 @@
     };
 
     const coverHtml = (p) => `
-        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-ink/10 ${p.coverBg}">${covers[p.cover]()}</div>`;
+        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white/20 shadow-[0_40px_80px_-30px_rgba(0,0,0,.8)] ${p.coverBg}">${covers[p.cover]()}</div>`;
 
     const privateNote = `
-        <p class="mt-6 flex items-center gap-2 text-sm text-ink/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
+        <p class="mt-6 flex items-center gap-2 text-sm text-white/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
 
     const render = (p, i) => {
       const flip = i % 2 === 1;
@@ -370,17 +349,18 @@
           <i class="${l.icon}"></i> ${l.label}
         </a>`).join('');
 
+      // Tiap proyek = tumpukan lapisan 3D: blok warna (belakang) → ilustrasi (depan), miring mengikuti kursor
       return `
-        <article class="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          <div class="relative lg:col-span-7 ${flip ? 'lg:order-2' : ''}">
-            <div aria-hidden="true" class="absolute -bottom-3 h-full w-full rounded-[2rem] ${flip ? '-left-3' : '-right-3'} ${p.block}"></div>
+        <article class="stage3d grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          <div data-tilt class="tilt relative lg:col-span-7 ${flip ? 'lg:order-2' : ''}">
+            <div aria-hidden="true" class="absolute -bottom-3 h-full w-full rounded-[2rem] ${flip ? '-left-3' : '-right-3'} ${p.block}" style="transform: translateZ(-50px)"></div>
             ${p.images ? swiperHtml(p) : coverHtml(p)}
           </div>
 
           <div class="lg:col-span-5">
             <p class="inline-block rounded-full px-3.5 py-1.5 text-sm font-semibold ${p.chip}">${p.stack}</p>
             <h2 class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">${p.title}</h2>
-            <p lang="id" class="mt-4 max-w-md leading-relaxed text-ink/70">${p.desc}</p>
+            <p lang="id" class="mt-4 max-w-md leading-relaxed text-white/70">${p.desc}</p>
             ${links ? `<div class="mt-7 flex flex-wrap gap-3">${links}</div>` : ''}
             ${p.private ? privateNote : ''}
           </div>
@@ -388,6 +368,18 @@
     };
 
     document.getElementById('projects').innerHTML = projects.map(render).join('');
+
+    // Kartu miring mengikuti kursor (mati di layar sentuh)
+    document.querySelectorAll('[data-tilt]').forEach((el) => {
+      el.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'touch') return;
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(1100px) rotateX(${(-y * 9).toFixed(2)}deg) rotateY(${(x * 11).toFixed(2)}deg)`;
+      });
+      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+    });
 
     // Satu instance Swiper per proyek, tombol navigasinya terpisah
     document.querySelectorAll('.project-swiper').forEach((el) => {
