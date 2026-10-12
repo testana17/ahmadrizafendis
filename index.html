@@ -6,7 +6,7 @@
   <meta name="description" content="Portofolio Ahmad Rizal, seorang Web Developer yang berfokus pada Laravel, Vue, Flutter, dan teknologi web modern.">
   <meta name="keywords" content="Ahmad Rizal, Web Developer, Laravel, Vue, Flutter, Mobile Developer, Portfolio">
   <meta name="author" content="Ahmad Rizal">
-  <meta name="theme-color" content="#F5F8FF">
+  <meta name="theme-color" content="#060A1A">
   <title>Ahmad Rizal | Web Developer</title>
 
   <!-- Google tag (gtag.js) -->
@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <script>
     tailwind.config = {
@@ -33,8 +34,7 @@
             display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
           },
           colors: {
-            paper: '#F5F8FF',
-            ink: '#0F1B3D',
+            night: '#060A1A',
             brand: { DEFAULT: '#2B50FF', soft: '#E3EAFF', deep: '#1C36C9' },
             sun: { DEFAULT: '#FFD43B', soft: '#FFF2B8' },
             mint: { DEFAULT: '#2FBF8F', soft: '#D3F5E6' },
@@ -46,35 +46,39 @@
 
   <style>
     html { scroll-behavior: smooth; }
+    body { background: #060A1A; }
 
     /* Satu momen animasi: hero muncul bertahap saat halaman dibuka */
-    .hero-in {
-      opacity: 0;
-      transform: translateY(16px);
-      animation: rise .7s cubic-bezier(.2, .7, .2, 1) forwards;
-      animation-delay: var(--d, 0s);
-    }
+    .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
+
+    /* kartu kaca yang miring mengikuti kursor */
+    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out; will-change: transform; }
+    .tz1 { transform: translateZ(16px); } .tz2 { transform: translateZ(32px); }
+    .glass { background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .stage3d { perspective: 1200px; }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero-in { animation: none; opacity: 1; transform: none; }
+      .tilt { transform: none !important; transition: none; }
     }
   </style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-sun selection:text-ink">
+<body class="text-white font-sans antialiased selection:bg-sun selection:text-night">
 
   <main class="relative overflow-hidden pb-40">
 
-    <!-- Lingkaran latar, datar dan lembut -->
-    <div aria-hidden="true" class="pointer-events-none absolute -top-48 -left-40 h-[30rem] w-[30rem] rounded-full bg-brand-soft"></div>
+    <!-- cahaya latar -->
+    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[34rem] w-[34rem] rounded-full bg-brand/30 blur-[120px]"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[40rem] -right-40 h-[28rem] w-[28rem] rounded-full bg-sun/10 blur-[120px]"></div>
 
     <!-- ================= HERO ================= -->
-    <section id="home" class="relative mx-auto grid max-w-6xl items-center gap-16 px-5 pt-12 sm:px-8 md:pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+    <section id="home" class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pt-12 sm:px-8 md:pt-20 lg:grid-cols-[1.05fr_0.95fr]">
 
-      <div>
-        <p class="hero-in inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-semibold shadow-sm" style="--d:.05s">
+      <div class="relative z-10">
+        <p class="hero-in glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold" style="--d:.05s">
           <span aria-hidden="true">👋</span> Hi, I'm Ahmad Rizal E.S
         </p>
 
@@ -82,49 +86,50 @@
           I build backends that hold up, and interfaces people enjoy using.
         </h1>
 
-        <p class="hero-in mt-6 max-w-xl text-lg leading-relaxed text-ink/70" style="--d:.25s">
+        <p class="hero-in mt-6 max-w-xl text-lg leading-relaxed text-white/70" style="--d:.25s">
           Web &amp; backend developer working with Laravel and Golang on the server, Vue.js or React on the front, and Flutter for mobile apps. I take on independent projects, keep sharpening my craft, and contribute to open-source along the way.
         </p>
 
         <div class="hero-in mt-9 flex flex-wrap items-center gap-3" style="--d:.35s">
           <a href="portfolio.html"
-             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-[0_6px_0_#1C36C9,0_18px_30px_-8px_rgba(43,80,255,.6)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
             <i class="fas fa-project-diagram"></i> See my projects
           </a>
           <a href="experience.html"
-             class="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-6 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-ink/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+             class="glass inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
             <i class="fas fa-briefcase"></i> My experience
           </a>
           <div class="ml-1 flex items-center gap-2">
             <a href="https://github.com/rizalsy17" target="_blank" rel="noopener" aria-label="GitHub Ahmad Rizal"
-               class="grid h-12 w-12 place-items-center rounded-full border border-ink/15 bg-white text-lg transition hover:bg-ink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+               class="glass grid h-12 w-12 place-items-center rounded-full text-lg transition hover:bg-white hover:text-night focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
               <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/ahmad-rizal-a54890226/" target="_blank" rel="noopener" aria-label="LinkedIn Ahmad Rizal"
-               class="grid h-12 w-12 place-items-center rounded-full border border-ink/15 bg-white text-lg transition hover:bg-[#0A66C2] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+               class="glass grid h-12 w-12 place-items-center rounded-full text-lg transition hover:bg-[#0A66C2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
               <i class="fab fa-linkedin-in"></i>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Foto + kartu API -->
-      <div class="hero-in relative mx-auto w-full max-w-sm pb-16 sm:max-w-md lg:pb-12" style="--d:.3s">
-        <div aria-hidden="true" class="absolute -right-4 -top-4 h-[calc(100%-4rem)] w-full rounded-[2.5rem] bg-sun sm:-right-6 sm:-top-6 lg:h-[calc(100%-3rem)]"></div>
+      <!-- Panggung 3D: kubus teknologi (three.js) + foto + kartu API -->
+      <div id="stage" class="hero-in relative mx-auto h-[540px] w-full max-w-md sm:h-[600px] lg:max-w-none" style="--d:.3s">
+        <canvas id="scene" class="absolute inset-0 h-full w-full" aria-hidden="true"></canvas>
 
-        <div class="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-brand lg:aspect-[5/6]">
-          <span aria-hidden="true" class="absolute inset-0 grid place-items-center font-display text-8xl font-extrabold text-white/90">AR</span>
-          <img src="img/fot.jpeg" alt="Foto Ahmad Rizal E.S"
-               class="absolute inset-0 h-full w-full object-cover"
-               onerror="this.style.display='none'">
+        <div class="stage3d absolute right-0 top-2 w-36 sm:w-44">
+          <div data-tilt class="tilt relative aspect-[4/5] overflow-hidden rounded-3xl border-4 border-white/90 bg-brand shadow-[0_30px_60px_-20px_rgba(43,80,255,.7)]" style="transform: rotate(4deg)">
+            <span aria-hidden="true" class="absolute inset-0 grid place-items-center font-display text-6xl font-extrabold text-white/90">AR</span>
+            <img src="img/fot.jpeg" alt="Foto Ahmad Rizal E.S" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'">
+          </div>
         </div>
 
         <!-- Kartu API: hal paling khas dari seorang backend developer -->
-        <div class="absolute -bottom-0 -left-2 w-[94%] rounded-2xl bg-ink p-4 text-white sm:p-5 shadow-2xl shadow-ink/30 sm:-left-8 lg:-left-14">
-          <div class="flex items-center justify-between gap-3 text-xs">
-            <span class="font-mono text-white/70">GET /api/developer/rizal</span>
-            <span class="rounded-full bg-mint/20 px-2.5 py-1 font-mono font-medium text-mint">200 OK</span>
-          </div>
+        <div class="stage3d absolute -bottom-0 left-0 w-[96%] sm:left-2">
+          <div data-tilt class="tilt glass rounded-2xl p-4 shadow-2xl shadow-black/50 sm:p-5">
+            <div class="flex items-center justify-between gap-3 text-xs">
+              <span class="font-mono text-white/70">GET /api/developer/rizal</span>
+              <span class="rounded-full bg-mint/20 px-2.5 py-1 font-mono font-medium text-mint">200 OK</span>
+            </div>
 <pre class="mt-3 overflow-x-auto font-mono text-[11px] leading-5 text-white/90 sm:text-[12.5px] sm:leading-6"><code>{
   <span class="text-[#8FA8FF]">"name"</span>: <span class="text-sun">"Ahmad Rizal E.S"</span>,
   <span class="text-[#8FA8FF]">"role"</span>: <span class="text-sun">"Web &amp; Backend Developer"</span>,
@@ -133,6 +138,7 @@
   <span class="text-[#8FA8FF]">"mobile"</span>: [<span class="text-sun">"Flutter"</span>],
   <span class="text-[#8FA8FF]">"database"</span>: <span class="text-sun">"MySQL"</span>
 }</code></pre>
+          </div>
         </div>
       </div>
     </section>
@@ -142,58 +148,58 @@
       <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div>
           <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">What I work with</h2>
-          <p class="mt-4 max-w-md leading-relaxed text-ink/70">
+          <p class="mt-4 max-w-md leading-relaxed text-white/70">
             Backend is where I spend most of my time. I add enough frontend, mobile, and design-system skill to take a feature from database to screen, on the web or on a phone.
           </p>
         </div>
 
-        <div class="divide-y divide-ink/10 overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
+        <div class="stage3d grid gap-4 sm:grid-cols-2">
           <!-- Backend -->
-          <div class="flex flex-col gap-4 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
-            <div class="flex items-center gap-3 sm:w-44 sm:shrink-0">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-soft text-brand"><i class="fas fa-server"></i></span>
+          <div data-tilt class="tilt glass rounded-3xl p-6 sm:col-span-2">
+            <div class="tz1 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-white shadow-lg shadow-brand/40"><i class="fas fa-server"></i></span>
               <h3 class="font-display text-lg font-bold">Backend</h3>
             </div>
-            <ul class="flex flex-wrap gap-2">
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fab fa-laravel mr-2"></i>Laravel</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep">Golang</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-plug mr-2"></i>API Programming</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-database mr-2"></i>MySQL</li>
+            <ul class="tz2 mt-4 flex flex-wrap gap-2">
+              <li class="rounded-full bg-brand/25 px-4 py-2 text-sm font-semibold text-[#B8C7FF]"><i class="fab fa-laravel mr-2"></i>Laravel</li>
+              <li class="rounded-full bg-brand/25 px-4 py-2 text-sm font-semibold text-[#B8C7FF]">Golang</li>
+              <li class="rounded-full bg-brand/25 px-4 py-2 text-sm font-semibold text-[#B8C7FF]"><i class="fas fa-plug mr-2"></i>API Programming</li>
+              <li class="rounded-full bg-brand/25 px-4 py-2 text-sm font-semibold text-[#B8C7FF]"><i class="fas fa-database mr-2"></i>MySQL</li>
             </ul>
           </div>
 
           <!-- Frontend -->
-          <div class="flex flex-col gap-4 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
-            <div class="flex items-center gap-3 sm:w-44 sm:shrink-0">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-sun-soft text-[#8A6A00]"><i class="fas fa-laptop-code"></i></span>
+          <div data-tilt class="tilt glass rounded-3xl p-6">
+            <div class="tz1 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-sun text-night shadow-lg shadow-sun/30"><i class="fas fa-laptop-code"></i></span>
               <h3 class="font-display text-lg font-bold">Frontend</h3>
             </div>
-            <ul class="flex flex-wrap gap-2">
-              <li class="rounded-full bg-sun-soft px-4 py-2 text-sm font-semibold text-[#6B5200]"><i class="fab fa-vuejs mr-2"></i>Vue.js</li>
-              <li class="rounded-full bg-sun-soft px-4 py-2 text-sm font-semibold text-[#6B5200]"><i class="fab fa-react mr-2"></i>React.js</li>
-              <li class="rounded-full bg-sun-soft px-4 py-2 text-sm font-semibold text-[#6B5200]"><i class="fas fa-paint-brush mr-2"></i>Tailwind CSS</li>
+            <ul class="tz2 mt-4 flex flex-wrap gap-2">
+              <li class="rounded-full bg-sun/20 px-4 py-2 text-sm font-semibold text-sun"><i class="fab fa-vuejs mr-2"></i>Vue.js</li>
+              <li class="rounded-full bg-sun/20 px-4 py-2 text-sm font-semibold text-sun"><i class="fab fa-react mr-2"></i>React.js</li>
+              <li class="rounded-full bg-sun/20 px-4 py-2 text-sm font-semibold text-sun"><i class="fas fa-paint-brush mr-2"></i>Tailwind CSS</li>
             </ul>
           </div>
 
           <!-- Mobile -->
-          <div class="flex flex-col gap-4 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
-            <div class="flex items-center gap-3 sm:w-44 sm:shrink-0">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-[#FFE3DE] text-[#C2412D]"><i class="fas fa-mobile-screen-button"></i></span>
+          <div data-tilt class="tilt glass rounded-3xl p-6">
+            <div class="tz1 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-[#FF6B57] text-white shadow-lg shadow-[#FF6B57]/30"><i class="fas fa-mobile-screen-button"></i></span>
               <h3 class="font-display text-lg font-bold">Mobile</h3>
             </div>
-            <ul class="flex flex-wrap gap-2">
-              <li class="rounded-full bg-[#FFE3DE] px-4 py-2 text-sm font-semibold text-[#9A2E1F]"><i class="fas fa-mobile-screen mr-2"></i>Flutter</li>
+            <ul class="tz2 mt-4 flex flex-wrap gap-2">
+              <li class="rounded-full bg-[#FF6B57]/20 px-4 py-2 text-sm font-semibold text-[#FFB4A8]"><i class="fas fa-mobile-screen mr-2"></i>Flutter</li>
             </ul>
           </div>
 
           <!-- Design -->
-          <div class="flex flex-col gap-4 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
-            <div class="flex items-center gap-3 sm:w-44 sm:shrink-0">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint-soft text-[#13795A]"><i class="fas fa-swatchbook"></i></span>
+          <div data-tilt class="tilt glass rounded-3xl p-6 sm:col-span-2">
+            <div class="tz1 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint text-night shadow-lg shadow-mint/30"><i class="fas fa-swatchbook"></i></span>
               <h3 class="font-display text-lg font-bold">Design</h3>
             </div>
-            <ul class="flex flex-wrap gap-2">
-              <li class="rounded-full bg-mint-soft px-4 py-2 text-sm font-semibold text-[#0F6048]"><i class="fas fa-layer-group mr-2"></i>Design System</li>
+            <ul class="tz2 mt-4 flex flex-wrap gap-2">
+              <li class="rounded-full bg-mint/20 px-4 py-2 text-sm font-semibold text-mint"><i class="fas fa-layer-group mr-2"></i>Design System</li>
             </ul>
           </div>
         </div>
@@ -202,64 +208,64 @@
 
     <!-- ================= CARA KERJA ================= -->
     <section class="relative mx-auto mt-20 max-w-6xl px-5 sm:px-8 md:mt-28">
-      <div class="grid gap-10 border-y border-ink/10 py-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-ink/10">
-        <div class="md:pr-10">
-          <i class="fas fa-seedling text-xl text-mint"></i>
-          <h3 class="mt-3 font-display text-xl font-bold">Always learning</h3>
-          <p class="mt-2 leading-relaxed text-ink/70">I keep improving my skills with every project I take on.</p>
+      <div class="stage3d grid gap-4 md:grid-cols-3">
+        <div data-tilt class="tilt glass rounded-3xl p-7">
+          <i class="tz2 fas fa-seedling text-2xl text-mint"></i>
+          <h3 class="tz1 mt-3 font-display text-xl font-bold">Always learning</h3>
+          <p class="mt-2 leading-relaxed text-white/70">I keep improving my skills with every project I take on.</p>
         </div>
-        <div class="md:px-10">
-          <i class="fas fa-code-branch text-xl text-brand"></i>
-          <h3 class="mt-3 font-display text-xl font-bold">Open-source minded</h3>
-          <p class="mt-2 leading-relaxed text-ink/70">I like giving back to the communities whose tools I rely on.</p>
+        <div data-tilt class="tilt glass rounded-3xl p-7">
+          <i class="tz2 fas fa-code-branch text-2xl text-[#8FA8FF]"></i>
+          <h3 class="tz1 mt-3 font-display text-xl font-bold">Open-source minded</h3>
+          <p class="mt-2 leading-relaxed text-white/70">I like giving back to the communities whose tools I rely on.</p>
         </div>
-        <div class="md:pl-10">
-          <i class="fas fa-circle-check text-xl text-[#E0A800]"></i>
-          <h3 class="mt-3 font-display text-xl font-bold">Quality in every project</h3>
-          <p class="mt-2 leading-relaxed text-ink/70">Clean code, clear APIs, and details that hold up after launch.</p>
+        <div data-tilt class="tilt glass rounded-3xl p-7">
+          <i class="tz2 fas fa-circle-check text-2xl text-sun"></i>
+          <h3 class="tz1 mt-3 font-display text-xl font-bold">Quality in every project</h3>
+          <p class="mt-2 leading-relaxed text-white/70">Clean code, clear APIs, and details that hold up after launch.</p>
         </div>
       </div>
     </section>
 
     <!-- ================= CONNECT ================= -->
     <section id="connect" class="relative mx-auto mt-20 max-w-6xl px-5 sm:px-8 md:mt-28">
-      <div class="relative overflow-hidden rounded-[2rem] bg-brand p-8 text-white sm:p-12 md:p-16">
-        <div aria-hidden="true" class="absolute -bottom-12 -right-10 h-40 w-40 rounded-full bg-sun sm:-bottom-24 sm:-right-16 sm:h-72 sm:w-72"></div>
-        <div aria-hidden="true" class="absolute -bottom-10 right-40 hidden h-24 w-24 rounded-full bg-white/20 md:block"></div>
+      <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand to-brand-deep p-8 sm:p-12 md:p-16">
+        <div aria-hidden="true" class="absolute -bottom-12 -right-10 h-40 w-40 rounded-full bg-sun sm:-bottom-24 sm:-right-16 sm:h-72 sm:w-72" style="box-shadow: inset -24px -24px 50px rgba(0,0,0,.18), inset 14px 14px 40px rgba(255,255,255,.35)"></div>
+        <div aria-hidden="true" class="absolute -bottom-10 right-40 hidden h-24 w-24 rounded-full bg-white/20 md:block" style="box-shadow: inset -12px -12px 24px rgba(0,0,0,.15)"></div>
 
         <div class="relative max-w-xl">
           <h2 class="font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">Have a project in mind? Let's talk.</h2>
           <p class="mt-4 text-lg leading-relaxed text-white/85">Message me on LinkedIn, or look through my code on GitHub.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="https://www.linkedin.com/in/ahmad-rizal-a54890226/" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+               class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep shadow-[0_5px_0_rgba(0,0,0,.25)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <i class="fab fa-linkedin"></i> Message on LinkedIn
             </a>
             <a href="https://github.com/rizalsy17" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+               class="inline-flex items-center gap-2 rounded-full bg-night px-6 py-3.5 text-sm font-semibold text-white shadow-[0_5px_0_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <i class="fab fa-github"></i> View GitHub
             </a>
           </div>
         </div>
       </div>
 
-      <p class="mt-10 text-center text-sm text-ink/50">&copy; <span id="year">2026</span> Ahmad Rizal E.S</p>
+      <p class="mt-10 text-center text-sm text-white/50">&copy; <span id="year">2026</span> Ahmad Rizal E.S</p>
     </section>
   </main>
 
   <!-- ================= NAVIGASI BAWAH ================= -->
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="flex gap-0.5 rounded-3xl border border-ink/10 bg-white/85 p-1.5 shadow-xl shadow-ink/10 backdrop-blur-xl sm:gap-1 sm:rounded-full">
+    <div class="glass flex gap-0.5 rounded-3xl p-1.5 shadow-xl shadow-black/40 sm:gap-1 sm:rounded-full" style="background: rgba(10,16,40,.7)">
       <a href="index.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
@@ -267,6 +273,110 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Kartu miring mengikuti kursor (mati di layar sentuh)
+    document.querySelectorAll('[data-tilt]').forEach((el) => {
+      const base = el.style.transform;
+      el.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'touch') return;
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(900px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 10).toFixed(2)}deg) translateZ(6px)`;
+      });
+      el.addEventListener('pointerleave', () => { el.style.transform = base; });
+    });
+
+    // Adegan 3D: kubus berlabel teknologi yang melayang, bergerak mengikuti kursor
+    (function () {
+      if (!window.THREE) return;
+      const canvas = document.getElementById('scene');
+      const stage = document.getElementById('stage');
+      let renderer;
+      try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); } catch (e) { return; }
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 50);
+      camera.position.z = 8;
+
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      const key = new THREE.DirectionalLight(0xffffff, 0.9); key.position.set(3, 4, 5); scene.add(key);
+      const blue = new THREE.PointLight(0x2b50ff, 2.2, 20); blue.position.set(-4, -2, 3); scene.add(blue);
+      const gold = new THREE.PointLight(0xffd43b, 1.6, 20); gold.position.set(4, 3, 2); scene.add(gold);
+
+      const items = [
+        ['Laravel', '#FF5A4D', -1.5, 1.5, 0, 1.45],
+        ['Go', '#2BC6E8', 1.1, 1.9, -0.8, 1.15],
+        ['Vue', '#2FBF8F', -0.2, 0.1, 0.6, 1.3],
+        ['React', '#4DA3FF', 1.9, -0.1, 0, 1.2],
+        ['Flutter', '#8FA8FF', -2.1, -0.9, -0.6, 1.1],
+        ['MySQL', '#FFD43B', 0.6, -1.7, 0.3, 1.25],
+        ['API', '#FFFFFF', -1.1, -2.2, -1, 0.95],
+      ];
+
+      const group = new THREE.Group();
+      scene.add(group);
+      const cubes = [];
+
+      function texture(label, color) {
+        const k = document.createElement('canvas');
+        k.width = k.height = 256;
+        const x = k.getContext('2d');
+        const g = x.createLinearGradient(0, 0, 256, 256);
+        g.addColorStop(0, '#1d2a66'); g.addColorStop(1, '#0a1235');
+        x.fillStyle = g; x.fillRect(0, 0, 256, 256);
+        x.strokeStyle = color; x.lineWidth = 10; x.strokeRect(14, 14, 228, 228);
+        x.fillStyle = color; x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.font = '800 ' + (label.length > 5 ? 46 : 64) + 'px "Bricolage Grotesque", sans-serif';
+        x.fillText(label, 128, 132);
+        return new THREE.CanvasTexture(k);
+      }
+
+      function build() {
+        items.forEach(([label, color, px, py, pz, s], i) => {
+          const mat = new THREE.MeshStandardMaterial({ map: texture(label, color), roughness: 0.25, metalness: 0.35 });
+          const m = new THREE.Mesh(new THREE.BoxGeometry(s, s, s), mat);
+          m.position.set(px, py, pz);
+          m.rotation.set(i * 0.6, i * 0.9, 0);
+          m.userData = { y: py, ph: i * 1.3, sp: 0.18 + (i % 3) * 0.06 };
+          group.add(m); cubes.push(m);
+        });
+      }
+
+      function resize() {
+        const w = stage.clientWidth, h = stage.clientHeight;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h; camera.updateProjectionMatrix();
+        group.scale.setScalar(w < 420 ? 0.72 : 1);
+      }
+      new ResizeObserver(resize).observe(stage);
+
+      let tx = 0, ty = 0;
+      window.addEventListener('pointermove', (e) => {
+        tx = (e.clientX / window.innerWidth - 0.5) * 0.7;
+        ty = (e.clientY / window.innerHeight - 0.5) * 0.5;
+      });
+
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const clock = new THREE.Clock();
+      function frame() {
+        const t = clock.getElapsedTime();
+        cubes.forEach((m) => {
+          m.rotation.x += m.userData.sp * 0.012;
+          m.rotation.y += m.userData.sp * 0.016;
+          m.position.y = m.userData.y + Math.sin(t * 0.9 + m.userData.ph) * 0.18;
+        });
+        group.rotation.y += (tx - group.rotation.y) * 0.05;
+        group.rotation.x += (ty - group.rotation.x) * 0.05;
+        renderer.render(scene, camera);
+        if (!reduce) requestAnimationFrame(frame);
+      }
+
+      (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => {
+        build(); resize(); frame();
+      });
+    })();
   </script>
 </body>
 </html>
