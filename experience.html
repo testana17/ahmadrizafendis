@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Pengalaman kerja dan sertifikat Ahmad Rizal E.S sebagai web dan backend developer.">
-  <meta name="theme-color" content="#F5F8FF">
+  <meta name="theme-color" content="#060A1A">
   <title>Experience - Ahmad Rizal E.S</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,73 +15,71 @@
 
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            paper: '#F5F8FF',
-            ink: '#0F1B3D',
-            brand: { DEFAULT: '#2B50FF', soft: '#E3EAFF', deep: '#1C36C9' },
-            sun: { DEFAULT: '#FFD43B', soft: '#FFF2B8' },
-            mint: { DEFAULT: '#2FBF8F', soft: '#D3F5E6' },
-          },
+      theme: { extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
         },
-      },
+        colors: {
+          night: '#060A1A',
+          brand: { DEFAULT: '#2B50FF', soft: '#E3EAFF', deep: '#1C36C9' },
+          sun: { DEFAULT: '#FFD43B', soft: '#FFF2B8' },
+          mint: { DEFAULT: '#2FBF8F', soft: '#D3F5E6' },
+        },
+      } },
     }
   </script>
 
   <style>
     html { scroll-behavior: smooth; }
-    .hero-in {
-      opacity: 0;
-      transform: translateY(16px);
-      animation: rise .7s cubic-bezier(.2, .7, .2, 1) forwards;
-      animation-delay: var(--d, 0s);
-    }
+    body { background: #060A1A; }
+    .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
+    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out; will-change: transform; }
+    .tz1 { transform: translateZ(14px); } .tz2 { transform: translateZ(28px); }
+    .glass { background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .stage3d { perspective: 1200px; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero-in { animation: none; opacity: 1; transform: none; }
+      .tilt { transform: none !important; transition: none; }
     }
   </style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-sun selection:text-ink">
+<body class="bg-night text-white font-sans antialiased selection:bg-sun selection:text-night">
 
   <main class="relative overflow-hidden pb-40">
-    <div aria-hidden="true" class="pointer-events-none absolute -top-48 -right-40 h-[30rem] w-[30rem] rounded-full bg-brand-soft"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -right-40 h-[34rem] w-[34rem] rounded-full bg-brand/30 blur-[120px]"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[60rem] -left-40 h-[28rem] w-[28rem] rounded-full bg-sun/10 blur-[120px]"></div>
 
     <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
 
-      <!-- Judul halaman -->
       <header class="hero-in">
         <h1 class="font-display text-[2.25rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl sm:leading-[1.05]">Experience &amp; Certificates</h1>
-        <p class="mt-4 max-w-xl text-lg text-ink/70">My journey in web development and technology.</p>
+        <p class="mt-4 max-w-xl text-lg text-white/70">My journey in web development and technology.</p>
       </header>
 
       <!-- ================= EXPERIENCE (timeline) ================= -->
       <section id="experience" class="mt-14 md:mt-20">
-        <div class="relative max-w-4xl">
-          <div aria-hidden="true" class="absolute bottom-4 left-4 top-4 w-px bg-ink/15 sm:left-5"></div>
+        <div class="stage3d relative max-w-4xl">
+          <div aria-hidden="true" class="absolute bottom-4 left-4 top-4 w-px bg-gradient-to-b from-brand via-white/20 to-transparent sm:left-5"></div>
 
           <ol class="space-y-8">
 
             <!-- BANTU -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full text-sm sm:h-10 sm:w-10 sm:text-base bg-brand text-white ring-4 ring-paper"><i class="fas fa-code-branch"></i></span>
-              <article class="rounded-3xl border border-ink/10 bg-white p-5 shadow-sm sm:p-8">
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-brand text-sm text-white ring-4 ring-night shadow-lg shadow-brand/50 sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-code-branch"></i></span>
+              <article data-tilt class="tilt glass rounded-3xl p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
+                  <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Backend Developer</h3>
-                    <p class="mt-1 font-semibold text-brand-deep">BANTU <span class="font-medium text-ink/60">(Internship)</span></p>
+                    <p class="mt-1 font-semibold text-[#8FA8FF]">BANTU <span class="font-medium text-white/60">(Internship)</span></p>
                   </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Apr 2025 - Jun 2025<br>3 months · Remote</p>
+                  <p class="text-sm leading-6 text-white/60 sm:text-right">Apr 2025 - Jun 2025<br>3 months · Remote</p>
                 </div>
 
-                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-ink/75 marker:text-brand">
+                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-white/75 marker:text-[#8FA8FF]">
                   <li>Developed secure login API with authentication and token management.</li>
                   <li>Implemented refresh token mechanism for access token renewal.</li>
                   <li>Built freelancer order creation with validation and database handling.</li>
@@ -94,91 +92,91 @@
                   <li>Conducted full feature testing and validation before deployment.</li>
                 </ul>
 
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">Laravel</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">API Development</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">RabbitMQ</li>
+                <ul class="tz2 mt-6 flex flex-wrap gap-2">
+                  <li class="rounded-full bg-brand/25 px-3.5 py-1.5 text-sm font-semibold text-[#B8C7FF]">Laravel</li>
+                  <li class="rounded-full bg-brand/25 px-3.5 py-1.5 text-sm font-semibold text-[#B8C7FF]">API Development</li>
+                  <li class="rounded-full bg-brand/25 px-3.5 py-1.5 text-sm font-semibold text-[#B8C7FF]">RabbitMQ</li>
                 </ul>
               </article>
             </li>
 
             <!-- Brand In -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full text-sm sm:h-10 sm:w-10 sm:text-base bg-sun text-ink ring-4 ring-paper"><i class="fas fa-laptop-code"></i></span>
-              <article class="rounded-3xl border border-ink/10 bg-white p-5 shadow-sm sm:p-8">
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-sun text-sm text-night ring-4 ring-night shadow-lg shadow-sun/40 sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
+              <article data-tilt class="tilt glass rounded-3xl p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
+                  <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Frontend Web Developer</h3>
-                    <p class="mt-1 font-semibold text-brand-deep">Brand In <span class="font-medium text-ink/60">(Internship)</span></p>
+                    <p class="mt-1 font-semibold text-[#8FA8FF]">Brand In <span class="font-medium text-white/60">(Internship)</span></p>
                   </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Sep 2024 - Dec 2024<br>4 months · Remote</p>
+                  <p class="text-sm leading-6 text-white/60 sm:text-right">Sep 2024 - Dec 2024<br>4 months · Remote</p>
                 </div>
 
-                <figure class="mt-5 max-w-xs">
-                  <div class="overflow-hidden rounded-2xl border border-ink/10 bg-paper">
+                <figure class="tz2 mt-5 max-w-xs">
+                  <div class="overflow-hidden rounded-2xl border border-white/15 bg-white/5 shadow-2xl shadow-black/50">
                     <img src="img/projek3.png" alt="HOME BASED ORGANIC SKIN CARE" loading="lazy" class="h-48 w-full object-cover">
                   </div>
                   <figcaption class="mt-3">
                     <a href="https://template03-five.vercel.app/" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                       class="inline-flex items-center gap-2 text-sm font-semibold text-sun transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
                       <i class="fas fa-arrow-up-right-from-square"></i> Live demo
                     </a>
                   </figcaption>
                 </figure>
 
-                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-ink/75 marker:text-brand">
+                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-white/75 marker:text-sun">
                   <li>Developed and optimized landing pages with responsive design.</li>
                   <li>Designed and implemented intuitive UI components for web projects.</li>
                 </ul>
 
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-sun-soft px-3.5 py-1.5 text-sm font-semibold text-[#6B5200]">React.js</li>
-                  <li class="rounded-full bg-sun-soft px-3.5 py-1.5 text-sm font-semibold text-[#6B5200]">UI/UX Design</li>
-                  <li class="rounded-full bg-sun-soft px-3.5 py-1.5 text-sm font-semibold text-[#6B5200]">Web Development</li>
+                <ul class="tz2 mt-6 flex flex-wrap gap-2">
+                  <li class="rounded-full bg-sun/20 px-3.5 py-1.5 text-sm font-semibold text-sun">React.js</li>
+                  <li class="rounded-full bg-sun/20 px-3.5 py-1.5 text-sm font-semibold text-sun">UI/UX Design</li>
+                  <li class="rounded-full bg-sun/20 px-3.5 py-1.5 text-sm font-semibold text-sun">Web Development</li>
                 </ul>
               </article>
             </li>
 
             <!-- Dicoding -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full text-sm sm:h-10 sm:w-10 sm:text-base bg-mint text-white ring-4 ring-paper"><i class="fas fa-graduation-cap"></i></span>
-              <article class="rounded-3xl border border-ink/10 bg-white p-5 shadow-sm sm:p-8">
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-mint text-sm text-night ring-4 ring-night shadow-lg shadow-mint/40 sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-graduation-cap"></i></span>
+              <article data-tilt class="tilt glass rounded-3xl p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
+                  <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Student</h3>
-                    <p class="mt-1 font-semibold text-brand-deep">Dicoding Indonesia <span class="font-medium text-ink/60">(Apprenticeship)</span></p>
+                    <p class="mt-1 font-semibold text-[#8FA8FF]">Dicoding Indonesia <span class="font-medium text-white/60">(Apprenticeship)</span></p>
                   </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Feb 2024 - Jul 2024<br>6 months</p>
+                  <p class="text-sm leading-6 text-white/60 sm:text-right">Feb 2024 - Jul 2024<br>6 months</p>
                 </div>
 
-                <p class="mt-5 leading-relaxed text-ink/75">Participated in intensive training for web development with React.js and backend technologies, including project-based learning and software development best practices.</p>
+                <p class="mt-5 leading-relaxed text-white/75">Participated in intensive training for web development with React.js and backend technologies, including project-based learning and software development best practices.</p>
 
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-mint-soft px-3.5 py-1.5 text-sm font-semibold text-[#0F6048]">React.js</li>
-                  <li class="rounded-full bg-mint-soft px-3.5 py-1.5 text-sm font-semibold text-[#0F6048]">Project Management</li>
-                  <li class="rounded-full bg-mint-soft px-3.5 py-1.5 text-sm font-semibold text-[#0F6048]">Backend Integration</li>
+                <ul class="tz2 mt-6 flex flex-wrap gap-2">
+                  <li class="rounded-full bg-mint/20 px-3.5 py-1.5 text-sm font-semibold text-mint">React.js</li>
+                  <li class="rounded-full bg-mint/20 px-3.5 py-1.5 text-sm font-semibold text-mint">Project Management</li>
+                  <li class="rounded-full bg-mint/20 px-3.5 py-1.5 text-sm font-semibold text-mint">Backend Integration</li>
                 </ul>
               </article>
             </li>
 
             <!-- GarapDigital -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full text-sm sm:h-10 sm:w-10 sm:text-base bg-ink text-white ring-4 ring-paper"><i class="fas fa-globe"></i></span>
-              <article class="rounded-3xl border border-ink/10 bg-white p-5 shadow-sm sm:p-8">
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-white text-sm text-night ring-4 ring-night shadow-lg shadow-white/20 sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-globe"></i></span>
+              <article data-tilt class="tilt glass rounded-3xl p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
+                  <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Web Developer</h3>
-                    <p class="mt-1 font-semibold text-brand-deep">GarapDigital.id <span class="font-medium text-ink/60">(Internship)</span></p>
+                    <p class="mt-1 font-semibold text-[#8FA8FF]">GarapDigital.id <span class="font-medium text-white/60">(Internship)</span></p>
                   </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Aug 2023 - Oct 2023<br>3 months · Remote</p>
+                  <p class="text-sm leading-6 text-white/60 sm:text-right">Aug 2023 - Oct 2023<br>3 months · Remote</p>
                 </div>
 
-                <p class="mt-5 leading-relaxed text-ink/75">Designed and developed a village information system web application, focusing on efficient data management and user-friendly interface for local community services.</p>
+                <p class="mt-5 leading-relaxed text-white/75">Designed and developed a village information system web application, focusing on efficient data management and user-friendly interface for local community services.</p>
 
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">Laravel</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">MySQL</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">Web System Design</li>
+                <ul class="tz2 mt-6 flex flex-wrap gap-2">
+                  <li class="rounded-full bg-brand/25 px-3.5 py-1.5 text-sm font-semibold text-[#B8C7FF]">Laravel</li>
+                  <li class="rounded-full bg-brand/25 px-3.5 py-1.5 text-sm font-semibold text-[#B8C7FF]">MySQL</li>
+                  <li class="rounded-full bg-brand/25 px-3.5 py-1.5 text-sm font-semibold text-[#B8C7FF]">Web System Design</li>
                 </ul>
               </article>
             </li>
@@ -190,79 +188,79 @@
       <section id="certificate" class="mt-24 md:mt-32">
         <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Certificates</h2>
 
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="stage3d mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-          <article class="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
-            <div class="bg-brand-soft p-4">
+          <article data-tilt class="tilt glass flex flex-col overflow-hidden rounded-3xl">
+            <div class="tz1 bg-brand-soft p-4">
               <img src="img/dico.png" alt="Certificate Dicoding - React &amp; Backend MSIB 6" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Dicoding - React &amp; Backend MSIB 6</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Training in modern web application development using React for the frontend and backend integration. The curriculum covers JavaScript fundamentals, React Hooks, and hands-on practice building fullstack applications.</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">Training in modern web application development using React for the frontend and backend integration. The curriculum covers JavaScript fundamentals, React Hooks, and hands-on practice building fullstack applications.</p>
             </div>
           </article>
 
-          <article class="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
-            <div class="bg-sun-soft p-4">
+          <article data-tilt class="tilt glass flex flex-col overflow-hidden rounded-3xl">
+            <div class="tz1 bg-sun-soft p-4">
               <img src="img/serti2.png" alt="Certificate Dicoding - React Web Developer Expert" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">React Web Developer Expert</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Advanced training to master React.js, including complex state management, performance optimization, and the application of best practices in modern web application development.</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">Advanced training to master React.js, including complex state management, performance optimization, and the application of best practices in modern web application development.</p>
               <a href="https://www.dicoding.com/certificates/98XWLG3R4ZM3" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-sun transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
           </article>
 
-          <article class="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
-            <div class="bg-mint-soft p-4">
+          <article data-tilt class="tilt glass flex flex-col overflow-hidden rounded-3xl">
+            <div class="tz1 bg-mint-soft p-4">
               <img src="img/serti3.png" alt="Certificate Certiport - IT Specialist" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Certiport - IT Specialist</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">IT Certiport HTML and CSS certification confirms expertise in HTML and CSS website development.</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">IT Certiport HTML and CSS certification confirms expertise in HTML and CSS website development.</p>
             </div>
           </article>
 
-          <article class="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
-            <div class="bg-brand-soft p-4">
+          <article data-tilt class="tilt glass flex flex-col overflow-hidden rounded-3xl">
+            <div class="tz1 bg-brand-soft p-4">
               <img src="img/serti4.png" alt="Certificate Dicoding - Fundamentals of Web Applications with React" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Learn the Fundamentals of Web Applications with React</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Comprehensive training on building web applications using React.js, covering component-based architecture, state management, and best practices for modern frontend development.</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">Comprehensive training on building web applications using React.js, covering component-based architecture, state management, and best practices for modern frontend development.</p>
               <a href="https://www.dicoding.com/certificates/GRX5Q51QRZ0M" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-sun transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
           </article>
 
-          <article class="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
-            <div class="bg-sun-soft p-4">
+          <article data-tilt class="tilt glass flex flex-col overflow-hidden rounded-3xl">
+            <div class="tz1 bg-sun-soft p-4">
               <img src="img/serti5.png" alt="Certificate Dicoding - Fundamental Backend App" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Learn Fundamental Backend App</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Training on backend application development fundamentals, including server-side programming, database management, and API creation using modern backend frameworks.</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">Training on backend application development fundamentals, including server-side programming, database management, and API creation using modern backend frameworks.</p>
               <a href="https://www.dicoding.com/certificates/N9ZOM70D6PG5" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-sun transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
           </article>
 
-          <article class="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm">
-            <div class="bg-mint-soft p-4">
+          <article data-tilt class="tilt glass flex flex-col overflow-hidden rounded-3xl">
+            <div class="tz1 bg-mint-soft p-4">
               <img src="img/serti6.png" alt="Certificate Dicoding - Fundamental of Web Programming" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Learn Fundamental of Web Programming</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Training on the basics of web programming, covering HTML, CSS, and JavaScript to build foundational skills for creating interactive and responsive web applications.</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">Training on the basics of web programming, covering HTML, CSS, and JavaScript to build foundational skills for creating interactive and responsive web applications.</p>
               <a href="https://www.dicoding.com/certificates/N9ZOORG70ZG5" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-sun transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sun">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
@@ -275,20 +273,34 @@
 
   <!-- Navigasi bawah -->
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="flex gap-0.5 rounded-3xl border border-ink/10 bg-white/85 p-1.5 shadow-xl shadow-ink/10 backdrop-blur-xl sm:gap-1 sm:rounded-full">
+    <div class="glass flex gap-0.5 rounded-3xl p-1.5 shadow-xl shadow-black/40 sm:gap-1 sm:rounded-full" style="background: rgba(10,16,40,.7)">
       <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full bg-brand px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html"
-         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+         class="flex flex-col items-center gap-1 rounded-2xl sm:flex-row sm:gap-2 sm:rounded-full px-3.5 py-2 text-[11px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
   </nav>
+
+  <script>
+    // Kartu miring mengikuti kursor (mati di layar sentuh)
+    document.querySelectorAll('[data-tilt]').forEach((el) => {
+      el.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'touch') return;
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(1000px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateZ(6px)`;
+      });
+      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+    });
+  </script>
 </body>
 </html>
