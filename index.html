@@ -6,7 +6,7 @@
   <meta name="description" content="Portofolio Ahmad Rizal, seorang Web Developer yang berfokus pada Laravel, Vue, Flutter, dan teknologi web modern.">
   <meta name="keywords" content="Ahmad Rizal, Web Developer, Laravel, Vue, Flutter, Mobile Developer, Portfolio">
   <meta name="author" content="Ahmad Rizal">
-  <meta name="theme-color" content="#F3F7FF">
+  <meta name="theme-color" content="#F6F3FE">
   <title>Ahmad Rizal | Web Developer</title>
 
   <!-- Google tag (gtag.js) -->
@@ -34,9 +34,11 @@
             display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
           },
           colors: {
-            paper: '#F3F7FF',
-            ink: '#0B1B4D',
-            brand: { DEFAULT: '#2457FF', deep: '#1237C4', soft: '#E4ECFF', mid: '#B9CCFF' },
+            paper: '#F6F3FE',
+            ink: '#241B4E',
+            brand: { DEFAULT: '#6366F1', deep: '#4338CA', soft: '#EAE8FD', mid: '#C9C3F7' },
+          violet: { DEFAULT: '#A855F7', deep: '#7E22CE', soft: '#F3E8FF', mid: '#DCC9FB' },
+          aqua: { DEFAULT: '#22D3EE', deep: '#0E7490', soft: '#DEFAFF', mid: '#A8ECFA' },
           },
         },
       },
@@ -45,7 +47,14 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #F3F7FF; }
+    body {
+      background:
+        radial-gradient(1100px 560px at 8% -8%, rgba(199,195,247,.55) 0%, rgba(246,243,254,0) 60%),
+        radial-gradient(900px 540px at 108% 8%, rgba(253,230,243,.5) 0%, rgba(246,243,254,0) 55%),
+        radial-gradient(900px 620px at 50% 115%, rgba(222,250,255,.5) 0%, rgba(246,243,254,0) 55%),
+        #F6F3FE;
+      background-attachment: fixed;
+    }
 
     .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
@@ -54,16 +63,16 @@
     .stage3d { perspective: 1200px; }
     .tilt { transform-style: preserve-3d; transition: transform .2s ease-out, box-shadow .2s ease-out; will-change: transform; }
     .tz1 { transform: translateZ(16px); } .tz2 { transform: translateZ(30px); }
-    .card3d { background: #fff; border: 1px solid rgba(36,87,255,.14); box-shadow: 0 1px 0 #fff inset, 0 24px 40px -24px rgba(36,87,255,.45); }
-    .card3d:hover { box-shadow: 0 1px 0 #fff inset, 0 34px 50px -24px rgba(36,87,255,.55); }
+    .card3d { background: #fff; border: 1px solid rgba(36,87,255,.14); box-shadow: 0 1px 0 #fff inset, 0 24px 40px -24px rgba(99,102,241,.45); }
+    .card3d:hover { box-shadow: 0 1px 0 #fff inset, 0 34px 50px -24px rgba(99,102,241,.55); }
 
     /* panggung model 3D */
     .viewer {
       background:
-        linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px) 0 0 / 44px 44px,
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px) 0 0 / 44px 44px,
         linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px) 0 0 / 44px 44px,
-        radial-gradient(120% 90% at 50% 12%, #6A93FF 0%, #2457FF 52%, #1237C4 100%);
-      box-shadow: 0 40px 70px -30px rgba(36,87,255,.7);
+        radial-gradient(120% 90% at 50% 12%, #A78BFA 0%, #6366F1 52%, #4338CA 100%);
+      box-shadow: 0 40px 70px -30px rgba(99,102,241,.7);
     }
     #scene { touch-action: pan-y; cursor: grab; }
     #scene.grabbing { cursor: grabbing; }
@@ -105,11 +114,11 @@
 
         <div class="hero-in mt-9 flex flex-wrap items-center gap-3" style="--d:.35s">
           <a href="portfolio.html"
-             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-[0_6px_0_#1237C4,0_18px_30px_-8px_rgba(36,87,255,.55)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-[0_6px_0_#4338CA,0_18px_30px_-8px_rgba(99,102,241,.55)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
             <i class="fas fa-project-diagram"></i> See my projects
           </a>
           <a href="experience.html"
-             class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep shadow-[0_6px_0_#D3E0FF] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+             class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep shadow-[0_6px_0_#DAD5FB] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
             <i class="fas fa-briefcase"></i> My experience
           </a>
           <div class="ml-1 flex items-center gap-2">
@@ -254,9 +263,9 @@
       <div class="relative overflow-hidden rounded-[2rem] bg-brand p-8 text-white sm:p-12 md:p-16">
         <!-- bola biru bergaya 3D -->
         <div aria-hidden="true" class="absolute -bottom-12 -right-10 h-40 w-40 rounded-full sm:-bottom-24 sm:-right-16 sm:h-72 sm:w-72"
-             style="background: radial-gradient(circle at 32% 28%, #BCD0FF 0%, #6A93FF 48%, #1237C4 100%); box-shadow: 0 30px 50px -20px rgba(0,0,0,.45)"></div>
+             style="background: radial-gradient(circle at 32% 28%, #D6CCFB 0%, #8B7CF0 48%, #4338CA 100%); box-shadow: 0 30px 50px -20px rgba(0,0,0,.45)"></div>
         <div aria-hidden="true" class="absolute -bottom-10 right-40 hidden h-24 w-24 rounded-full md:block"
-             style="background: radial-gradient(circle at 32% 28%, #ffffff 0%, #B9CCFF 55%, #6A93FF 100%); box-shadow: 0 20px 30px -12px rgba(0,0,0,.35)"></div>
+             style="background: radial-gradient(circle at 32% 28%, #ffffff 0%, #C9C3F7 55%, #8B7CF0 100%); box-shadow: 0 20px 30px -12px rgba(0,0,0,.35)"></div>
 
         <div class="relative max-w-xl">
           <h2 class="font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">Have a project in mind? Let's talk.</h2>
@@ -267,7 +276,7 @@
               <i class="fab fa-linkedin"></i> Message on LinkedIn
             </a>
             <a href="https://github.com/rizalsy17" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-brand-deep px-6 py-3.5 text-sm font-semibold text-white shadow-[0_5px_0_#0B1B4D] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+               class="inline-flex items-center gap-2 rounded-full bg-brand-deep px-6 py-3.5 text-sm font-semibold text-white shadow-[0_5px_0_#241B4E] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <i class="fab fa-github"></i> View GitHub
             </a>
           </div>
@@ -336,24 +345,24 @@
       renderer.toneMappingExposure = 1.05;
 
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const BLUE = 0x2457ff, CRIM = 0x1237c4, INK = 0x0b1b4d;
-      const BLUE_S = '#2457FF', CRIM_S = '#1237C4', INK_S = '#0B1B4D', MID_S = '#B9CCFF', SOFT_S = '#E4ECFF';
+      const BLUE = 0x6366ff, CRIM = 0x4338ca, INK = 0x241b4e, VIOLET = 0xa855f7, AQUA = 0x22d3ee, BLUSH = 0xf472b6;
+      const BLUE_S = '#6366F1', CRIM_S = '#4338CA', INK_S = '#241B4E', MID_S = '#C9C3F7', SOFT_S = '#EAE8FD';
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
       const rig = new THREE.Group();
       scene.add(rig);
 
-      scene.add(new THREE.HemisphereLight(0xffffff, 0x7aa0ff, 0.95));
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x9b8aff, 0.95));
       const key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(4, 6, 6); scene.add(key);
-      const rim = new THREE.PointLight(0x8fb0ff, 1.4, 30); rim.position.set(-6, 2, -4); scene.add(rim);
-      const fill = new THREE.PointLight(0x9bb8ff, 0.8, 30); fill.position.set(6, -1, 4); scene.add(fill);
+      const rim = new THREE.PointLight(0xb088f5, 1.4, 30); rim.position.set(-6, 2, -4); scene.add(rim);
+      const fill = new THREE.PointLight(0xa99cf7, 0.8, 30); fill.position.set(6, -1, 4); scene.add(fill);
 
       // ---------- bahan ----------
       const std = (color, rough, metal) => new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal });
-      const clayMat = new THREE.MeshStandardMaterial({ color: 0xeaf0ff, roughness: 0.9, metalness: 0 });
+      const clayMat = new THREE.MeshStandardMaterial({ color: 0xf0ecfd, roughness: 0.9, metalness: 0 });
       const wireWhite = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.85 });
-      const wireRose = new THREE.MeshBasicMaterial({ color: 0xcfe0ff, wireframe: true, transparent: true, opacity: 0.95 });
+      const wireRose = new THREE.MeshBasicMaterial({ color: 0xe4d4fb, wireframe: true, transparent: true, opacity: 0.95 });
 
       const meshes = [];
       function make(geo, mat, accent) {
@@ -429,7 +438,7 @@
       });
       const shadowTex = () => tex(256, 256, (x, w, h) => {
         const g = x.createRadialGradient(128, 128, 8, 128, 128, 128);
-        g.addColorStop(0, 'rgba(8,24,90,.5)'); g.addColorStop(1, 'rgba(8,24,90,0)');
+        g.addColorStop(0, 'rgba(28,18,62,.5)'); g.addColorStop(1, 'rgba(28,18,62,0)');
         x.fillStyle = g; x.fillRect(0, 0, w, h);
       });
 
@@ -446,7 +455,7 @@
         body.rotation.x = -Math.PI / 2; g.add(body);
         const plate = make(new THREE.BoxGeometry(2.2, 0.3, 0.05), std(plateColor, 0.4, 0.2));
         plate.position.set(0, 0, 0.92); g.add(plate);
-        [0xbcd0ff, 0xffffff, 0x9bb8ff].forEach((c, i) => {
+        [0xd4c9fb, 0xffffff, 0xa99cf7].forEach((c, i) => {
           const led = make(new THREE.SphereGeometry(0.055, 16, 12), new THREE.MeshBasicMaterial({ color: c }), true);
           led.position.set(-0.95 + i * 0.18, 0, 0.965); g.add(led);
         });
@@ -461,7 +470,7 @@
         // platform + cincin biru muda
         const plat = make(new THREE.CylinderGeometry(3, 3.15, 0.25, 64), std(0xffffff, 0.4, 0.05));
         plat.position.y = -2.1; rig.add(plat);
-        const ring = make(new THREE.TorusGeometry(3.18, 0.045, 10, 128), new THREE.MeshBasicMaterial({ color: 0xbcd0ff }), true);
+        const ring = make(new THREE.TorusGeometry(3.18, 0.045, 10, 128), new THREE.MeshBasicMaterial({ color: 0xd4c9fb }), true);
         ring.rotation.x = Math.PI / 2; ring.position.y = -1.93; rig.add(ring);
 
         // tumpukan server
@@ -486,7 +495,7 @@
         rig.add(browser);
 
         // kubus teknologi yang mengorbit
-        const items = [['Laravel', CRIM_S], ['Go', BLUE_S], ['Vue', BLUE_S], ['React', CRIM_S], ['Flutter', BLUE_S], ['MySQL', CRIM_S], ['API', BLUE_S]];
+        const items = [['Laravel', VIOLET_S], ['Go', BLUE_S], ['Vue', AQUA_S], ['React', BLUSH_S], ['Flutter', BLUE_S], ['MySQL', VIOLET_S], ['API', AQUA_S]];
         const ys = [0.8, 1.9, 0.1, 1.4, 0.5, 2.0, -0.4];
         items.forEach(([label, color], i) => {
           const m = make(new THREE.BoxGeometry(0.52, 0.52, 0.52), new THREE.MeshStandardMaterial({ map: cubeTex(label, color), roughness: 0.3, metalness: 0.05 }), i % 2 === 0);
