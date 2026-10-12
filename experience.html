@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Pengalaman kerja dan sertifikat Ahmad Rizal E.S sebagai web dan backend developer.">
-  <meta name="theme-color" content="#F3F7FF">
+  <meta name="theme-color" content="#F6F3FE">
   <title>Experience - Ahmad Rizal E.S</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,10 +21,12 @@
           display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
         },
         colors: {
-          paper: '#F3F7FF',
-          ink: '#0B1B4D',
-          brand: { DEFAULT: '#2457FF', deep: '#1237C4', soft: '#E4ECFF', mid: '#B9CCFF' },
-          crimson: { DEFAULT: '#DC143C', deep: '#A80F2E', soft: '#FFE1E7' },
+          paper: '#F6F3FE',
+          ink: '#241B4E',
+          brand: { DEFAULT: '#6366F1', deep: '#4338CA', soft: '#EAE8FD', mid: '#C9C3F7' },
+          violet: { DEFAULT: '#A855F7', deep: '#7E22CE', soft: '#F3E8FF', mid: '#DCC9FB' },
+          aqua: { DEFAULT: '#22D3EE', deep: '#0E7490', soft: '#DEFAFF', mid: '#A8ECFA' },
+          blush: { DEFAULT: '#F472B6', deep: '#DB2777', soft: '#FDE6F3' },
         },
       } },
     }
@@ -32,27 +34,34 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #F3F7FF; }
+    body {
+      background:
+        radial-gradient(1100px 560px at 8% -8%, rgba(199,195,247,.55) 0%, rgba(246,243,254,0) 60%),
+        radial-gradient(900px 540px at 108% 8%, rgba(253,230,243,.5) 0%, rgba(246,243,254,0) 55%),
+        radial-gradient(900px 620px at 50% 115%, rgba(222,250,255,.5) 0%, rgba(246,243,254,0) 55%),
+        #F6F3FE;
+      background-attachment: fixed;
+    }
     .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
     @keyframes rise { to { opacity: 1; transform: none; } }
 
     .stage3d { perspective: 1200px; }
     .tilt { transform-style: preserve-3d; transition: transform .2s ease-out, box-shadow .2s ease-out; will-change: transform; }
     .tz1 { transform: translateZ(14px); } .tz2 { transform: translateZ(26px); }
-    .card3d { background: #fff; border: 1px solid rgba(36,87,255,.14); box-shadow: 0 1px 0 #fff inset, 0 24px 40px -24px rgba(36,87,255,.45); }
-    .card3d:hover { box-shadow: 0 1px 0 #fff inset, 0 34px 50px -24px rgba(36,87,255,.55); }
+    .card3d { background: #fff; border: 1px solid rgba(36,87,255,.14); box-shadow: 0 1px 0 #fff inset, 0 24px 40px -24px rgba(99,102,241,.45); }
+    .card3d:hover { box-shadow: 0 1px 0 #fff inset, 0 34px 50px -24px rgba(99,102,241,.55); }
 
     /* kubus 3D murni CSS untuk hiasan header */
     .cube-wrap { --s: 84px; width: var(--s); height: var(--s); perspective: 700px; flex-shrink: 0; }
     @media (min-width: 640px) { .cube-wrap { --s: 120px; } }
     .cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: spin 16s linear infinite; }
     .face { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: calc(var(--s) * .32); border-radius: calc(var(--s) * .16); border: 2px solid rgba(255,255,255,.4); }
-    .face:nth-child(1) { background: #2457FF; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(2) { background: #DC143C; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(3) { background: #1237C4; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(4) { background: #A80F2E; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(5) { background: #5B8CFF; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(6) { background: #FF5C7E; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(1) { background: #6366F1; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(2) { background: #F472B6; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(3) { background: #4338CA; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(4) { background: #DB2777; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(5) { background: #A855F7; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+    .face:nth-child(6) { background: #22D3EE; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
     @keyframes spin { from { transform: rotateX(-22deg) rotateY(0deg); } to { transform: rotateX(-22deg) rotateY(360deg); } }
 
     @media (prefers-reduced-motion: reduce) {
@@ -64,11 +73,11 @@
   </style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-crimson selection:text-white">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-blush selection:text-white">
 
   <main class="relative overflow-hidden pb-40">
     <div aria-hidden="true" class="pointer-events-none absolute -top-40 -right-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[62rem] -left-32 h-[22rem] w-[22rem] rounded-full bg-crimson-soft"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[62rem] -left-32 h-[22rem] w-[22rem] rounded-full bg-blush-soft"></div>
 
     <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
 
@@ -98,24 +107,24 @@
 
             <!-- Freelance (sekarang) -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-crimson text-sm text-white shadow-lg shadow-crimson/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
-              <article data-tilt class="tilt card3d rounded-3xl border-crimson/30 p-5 sm:p-8">
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-blush text-sm text-white shadow-lg shadow-blush/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
+              <article data-tilt class="tilt card3d rounded-3xl border-blush/30 p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Frontend Developer</h3>
-                    <p class="mt-1 font-semibold text-crimson-deep">Freelance <span class="font-medium text-ink/60">(Self-employed)</span></p>
+                    <p class="mt-1 font-semibold text-blush-deep">Freelance <span class="font-medium text-ink/60">(Self-employed)</span></p>
                   </div>
                   <div class="sm:text-right">
-                    <span class="inline-flex items-center gap-2 rounded-full bg-crimson-soft px-3 py-1 text-xs font-semibold text-crimson-deep"><span class="h-2 w-2 animate-pulse rounded-full bg-crimson"></span>Present</span>
+                    <span class="inline-flex items-center gap-2 rounded-full bg-blush-soft px-3 py-1 text-xs font-semibold text-blush-deep"><span class="h-2 w-2 animate-pulse rounded-full bg-blush"></span>Present</span>
                     <p class="mt-2 text-sm leading-6 text-ink/60">Nov 2026 - Present</p>
                   </div>
                 </div>
 
                 <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">Freelance</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">Frontend Development</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">React.js</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">Vue.js</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Freelance</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Frontend Development</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">React.js</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Vue.js</li>
                 </ul>
               </article>
             </li>
@@ -155,12 +164,12 @@
 
             <!-- Brand In -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-crimson text-sm text-white shadow-lg shadow-crimson/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-blush text-sm text-white shadow-lg shadow-blush/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
               <article data-tilt class="tilt card3d rounded-3xl p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Frontend Web Developer</h3>
-                    <p class="mt-1 font-semibold text-crimson-deep">Brand In <span class="font-medium text-ink/60">(Internship)</span></p>
+                    <p class="mt-1 font-semibold text-blush-deep">Brand In <span class="font-medium text-ink/60">(Internship)</span></p>
                   </div>
                   <p class="text-sm leading-6 text-ink/60 sm:text-right">Sep 2024 - Dec 2024<br>4 months · Remote</p>
                 </div>
@@ -171,21 +180,21 @@
                   </div>
                   <figcaption class="mt-3">
                     <a href="https://template03-five.vercel.app/" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-crimson focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+                       class="inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
                       <i class="fas fa-arrow-up-right-from-square"></i> Live demo
                     </a>
                   </figcaption>
                 </figure>
 
-                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-ink/75 marker:text-crimson">
+                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-ink/75 marker:text-blush">
                   <li>Developed and optimized landing pages with responsive design.</li>
                   <li>Designed and implemented intuitive UI components for web projects.</li>
                 </ul>
 
                 <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">React.js</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">UI/UX Design</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">Web Development</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">React.js</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">UI/UX Design</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Web Development</li>
                 </ul>
               </article>
             </li>
@@ -214,12 +223,12 @@
 
             <!-- GarapDigital -->
             <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-crimson text-sm text-white shadow-lg shadow-crimson/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-globe"></i></span>
+              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-blush text-sm text-white shadow-lg shadow-blush/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-globe"></i></span>
               <article data-tilt class="tilt card3d rounded-3xl p-5 sm:p-8">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div class="tz1">
                     <h3 class="font-display text-xl font-bold sm:text-2xl">Web Developer</h3>
-                    <p class="mt-1 font-semibold text-crimson-deep">GarapDigital.id <span class="font-medium text-ink/60">(Internship)</span></p>
+                    <p class="mt-1 font-semibold text-blush-deep">GarapDigital.id <span class="font-medium text-ink/60">(Internship)</span></p>
                   </div>
                   <p class="text-sm leading-6 text-ink/60 sm:text-right">Aug 2023 - Oct 2023<br>3 months · Remote</p>
                 </div>
@@ -227,9 +236,9 @@
                 <p class="mt-5 leading-relaxed text-ink/75">Designed and developed a village information system web application, focusing on efficient data management and user-friendly interface for local community services.</p>
 
                 <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">Laravel</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">MySQL</li>
-                  <li class="rounded-full bg-crimson-soft px-3.5 py-1.5 text-sm font-semibold text-crimson-deep">Web System Design</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Laravel</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">MySQL</li>
+                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Web System Design</li>
                 </ul>
               </article>
             </li>
@@ -254,14 +263,14 @@
           </article>
 
           <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-crimson-soft p-4">
+            <div class="tz1 bg-blush-soft p-4">
               <img src="img/serti2.png" alt="Certificate Dicoding - React Web Developer Expert" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">React Web Developer Expert</h3>
               <p class="mt-2 text-sm leading-relaxed text-ink/70">Advanced training to master React.js, including complex state management, performance optimization, and the application of best practices in modern web application development.</p>
               <a href="https://www.dicoding.com/certificates/98XWLG3R4ZM3" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-crimson focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
@@ -278,14 +287,14 @@
           </article>
 
           <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-crimson-soft p-4">
+            <div class="tz1 bg-blush-soft p-4">
               <img src="img/serti4.png" alt="Certificate Dicoding - Fundamentals of Web Applications with React" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Learn the Fundamentals of Web Applications with React</h3>
               <p class="mt-2 text-sm leading-relaxed text-ink/70">Comprehensive training on building web applications using React.js, covering component-based architecture, state management, and best practices for modern frontend development.</p>
               <a href="https://www.dicoding.com/certificates/GRX5Q51QRZ0M" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-crimson focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
@@ -299,21 +308,21 @@
               <h3 class="font-display text-lg font-bold leading-snug">Learn Fundamental Backend App</h3>
               <p class="mt-2 text-sm leading-relaxed text-ink/70">Training on backend application development fundamentals, including server-side programming, database management, and API creation using modern backend frameworks.</p>
               <a href="https://www.dicoding.com/certificates/N9ZOM70D6PG5" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-crimson focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
           </article>
 
           <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-crimson-soft p-4">
+            <div class="tz1 bg-blush-soft p-4">
               <img src="img/serti6.png" alt="Certificate Dicoding - Fundamental of Web Programming" loading="lazy" class="h-44 w-full object-contain">
             </div>
             <div class="flex flex-1 flex-col p-6">
               <h3 class="font-display text-lg font-bold leading-snug">Learn Fundamental of Web Programming</h3>
               <p class="mt-2 text-sm leading-relaxed text-ink/70">Training on the basics of web programming, covering HTML, CSS, and JavaScript to build foundational skills for creating interactive and responsive web applications.</p>
               <a href="https://www.dicoding.com/certificates/N9ZOORG70ZG5" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-crimson focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
                 <i class="fas fa-arrow-up-right-from-square"></i> View certificate
               </a>
             </div>
@@ -328,15 +337,15 @@
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
     <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
       <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
