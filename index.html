@@ -37,7 +37,6 @@
             paper: '#F3F7FF',
             ink: '#0B1B4D',
             brand: { DEFAULT: '#2457FF', deep: '#1237C4', soft: '#E4ECFF', mid: '#B9CCFF' },
-            crimson: { DEFAULT: '#DC143C', deep: '#A80F2E', soft: '#FFE1E7' },
           },
         },
       },
@@ -77,12 +76,12 @@
   </style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-crimson selection:text-white">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-brand selection:text-white">
 
   <main class="relative overflow-hidden pb-40">
 
     <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[46rem] -right-32 h-[22rem] w-[22rem] rounded-full bg-crimson-soft"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-[46rem] -right-32 h-[22rem] w-[22rem] rounded-full bg-brand-soft"></div>
 
     <!-- ================= HERO ================= -->
     <section id="home" class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pt-10 sm:px-8 md:pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
@@ -106,20 +105,20 @@
 
         <div class="hero-in mt-9 flex flex-wrap items-center gap-3" style="--d:.35s">
           <a href="portfolio.html"
-             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-[0_6px_0_#1237C4,0_18px_30px_-8px_rgba(36,87,255,.55)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-[0_6px_0_#1237C4,0_18px_30px_-8px_rgba(36,87,255,.55)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
             <i class="fas fa-project-diagram"></i> See my projects
           </a>
           <a href="experience.html"
-             class="inline-flex items-center gap-2 rounded-full border border-crimson/30 bg-white px-6 py-3.5 text-sm font-semibold text-crimson-deep shadow-[0_6px_0_#FFE1E7] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+             class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep shadow-[0_6px_0_#D3E0FF] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
             <i class="fas fa-briefcase"></i> My experience
           </a>
           <div class="ml-1 flex items-center gap-2">
             <a href="https://github.com/rizalsy17" target="_blank" rel="noopener" aria-label="GitHub Ahmad Rizal"
-               class="grid h-12 w-12 place-items-center rounded-full border border-brand/15 bg-white text-lg transition hover:bg-ink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+               class="grid h-12 w-12 place-items-center rounded-full border border-brand/15 bg-white text-lg transition hover:bg-ink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
               <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/ahmad-rizal-a54890226/" target="_blank" rel="noopener" aria-label="LinkedIn Ahmad Rizal"
-               class="grid h-12 w-12 place-items-center rounded-full border border-brand/15 bg-white text-lg transition hover:bg-[#0A66C2] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-crimson">
+               class="grid h-12 w-12 place-items-center rounded-full border border-brand/15 bg-white text-lg transition hover:bg-[#0A66C2] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
               <i class="fab fa-linkedin-in"></i>
             </a>
           </div>
@@ -154,12 +153,12 @@
               <span class="rounded-full bg-brand-soft px-2.5 py-1 font-mono font-medium text-brand-deep">200 OK</span>
             </div>
 <pre class="mt-3 overflow-x-auto font-mono text-[11px] leading-5 text-ink/80 sm:text-[12.5px] sm:leading-6"><code>{
-  <span class="text-brand">"name"</span>: <span class="text-crimson">"Ahmad Rizal E.S"</span>,
-  <span class="text-brand">"role"</span>: <span class="text-crimson">"Web &amp; Backend Developer"</span>,
-  <span class="text-brand">"backend"</span>: [<span class="text-crimson">"Laravel"</span>, <span class="text-crimson">"Golang"</span>],
-  <span class="text-brand">"frontend"</span>: [<span class="text-crimson">"Vue.js"</span>, <span class="text-crimson">"React"</span>],
-  <span class="text-brand">"mobile"</span>: [<span class="text-crimson">"Flutter"</span>],
-  <span class="text-brand">"database"</span>: <span class="text-crimson">"MySQL"</span>
+  <span class="text-brand">"name"</span>: <span class="text-brand-deep">"Ahmad Rizal E.S"</span>,
+  <span class="text-brand">"role"</span>: <span class="text-brand-deep">"Web &amp; Backend Developer"</span>,
+  <span class="text-brand">"backend"</span>: [<span class="text-brand-deep">"Laravel"</span>, <span class="text-brand-deep">"Golang"</span>],
+  <span class="text-brand">"frontend"</span>: [<span class="text-brand-deep">"Vue.js"</span>, <span class="text-brand-deep">"React"</span>],
+  <span class="text-brand">"mobile"</span>: [<span class="text-brand-deep">"Flutter"</span>],
+  <span class="text-brand">"database"</span>: <span class="text-brand-deep">"MySQL"</span>
 }</code></pre>
           </div>
         </div>
@@ -194,13 +193,13 @@
           <!-- Frontend -->
           <div data-tilt class="tilt card3d rounded-3xl p-6">
             <div class="tz1 flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-crimson text-white shadow-lg shadow-crimson/40"><i class="fas fa-laptop-code"></i></span>
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-deep text-white shadow-lg shadow-brand-deep/40"><i class="fas fa-laptop-code"></i></span>
               <h3 class="font-display text-lg font-bold">Frontend</h3>
             </div>
             <ul class="tz2 mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-crimson-soft px-4 py-2 text-sm font-semibold text-crimson-deep"><i class="fab fa-vuejs mr-2"></i>Vue.js</li>
-              <li class="rounded-full bg-crimson-soft px-4 py-2 text-sm font-semibold text-crimson-deep"><i class="fab fa-react mr-2"></i>React.js</li>
-              <li class="rounded-full bg-crimson-soft px-4 py-2 text-sm font-semibold text-crimson-deep"><i class="fas fa-paint-brush mr-2"></i>Tailwind CSS</li>
+              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fab fa-vuejs mr-2"></i>Vue.js</li>
+              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fab fa-react mr-2"></i>React.js</li>
+              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-paint-brush mr-2"></i>Tailwind CSS</li>
             </ul>
           </div>
 
@@ -218,11 +217,11 @@
           <!-- Design -->
           <div data-tilt class="tilt card3d rounded-3xl p-6 sm:col-span-2">
             <div class="tz1 flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-crimson text-white shadow-lg shadow-crimson/40"><i class="fas fa-swatchbook"></i></span>
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-deep text-white shadow-lg shadow-brand-deep/40"><i class="fas fa-swatchbook"></i></span>
               <h3 class="font-display text-lg font-bold">Design</h3>
             </div>
             <ul class="tz2 mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-crimson-soft px-4 py-2 text-sm font-semibold text-crimson-deep"><i class="fas fa-layer-group mr-2"></i>Design System</li>
+              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-layer-group mr-2"></i>Design System</li>
             </ul>
           </div>
         </div>
@@ -238,7 +237,7 @@
           <p class="mt-2 leading-relaxed text-ink/70">I keep improving my skills with every project I take on.</p>
         </div>
         <div data-tilt class="tilt card3d rounded-3xl p-7">
-          <i class="tz2 fas fa-code-branch text-2xl text-crimson"></i>
+          <i class="tz2 fas fa-code-branch text-2xl text-brand-deep"></i>
           <h3 class="tz1 mt-3 font-display text-xl font-bold">Open-source minded</h3>
           <p class="mt-2 leading-relaxed text-ink/70">I like giving back to the communities whose tools I rely on.</p>
         </div>
@@ -253,9 +252,9 @@
     <!-- ================= CONNECT ================= -->
     <section id="connect" class="relative mx-auto mt-20 max-w-6xl px-5 sm:px-8 md:mt-28">
       <div class="relative overflow-hidden rounded-[2rem] bg-brand p-8 text-white sm:p-12 md:p-16">
-        <!-- bola crimson bergaya 3D -->
+        <!-- bola biru bergaya 3D -->
         <div aria-hidden="true" class="absolute -bottom-12 -right-10 h-40 w-40 rounded-full sm:-bottom-24 sm:-right-16 sm:h-72 sm:w-72"
-             style="background: radial-gradient(circle at 32% 28%, #FF6F8B 0%, #DC143C 48%, #A80F2E 100%); box-shadow: 0 30px 50px -20px rgba(0,0,0,.45)"></div>
+             style="background: radial-gradient(circle at 32% 28%, #BCD0FF 0%, #6A93FF 48%, #1237C4 100%); box-shadow: 0 30px 50px -20px rgba(0,0,0,.45)"></div>
         <div aria-hidden="true" class="absolute -bottom-10 right-40 hidden h-24 w-24 rounded-full md:block"
              style="background: radial-gradient(circle at 32% 28%, #ffffff 0%, #B9CCFF 55%, #6A93FF 100%); box-shadow: 0 20px 30px -12px rgba(0,0,0,.35)"></div>
 
@@ -268,7 +267,7 @@
               <i class="fab fa-linkedin"></i> Message on LinkedIn
             </a>
             <a href="https://github.com/rizalsy17" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3.5 text-sm font-semibold text-white shadow-[0_5px_0_#A80F2E] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+               class="inline-flex items-center gap-2 rounded-full bg-brand-deep px-6 py-3.5 text-sm font-semibold text-white shadow-[0_5px_0_#0B1B4D] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <i class="fab fa-github"></i> View GitHub
             </a>
           </div>
@@ -283,15 +282,15 @@
   <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
     <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
       <a href="index.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
         <i class="fas fa-home text-base sm:text-sm"></i> Home
       </a>
       <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
         <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
       </a>
       <a href="portfolio.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson">
+         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
         <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
       </a>
     </div>
@@ -337,8 +336,8 @@
       renderer.toneMappingExposure = 1.05;
 
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const BLUE = 0x2457ff, CRIM = 0xdc143c, INK = 0x0b1b4d;
-      const BLUE_S = '#2457FF', CRIM_S = '#DC143C', INK_S = '#0B1B4D', MID_S = '#B9CCFF', SOFT_S = '#E4ECFF';
+      const BLUE = 0x2457ff, CRIM = 0x1237c4, INK = 0x0b1b4d;
+      const BLUE_S = '#2457FF', CRIM_S = '#1237C4', INK_S = '#0B1B4D', MID_S = '#B9CCFF', SOFT_S = '#E4ECFF';
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
@@ -347,14 +346,14 @@
 
       scene.add(new THREE.HemisphereLight(0xffffff, 0x7aa0ff, 0.95));
       const key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(4, 6, 6); scene.add(key);
-      const rim = new THREE.PointLight(CRIM, 1.4, 30); rim.position.set(-6, 2, -4); scene.add(rim);
+      const rim = new THREE.PointLight(0x8fb0ff, 1.4, 30); rim.position.set(-6, 2, -4); scene.add(rim);
       const fill = new THREE.PointLight(0x9bb8ff, 0.8, 30); fill.position.set(6, -1, 4); scene.add(fill);
 
       // ---------- bahan ----------
       const std = (color, rough, metal) => new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal });
       const clayMat = new THREE.MeshStandardMaterial({ color: 0xeaf0ff, roughness: 0.9, metalness: 0 });
       const wireWhite = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.85 });
-      const wireRose = new THREE.MeshBasicMaterial({ color: 0xffb3c1, wireframe: true, transparent: true, opacity: 0.95 });
+      const wireRose = new THREE.MeshBasicMaterial({ color: 0xcfe0ff, wireframe: true, transparent: true, opacity: 0.95 });
 
       const meshes = [];
       function make(geo, mat, accent) {
@@ -447,7 +446,7 @@
         body.rotation.x = -Math.PI / 2; g.add(body);
         const plate = make(new THREE.BoxGeometry(2.2, 0.3, 0.05), std(plateColor, 0.4, 0.2));
         plate.position.set(0, 0, 0.92); g.add(plate);
-        [CRIM, 0xffffff, 0x9bb8ff].forEach((c, i) => {
+        [0xbcd0ff, 0xffffff, 0x9bb8ff].forEach((c, i) => {
           const led = make(new THREE.SphereGeometry(0.055, 16, 12), new THREE.MeshBasicMaterial({ color: c }), true);
           led.position.set(-0.95 + i * 0.18, 0, 0.965); g.add(led);
         });
@@ -459,10 +458,10 @@
       }
 
       function build() {
-        // platform + cincin crimson
+        // platform + cincin biru muda
         const plat = make(new THREE.CylinderGeometry(3, 3.15, 0.25, 64), std(0xffffff, 0.4, 0.05));
         plat.position.y = -2.1; rig.add(plat);
-        const ring = make(new THREE.TorusGeometry(3.18, 0.045, 10, 128), new THREE.MeshBasicMaterial({ color: CRIM }), true);
+        const ring = make(new THREE.TorusGeometry(3.18, 0.045, 10, 128), new THREE.MeshBasicMaterial({ color: 0xbcd0ff }), true);
         ring.rotation.x = Math.PI / 2; ring.position.y = -1.93; rig.add(ring);
 
         // tumpukan server
