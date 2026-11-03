@@ -1,1 +1,301 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Services and pricing from Ahmad Rizal E.S: company websites, mobile apps, web apps, and APIs. Book a consultation.">
+<meta name="theme-color" content="#0C0A24">
+<title>Services &amp; Pricing | Ahmad Rizal E.S</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0A24;--surf:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);
+  --ink:#F3F1FF;--muted:#A7A3C9;--accent:#8B7CFF;--aqua:#4FE3F5;--pink:#F472B6;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#0C0A24}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:4px;border-radius:8px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+main{position:relative;z-index:1}
+
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:40rem;height:40rem;left:-12rem;top:-14rem;background:#4B3BE0}
+.aurora i:nth-child(2){width:32rem;height:32rem;right:-10rem;top:24rem;background:#0E8FA8;animation-duration:28s;opacity:.3}
+@keyframes drift{to{transform:translate3d(6rem,5rem,0) scale(1.15)}}
+.glow{position:fixed;left:0;top:0;width:32rem;height:32rem;margin:-16rem 0 0 -16rem;border-radius:50%;background:radial-gradient(closest-side,rgba(139,124,255,.2),transparent);pointer-events:none;z-index:0;will-change:transform}
+
+header{position:fixed;top:max(.75rem,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:20;width:max-content;max-width:calc(100% - 1.5rem)}
+.pill{display:flex;align-items:center;gap:1.5rem;padding:.45rem .5rem .45rem 1.3rem;border:1px solid var(--line);border-radius:999px;background:rgba(18,14,52,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.logo{font:700 1rem var(--display);letter-spacing:-.01em}
+.pill nav{display:flex;gap:1.4rem;font-size:.92rem;color:var(--muted)}
+.pill nav a{transition:color .3s}.pill nav a:hover,.pill nav a[aria-current]{color:var(--ink)}
+@media(max-width:700px){.pill nav .opt{display:none}.pill,.pill nav{gap:1rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font:600 .95rem "Hanken Grotesk",sans-serif;border:1px solid var(--line);background:var(--surf);color:var(--ink);cursor:pointer;transition:transform .35s var(--ease),border-color .3s,filter .3s;will-change:transform}
+.btn:hover{border-color:rgba(255,255,255,.4)}
+.btn.p{background:linear-gradient(120deg,var(--accent),#6AA8FF);color:#0C0A24;border-color:transparent}
+.btn.p:hover{filter:brightness(1.08)}
+.btn.s{padding:.55rem 1.1rem;font-size:.88rem}
+
+.top{padding:clamp(7.5rem,14vw,10rem) 0 2rem}
+h1{margin:0;font:800 clamp(2.6rem,7.4vw,5.6rem)/1 var(--display);letter-spacing:-.04em}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.w>span{display:inline-block;transform:translateY(112%);animation:up .95s var(--ease) forwards;animation-delay:calc(var(--i)*80ms + 100ms)}
+@keyframes up{to{transform:none}}
+.lead{margin:1.4rem 0 0;max-width:34rem;color:var(--muted);font-size:1.12rem}
+.fade{opacity:0;animation:fade .9s var(--ease) forwards;animation-delay:calc(var(--i)*90ms + 500ms)}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+h2{margin:0;font:800 clamp(1.9rem,4.2vw,3rem)/1.05 var(--display);letter-spacing:-.035em}
+section{padding:clamp(3.5rem,8vw,6rem) 0 0}
+.sub{margin:1rem 0 0;color:var(--muted);max-width:32rem}
+
+/* service tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.tabs button{padding:.6rem 1.3rem;border-radius:999px;border:1px solid var(--line);background:var(--surf);color:var(--muted);font:600 .92rem "Hanken Grotesk",sans-serif;cursor:pointer;transition:all .35s var(--ease)}
+.tabs button:hover{color:var(--ink);border-color:rgba(255,255,255,.35)}
+.tabs button[aria-selected=true]{background:linear-gradient(120deg,var(--accent),#6AA8FF);color:#0C0A24;border-color:transparent}
+.sdesc{margin:1.4rem 0 0;color:var(--muted);max-width:38rem;min-height:3.2rem}
+
+/* price cards */
+.plans{display:grid;gap:1.25rem;margin-top:1.5rem;grid-template-columns:1fr}
+@media(min-width:860px){.plans{grid-template-columns:repeat(3,1fr)}}
+.cd{position:relative;display:flex;flex-direction:column;padding:1.8rem;border:1px solid var(--line);border-radius:28px;background:var(--surf);overflow:hidden;transition:border-color .4s,transform .5s var(--ease);animation:fade .7s var(--ease) both;animation-delay:calc(var(--i,0)*90ms)}
+.cd>*{position:relative}
+.cd::before{content:"";position:absolute;inset:0;background:radial-gradient(460px circle at var(--mx,50%) var(--my,0%),rgba(139,124,255,.25),transparent 60%);opacity:0;transition:opacity .4s}
+.cd:hover{border-color:rgba(139,124,255,.5);transform:translateY(-4px)}.cd:hover::before{opacity:1}
+.cd.hot{border-color:rgba(139,124,255,.55);background:linear-gradient(170deg,rgba(139,124,255,.18),rgba(79,227,245,.05))}
+.badge{position:absolute!important;top:1.2rem;right:1.2rem;padding:.2rem .75rem;border-radius:999px;background:linear-gradient(120deg,var(--accent),var(--aqua));color:#0C0A24;font-size:.75rem;font-weight:700}
+.cd h3{margin:0;font:700 1.35rem var(--display);letter-spacing:-.02em}
+.for{margin:.3rem 0 0;color:var(--muted);font-size:.93rem}
+.price{margin:1.4rem 0 0;font:800 2.1rem/1 var(--display);letter-spacing:-.03em}
+.price small{display:block;margin-bottom:.35rem;font:500 .8rem "Hanken Grotesk",sans-serif;color:var(--muted);letter-spacing:0}
+.ft{list-style:none;margin:1.4rem 0 1.8rem;padding:0;display:grid;gap:.6rem;color:var(--muted);font-size:.95rem}
+.ft li{display:flex;gap:.6rem;align-items:flex-start}
+.ft li::before{content:"";flex:none;width:1rem;height:1rem;margin-top:.3rem;border-radius:50%;background:rgba(79,227,245,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-4.8' fill='none' stroke='%234FE3F5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100%}
+.cd .btn{margin-top:auto}
+.note{margin:1.6rem 0 0;color:var(--muted);font-size:.9rem}
+
+/* faq */
+.faq{margin-top:2rem;max-width:46rem}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{display:flex;justify-content:space-between;gap:1rem;padding:1.2rem 0;font:600 1.08rem var(--display);cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent);transition:transform .4s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 1.2rem;color:var(--muted);max-width:38rem}
+
+/* consult */
+.consult{display:grid;gap:2.5rem}
+@media(min-width:900px){.consult{grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}}
+.box{padding:1.8rem;border:1px solid var(--line);border-radius:28px;background:var(--surf)}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.4rem;font-size:.9rem;font-weight:600}
+input,select,textarea{width:100%;padding:.85rem 1rem;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);font:400 1rem "Hanken Grotesk",sans-serif;transition:border-color .3s,background .3s}
+select option{background:#14113A;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.08)}
+textarea{min-height:7rem;resize:vertical}
+.two{display:grid;gap:1rem}@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.status{margin:0;min-height:1.5rem;color:var(--aqua);font-size:.92rem}
+.pts{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:.9rem;color:var(--muted)}
+.pts b{display:block;color:var(--ink);font-weight:600}
+
+footer{position:relative;z-index:1;margin-top:5rem;border-top:1px solid var(--line);padding:1.8rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer a:hover{color:var(--ink)}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .w>span{transform:none}.fade,.js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<header>
+  <div class="pill">
+    <a href="index.html" class="logo">Ahmad Rizal</a>
+    <nav aria-label="Main">
+      <a href="index.html" class="opt">Home</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="experience.html" class="opt">Experience</a>
+    </nav>
+    <a href="#consult" class="btn p s mag">Let’s talk</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="top">
+      <h1 aria-label="Services and pricing">
+        <span class="w"><span style="--i:0">Services</span></span>
+        <span class="w"><span style="--i:1">&amp;</span></span>
+        <span class="w"><span style="--i:2">pricing</span></span>
+      </h1>
+      <p class="lead fade" style="--i:0">Clear starting prices for the most common projects. Not sure what you need? Book a consultation and we’ll figure it out together.</p>
+    </div>
+
+    <section id="pricing" style="padding-top:2rem">
+      <div class="tabs" id="tabs" role="tablist" aria-label="Choose a service"></div>
+      <p class="sdesc" id="sdesc"></p>
+      <div class="plans" id="plans"></div>
+      <p class="note">Prices are starting points in Indonesian rupiah (IDR). The final quote depends on scope, number of features, and timeline.</p>
+    </section>
+
+    <section id="faq">
+      <h2 class="rv">Common questions</h2>
+      <div class="faq rv">
+        <details><summary>How is the final price decided?</summary><p>We agree on the scope first: pages or screens, features, and integrations. You get a written quote before any work begins.</p></details>
+        <details><summary>How long does a project take?</summary><p>It depends on the size. A simple website is much quicker than an app with its own backend. I’ll give you a timeline together with the quote.</p></details>
+        <details><summary>Can I start small and add features later?</summary><p>Yes. I build in a way that lets you add pages, features, or an app later without starting over.</p></details>
+        <details><summary>Do you provide support after launch?</summary><p>Yes. I stay available for fixes and improvements after launch. We can agree on the details when we discuss the project.</p></details>
+      </div>
+    </section>
+
+    <section id="consult">
+      <div class="consult">
+        <div class="rv">
+          <h2>Book a consultation</h2>
+          <p class="sub">Tell me about your idea. I’ll help you pick the right service and package, with no obligation.</p>
+          <ul class="pts">
+            <li><b>Share your goal</b>What you want to build and who it’s for.</li>
+            <li><b>Get recommendations</b>The right package, rough timeline, and next steps.</li>
+            <li><b>Decide at your pace</b>A quote comes first, work starts only when you say so.</li>
+          </ul>
+        </div>
+        <div class="box rv" style="--i:1">
+          <form id="form" novalidate>
+            <label>Your name<input id="name" autocomplete="name" placeholder="e.g. Budi" required></label>
+            <div class="two">
+              <label>Service<select id="svc"></select></label>
+              <label>Package<select id="pkg"></select></label>
+            </div>
+            <label>About your project<textarea id="msg" placeholder="What do you want to build? Any deadline or reference?"></textarea></label>
+            <button class="btn p" type="submit">Send consultation request</button>
+            <p class="status" id="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Ahmad Rizal E.S</span>
+    <span><a href="index.html">Home</a> &nbsp;&nbsp; <a href="portfolio.html">Projects</a> &nbsp;&nbsp; <a href="experience.html">Experience</a></span>
+  </div>
+</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fine=matchMedia('(pointer:fine)').matches,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#year').textContent=new Date().getFullYear();
+
+/* ===== EDIT DI SINI: kontak & harga ===== */
+const CONTACT={
+  whatsapp:'',   // isi nomor format internasional tanpa +, mis. '6281234567890'. Kosong = pesan disalin & LinkedIn dibuka
+  linkedin:'https://www.linkedin.com/in/ahmad-rizal-a54890226/',
+};
+// price = harga mulai (IDR); null = tampilkan "Let's talk"
+const services=[
+  {id:'web',name:'Company website',desc:'A fast, polished site that introduces your business, earns trust, and is easy for your team to update.',plans:[
+    {name:'Landing page',for:'One page to promote a product or service',price:1500000,f:['1 responsive page','Contact form or WhatsApp button','Basic SEO setup','Smooth animations']},
+    {name:'Company profile',for:'A full site for your business',price:3500000,hot:true,f:['Up to 6 pages','Admin panel to edit content','SEO-ready structure','Domain and hosting setup help']},
+    {name:'Custom website',for:'Special features or integrations',price:null,f:['Booking, catalog, or blog','Custom design','Third-party integrations','Tailored to your scope']}]},
+  {id:'mobile',name:'Mobile app',desc:'Android and iOS apps from one Flutter codebase, connected to your own backend.',plans:[
+    {name:'Starter app',for:'A simple app to validate your idea',price:8000000,f:['Up to 5 screens','Android and iOS (Flutter)','Basic API connection','Store submission guidance']},
+    {name:'Standard app',for:'A complete app with accounts and data',price:15000000,hot:true,f:['Up to 12 screens','Login and user accounts','Backend and API included','Testing before release']},
+    {name:'Custom app',for:'Complex flows or special integrations',price:null,f:['Payments, maps, or notifications','Custom UI design','Admin dashboard','Tailored to your scope']}]},
+  {id:'webapp',name:'Web app & dashboard',desc:'Admin panels, booking and ordering systems, and internal tools your team uses every day.',plans:[
+    {name:'Basic system',for:'Replace spreadsheets with one simple tool',price:5000000,f:['Login and user roles','Up to 3 modules','Data tables and search','Responsive layout']},
+    {name:'Standard system',for:'A full system for daily operations',price:12000000,hot:true,f:['Up to 8 modules','Reports and export','Dashboard with charts','Training and handover']},
+    {name:'Custom system',for:'Larger systems with special rules',price:null,f:['Complex workflows','Integrations with other tools','Custom design','Tailored to your scope']}]},
+  {id:'api',name:'API & backend',desc:'Clean, well-structured APIs and databases that stay stable as your users and features grow.',plans:[
+    {name:'Basic API',for:'A small API for an app or website',price:3000000,f:['Up to 10 endpoints','Authentication','MySQL database design','API documentation']},
+    {name:'Standard backend',for:'A solid backend for a growing product',price:8000000,hot:true,f:['Up to 30 endpoints','Roles and permissions','Queue for background tasks','Testing and deployment']},
+    {name:'Custom backend',for:'High-traffic or complex systems',price:null,f:['Laravel or Golang','Scalable architecture','Third-party integrations','Tailored to your scope']}]},
+];
+const idr=new Intl.NumberFormat('id-ID');
+const tabs=$('#tabs'),plans=$('#plans'),svc=$('#svc'),pkg=$('#pkg');
+
+tabs.innerHTML=services.map((s,i)=>`<button role="tab" aria-selected="${i===0}" data-i="${i}">${s.name}</button>`).join('');
+svc.innerHTML=services.map((s,i)=>`<option value="${i}">${s.name}</option>`).join('');
+
+function fillPkg(i,sel=0){pkg.innerHTML=services[i].plans.map((p,k)=>`<option value="${k}">${p.name}</option>`).join('');pkg.value=sel}
+function showService(i){
+  const s=services[i];
+  $$('button',tabs).forEach((b,k)=>b.setAttribute('aria-selected',k===i));
+  $('#sdesc').textContent=s.desc;
+  plans.innerHTML=s.plans.map((p,k)=>`
+    <article class="cd ${p.hot?'hot':''}" style="--i:${k}">
+      ${p.hot?'<span class="badge">Most popular</span>':''}
+      <h3>${p.name}</h3><p class="for">${p.for}</p>
+      <p class="price">${p.price?`<small>Starting from</small>Rp ${idr.format(p.price)}`:`<small>Price</small>Let’s talk`}</p>
+      <ul class="ft">${p.f.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <button class="btn ${p.hot?'p':''}" data-pick="${i},${k}">${p.price?'Choose this package':'Ask for a quote'}</button>
+    </article>`).join('');
+  $$('.cd',plans).forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+  svc.value=i;fillPkg(i,1);
+}
+tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)showService(+b.dataset.i)});
+plans.addEventListener('click',e=>{
+  const b=e.target.closest('[data-pick]');if(!b)return;
+  const [i,k]=b.dataset.pick.split(',').map(Number);
+  svc.value=i;fillPkg(i,k);
+  $('#consult').scrollIntoView({behavior:reduce?'auto':'smooth'});
+  setTimeout(()=>$('#name').focus({preventScroll:true}),600);
+});
+svc.addEventListener('change',()=>fillPkg(+svc.value,0));
+showService(0);
+
+/* consultation form */
+$('#form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const st=$('#status'),name=$('#name').value.trim();
+  if(!name){st.textContent='Please enter your name.';$('#name').focus();return}
+  const s=services[+svc.value],p=s.plans[+pkg.value];
+  const text=`Hi Rizal, I'm ${name}. I'd like to consult about: ${s.name} (${p.name}).\n\n${$('#msg').value.trim()||'I’d like to discuss my project.'}`;
+  if(CONTACT.whatsapp){
+    open(`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(text)}`,'_blank','noopener');
+    st.textContent='Opening WhatsApp with your message…';
+  }else{
+    try{await navigator.clipboard.writeText(text);st.textContent='Message copied. Paste it into LinkedIn, which is opening now.'}
+    catch{st.textContent='Opening LinkedIn. Please type your message there.'}
+    open(CONTACT.linkedin,'_blank','noopener');
+  }
+});
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+
+/* cursor glow + magnetic buttons */
+if(fine&&!reduce){
+  const g=$('#glow');let x=innerWidth/2,y=200,tx=x,ty=y;
+  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+  (function f(){x+=(tx-x)*.08;y+=(ty-y)*.08;g.style.transform=`translate3d(${x}px,${y}px,0)`;requestAnimationFrame(f)})();
+  $$('.mag').forEach(el=>{
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`});
+    el.addEventListener('pointerleave',()=>{el.style.transform=''});
+  });
+}else $('#glow').style.display='none';
+</script>
+</body>
+</html>
