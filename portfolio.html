@@ -1,440 +1,268 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Proyek-proyek Ahmad Rizal E.S: aplikasi POS, sistem inventaris stok, sistem informasi desa, web booking nikah, company profile, analisis sentimen, dan aplikasi mobile kampus.">
-  <meta name="theme-color" content="#F6F3FE">
-  <title>Ahmad Rizal E.S - Full Stack Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Proyek-proyek Ahmad Rizal E.S: aplikasi POS, sistem inventaris stok, sistem informasi desa, web booking nikah, company profile, analisis sentimen, dan aplikasi mobile kampus.">
+<meta name="theme-color" content="#0C0A24">
+<title>Projects | Ahmad Rizal E.S</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0A24;--surf:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);
+  --ink:#F3F1FF;--muted:#A7A3C9;--accent:#8B7CFF;--aqua:#4FE3F5;--pink:#F472B6;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#0C0A24}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:4px;border-radius:8px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+main{position:relative;z-index:1}
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:40rem;height:40rem;left:-12rem;top:-14rem;background:#4B3BE0}
+.aurora i:nth-child(2){width:32rem;height:32rem;right:-10rem;top:24rem;background:#0E8FA8;animation-duration:28s;opacity:.3}
+@keyframes drift{to{transform:translate3d(6rem,5rem,0) scale(1.15)}}
+.glow{position:fixed;left:0;top:0;width:32rem;height:32rem;margin:-16rem 0 0 -16rem;border-radius:50%;background:radial-gradient(closest-side,rgba(139,124,255,.2),transparent);pointer-events:none;z-index:0;will-change:transform}
 
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        },
-        colors: {
-          paper: '#F6F3FE',
-          ink: '#241B4E',
-          brand: { DEFAULT: '#6366F1', deep: '#4338CA', soft: '#EAE8FD', mid: '#C9C3F7' },
-          violet: { DEFAULT: '#A855F7', deep: '#7E22CE', soft: '#F3E8FF', mid: '#DCC9FB' },
-          aqua: { DEFAULT: '#22D3EE', deep: '#0E7490', soft: '#DEFAFF', mid: '#A8ECFA' },
-          blush: { DEFAULT: '#F472B6', deep: '#DB2777', soft: '#FDE6F3' },
-        },
-      } },
-    }
-  </script>
+header{position:fixed;top:max(.75rem,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:20;width:max-content;max-width:calc(100% - 1.5rem)}
+.pill{display:flex;align-items:center;gap:1.5rem;padding:.45rem .5rem .45rem 1.3rem;border:1px solid var(--line);border-radius:999px;background:rgba(18,14,52,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.logo{font:700 1rem var(--display);letter-spacing:-.01em}
+.pill nav{display:flex;gap:1.4rem;font-size:.92rem;color:var(--muted)}
+.pill nav a{transition:color .3s}.pill nav a:hover,.pill nav a[aria-current]{color:var(--ink)}
+@media(max-width:640px){.pill nav .opt{display:none}.pill,.pill nav{gap:1rem}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--surf);color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .35s var(--ease),border-color .3s;will-change:transform}
+.btn:hover{border-color:rgba(255,255,255,.4)}
+.btn.p{background:linear-gradient(120deg,var(--accent),#6AA8FF);color:#0C0A24;border-color:transparent}
+.btn.s{padding:.55rem 1.1rem;font-size:.88rem}
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      background:
-        radial-gradient(1100px 560px at 8% -8%, rgba(199,195,247,.55) 0%, rgba(246,243,254,0) 60%),
-        radial-gradient(900px 540px at 108% 8%, rgba(253,230,243,.5) 0%, rgba(246,243,254,0) 55%),
-        radial-gradient(900px 620px at 50% 115%, rgba(222,250,255,.5) 0%, rgba(246,243,254,0) 55%),
-        #F6F3FE;
-      background-attachment: fixed;
-    }
-    .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
-    @keyframes rise { to { opacity: 1; transform: none; } }
+.top{padding:clamp(7.5rem,14vw,10rem) 0 2rem}
+h1{margin:0;font:800 clamp(2.8rem,8vw,6rem)/1 var(--display);letter-spacing:-.04em}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.w>span{display:inline-block;transform:translateY(112%);animation:up .95s var(--ease) forwards;animation-delay:calc(var(--i)*80ms + 100ms)}
+@keyframes up{to{transform:none}}
+.lead{margin:1.4rem 0 0;max-width:34rem;color:var(--muted);font-size:1.12rem}
+.fade{opacity:0;animation:fade .9s var(--ease) forwards;animation-delay:calc(var(--i)*90ms + 500ms)}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-    .stage3d { perspective: 1400px; }
-    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out; will-change: transform; }
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.2rem 0 0}
+.filters button{padding:.55rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:var(--surf);color:var(--muted);font:600 .9rem "Hanken Grotesk",sans-serif;cursor:pointer;transition:all .35s var(--ease)}
+.filters button:hover{color:var(--ink);border-color:rgba(255,255,255,.35)}
+.filters button[aria-pressed=true]{background:linear-gradient(120deg,var(--accent),#6AA8FF);color:#0C0A24;border-color:transparent}
 
-    /* kubus 3D murni CSS untuk hiasan header */
-    .cube-wrap { --s: 84px; width: var(--s); height: var(--s); perspective: 700px; flex-shrink: 0; }
-    @media (min-width: 640px) { .cube-wrap { --s: 120px; } }
-    .cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: spin 16s linear infinite; }
-    .face { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: calc(var(--s) * .32); border-radius: calc(var(--s) * .16); border: 2px solid rgba(255,255,255,.4); }
-    .face:nth-child(1) { background: #6366F1; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(2) { background: #F472B6; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(3) { background: #4338CA; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(4) { background: #DB2777; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(5) { background: #A855F7; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(6) { background: #22D3EE; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
-    @keyframes spin { from { transform: rotateX(-22deg) rotateY(0deg); } to { transform: rotateX(-22deg) rotateY(360deg); } }
+.grid{display:grid;gap:1.25rem;grid-template-columns:1fr;padding:2rem 0 4rem}
+@media(min-width:800px){.grid{grid-template-columns:1fr 1fr;gap:1.5rem}}
+.cd{position:relative;padding:1rem 1rem 1.7rem;border:1px solid var(--line);border-radius:28px;background:var(--surf);overflow:hidden;transition:border-color .4s,transform .5s var(--ease)}
+.cd.off{display:none}
+.cd.show{animation:fade .7s var(--ease) both}
+.cd>*{position:relative}
+.cd::before{content:"";position:absolute;inset:0;background:radial-gradient(460px circle at var(--mx,50%) var(--my,0%),rgba(139,124,255,.25),transparent 60%);opacity:0;transition:opacity .4s}
+.cd:hover{border-color:rgba(139,124,255,.5);transform:translateY(-4px)}.cd:hover::before{opacity:1}
+.txt{padding:1.4rem .7rem 0}
+.chip{display:inline-block;padding:.25rem .85rem;border-radius:999px;border:1px solid var(--line);font-size:.82rem;font-weight:600;color:var(--aqua);background:rgba(79,227,245,.08)}
+.cd h2{margin:.9rem 0 0;font:700 1.55rem/1.15 var(--display);letter-spacing:-.025em}
+.cd p{margin:.6rem 0 0;color:var(--muted)}
+.cd .pv{display:flex;align-items:center;gap:.5rem;margin-top:1.1rem;font-size:.85rem;color:var(--muted);opacity:.8}
+.pv svg{width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .hero-in { animation: none; opacity: 1; transform: none; }
-      .tilt { transform: none !important; transition: none; }
-      .cube { animation: none; transform: rotateX(-22deg) rotateY(-30deg); }
-    }
+/* visual panels */
+.vis{position:relative;aspect-ratio:16/10;border-radius:20px;border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;background:linear-gradient(160deg,rgba(139,124,255,.22),rgba(79,227,245,.06)),#100D33}
+.vis::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/32px 32px;opacity:.3;mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent)}
+.vis>*{position:relative}
+.vis>*{transition:transform .7s var(--ease)}
+.cd:hover .vis>*{transform:scale(1.05)}
+.snap{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;height:100%;scrollbar-width:none}.snap::-webkit-scrollbar{display:none}
+.snap img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start}
+.b{display:block;height:.7rem;border-radius:8px;background:rgba(255,255,255,.14);animation:pop .7s var(--ease) both;animation-delay:calc(var(--d)*1ms)}
+.b.a{background:linear-gradient(90deg,var(--accent),var(--aqua))}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.94)}}
+.pn,.win{background:#14113A;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 50px -20px #000b}
+.pn{width:72%;padding:1rem;display:grid;gap:.65rem}
+.win{width:72%;overflow:hidden}
+.bar{display:flex;gap:5px;padding:.55rem .8rem;border-bottom:1px solid var(--line)}.bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)}
+.pg{padding:.9rem;display:grid;gap:.5rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.row{display:flex;gap:.6rem;align-items:center}
+.sq{flex:none;width:1.6rem;height:1.6rem;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--aqua))}
+.ln{flex:1;display:grid;gap:.3rem}.ln i{display:block;height:.4rem;border-radius:4px;background:rgba(255,255,255,.17)}
+.lv{flex:none;height:.45rem;border-radius:4px;background:var(--aqua)}.lv.low{background:var(--pink)}
+.pos{display:flex;gap:.7rem;width:76%}
+.pos .g{flex:1.5;display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem}
+.pos .g .b{height:3rem;border-radius:12px;display:grid;place-items:center}
+.pos .g .b::after{content:"";width:1.3rem;height:1.3rem;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--aqua))}
+.pos .pn{flex:1;width:auto;align-content:start}
+.donut{width:5.2rem;height:5.2rem;border-radius:50%;background:conic-gradient(var(--accent) 0 40%,var(--aqua) 0 72%,var(--pink) 0 100%);-webkit-mask:radial-gradient(farthest-side,transparent 60%,#000 61%);mask:radial-gradient(farthest-side,transparent 60%,#000 61%);animation:pop .8s var(--ease) both}
+.vl{display:flex;gap:1rem;align-items:center}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:.4rem}
+.cal span{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12);animation:pop .5s var(--ease) both;animation-delay:calc(var(--d)*1ms)}
+.cal .hi{background:linear-gradient(135deg,var(--pink),var(--accent));box-shadow:0 0 0 5px rgba(244,114,182,.2)}
+.face{flex:none;width:1.7rem;height:1.7rem;border-radius:50%}
+.chart{display:flex;align-items:flex-end;gap:.4rem;height:4.6rem}
+.chart span{flex:1;height:var(--h);border-radius:5px 5px 0 0;transform-origin:bottom;animation:grow .8s var(--ease) both;animation-delay:calc(var(--d)*1ms)}
+@keyframes grow{from{transform:scaleY(0)}}
+.phone{width:7.2rem;aspect-ratio:9/17;border-radius:22px;border:2px solid rgba(255,255,255,.28);background:#14113A;padding:.8rem .65rem;display:flex;flex-direction:column;gap:.55rem;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.phone .b.a:last-child{margin-top:auto;height:1.7rem}
 
-    /* Tampilan carousel Swiper */
-    .project-swiper .swiper-button-prev,
-    .project-swiper .swiper-button-next { width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: #fff; color: #241B4E; box-shadow: 0 4px 14px rgba(11,27,77,.25); --swiper-navigation-size: 14px; }
-    .project-swiper .swiper-button-prev { left: .75rem; }
-    .project-swiper .swiper-button-next { right: .75rem; }
-    .project-swiper .swiper-button-prev:focus-visible,
-    .project-swiper .swiper-button-next:focus-visible { outline: 2px solid #F472B6; outline-offset: 2px; }
-    .project-swiper > .swiper-pagination { bottom: .75rem; left: auto; right: .75rem; width: auto; padding: .25rem .75rem; border-radius: 9999px; background: rgba(11,27,77,.8); color: #fff; font-size: .75rem; font-weight: 600; }
-  </style>
+.cta{text-align:center;padding:2rem 0 6rem}
+.cta h2{margin:0 auto;max-width:14ch;font:800 clamp(2.2rem,6.5vw,4.6rem)/1 var(--display);letter-spacing:-.035em}
+.cta p{color:var(--muted);margin:1.2rem auto 0;max-width:28rem}
+.cta .btn{margin-top:2rem}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:1.8rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer a:hover{color:var(--ink)}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .w>span{transform:none}.fade,.js .rv{opacity:1;transform:none}
+}
+</style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-blush selection:text-white">
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
 
-  <main class="relative overflow-hidden pb-40">
-    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[70rem] -right-32 h-[24rem] w-[24rem] rounded-full bg-blush-soft"></div>
+<header>
+  <div class="pill">
+    <a href="index.html" class="logo">Ahmad Rizal</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" aria-current="page">Projects</a>
+      <a href="experience.html" class="opt">Experience</a>
+    </nav>
+    <a href="index.html#contact" class="btn p s mag">Let’s talk</a>
+  </div>
+</header>
 
-    <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
-
-      <header class="hero-in flex items-center justify-between gap-6">
-        <div>
-          <h1 class="font-display text-[2.5rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl sm:leading-[1.05]">My Projects</h1>
-          <p class="mt-4 max-w-xl text-lg text-ink/70">Web, mobile, and data projects I've built, from point-of-sale systems to sentiment analysis.</p>
-        </div>
-        <div class="cube-wrap hidden min-[420px]:block" aria-hidden="true">
-          <div class="cube">
-            <div class="face"><i class="fas fa-laptop-code"></i></div>
-            <div class="face"><i class="fas fa-mobile-screen-button"></i></div>
-            <div class="face"><i class="fas fa-database"></i></div>
-            <div class="face"><i class="fas fa-server"></i></div>
-            <div class="face"><i class="fas fa-code"></i></div>
-            <div class="face"><i class="fas fa-layer-group"></i></div>
-          </div>
-        </div>
-      </header>
-
-      <!-- Daftar proyek dirender dari data di bawah -->
-      <section id="projects" class="mt-14 space-y-20 md:mt-24 md:space-y-32"></section>
+<main>
+  <div class="wrap">
+    <div class="top">
+      <h1 aria-label="My projects">
+        <span class="w"><span style="--i:0">My</span></span>
+        <span class="w"><span style="--i:1">projects</span></span>
+      </h1>
+      <p class="lead fade" style="--i:0">Web, mobile, and data projects I’ve built, from point-of-sale systems to sentiment analysis.</p>
+      <div class="filters fade" style="--i:1" id="filters" role="group" aria-label="Filter projects">
+        <button aria-pressed="true" data-f="all">All</button>
+        <button aria-pressed="false" data-f="web">Web</button>
+        <button aria-pressed="false" data-f="mobile">Mobile</button>
+        <button aria-pressed="false" data-f="data">Data</button>
+      </div>
     </div>
-  </main>
+    <section class="grid" id="projects" aria-live="polite"></section>
 
-  <!-- Navigasi bawah -->
-  <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
-      <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
-        <i class="fas fa-home text-base sm:text-sm"></i> Home
-      </a>
-      <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
-        <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
-      </a>
-      <a href="portfolio.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
-        <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
-      </a>
+    <div class="cta rv">
+      <h2>Want something like this for your business?</h2>
+      <p>Tell me what you need and I’ll reply with ideas and next steps.</p>
+      <a href="index.html#contact" class="btn p mag">Start a project</a>
     </div>
-  </nav>
+  </div>
+</main>
 
-  <script>
-    // Helper: range(5, 15) => [5, 6, ... 15]
-    const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Ahmad Rizal E.S</span>
+    <span><a href="index.html">Home</a> &nbsp;&nbsp; <a href="experience.html">Experience</a></span>
+  </div>
+</footer>
 
-    // Tambah proyek / screenshot baru cukup lewat data ini.
-    // Semua proyek ini privat (bukan open source) dan belum punya screenshot, jadi memakai ilustrasi.
-    // Kalau sudah ada screenshot asli, ganti `cover`/`coverBg` dengan:
-    //   images: ['img/pos-1.png', 'img/pos-2.png']   (nomor seperti 5, 6, 7 juga boleh)
-    const projects = [
-      {
-        stack: 'Point of Sale',
-        title: 'Aplikasi POS',
-        desc: 'Aplikasi kasir (Point of Sale) untuk mencatat dan mengelola transaksi penjualan.',
-        cover: 'pos', coverBg: 'bg-brand-soft',
-        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
-        private: true, links: [],
-      },
-      {
-        stack: 'Inventory System',
-        title: 'Sistem Inventaris Stok',
-        desc: 'Aplikasi untuk mencatat dan memantau stok barang, termasuk barang masuk dan keluar.',
-        cover: 'inventory', coverBg: 'bg-blush-soft',
-        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
-        private: true, links: [],
-      },
-      {
-        stack: 'Information System',
-        title: 'Sistem Informasi Desa',
-        desc: 'Aplikasi web sistem informasi desa untuk pengelolaan data dan pelayanan kepada masyarakat desa.',
-        cover: 'village', coverBg: 'bg-brand-soft',
-        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
-        private: true, links: [],
-      },
-      {
-        stack: 'Web Application',
-        title: 'Web Booking Nikah',
-        desc: 'Website untuk melakukan pemesanan (booking) layanan pernikahan secara online.',
-        cover: 'wedding', coverBg: 'bg-blush-soft',
-        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
-        private: true, links: [],
-      },
-      {
-        stack: 'Company Profile',
-        title: 'Website Company Profile',
-        desc: 'Website company profile untuk memperkenalkan profil, layanan, dan informasi perusahaan.',
-        cover: 'company', coverBg: 'bg-brand-soft',
-        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
-        private: true, links: [],
-      },
-      {
-        stack: 'Sentiment Analysis',
-        title: 'Analisis Sentimen Performa Dosen',
-        desc: 'Sistem analisis sentimen untuk menilai performa dosen berdasarkan umpan balik yang diberikan.',
-        cover: 'sentiment', coverBg: 'bg-blush-soft',
-        block: 'bg-brand', chip: 'bg-brand-soft text-brand-deep',
-        private: true, links: [],
-      },
-      {
-        stack: 'Mobile App',
-        title: 'Aplikasi Mobile Ujian &amp; Fasilitas Kampus',
-        desc: 'Aplikasi mobile untuk kebutuhan ujian dan fasilitas di lingkungan kampus.',
-        cover: 'mobile', coverBg: 'bg-brand-soft',
-        block: 'bg-blush', chip: 'bg-blush-soft text-blush-deep',
-        private: true, links: [],
-      },
-    ];
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fine=matchMedia('(pointer:fine)').matches,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#year').textContent=new Date().getFullYear();
 
-    // Ilustrasi SVG sederhana sebagai pengganti screenshot (warna disesuaikan ke palet biru + blush lewat `tint`)
-    const face = (cx, cy, color, mouth) => `
-      <circle cx="${cx}" cy="${cy}" r="24" fill="${color}"/>
-      <circle cx="${cx - 8}" cy="${cy - 7}" r="3" fill="#fff"/><circle cx="${cx + 8}" cy="${cy - 7}" r="3" fill="#fff"/>
-      <path d="${mouth}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+/* Tambah proyek baru lewat data ini. Kalau sudah ada screenshot asli, isi
+   images: ['img/pos-1.png','img/pos-2.png'] dan ilustrasi diganti slider gambar. */
+const projects=[
+  {cat:'web',stack:'Point of Sale',title:'Aplikasi POS',desc:'Aplikasi kasir (Point of Sale) untuk mencatat dan mengelola transaksi penjualan.',scene:'pos'},
+  {cat:'web',stack:'Inventory System',title:'Sistem Inventaris Stok',desc:'Aplikasi untuk mencatat dan memantau stok barang, termasuk barang masuk dan keluar.',scene:'inventory'},
+  {cat:'web',stack:'Information System',title:'Sistem Informasi Desa',desc:'Aplikasi web sistem informasi desa untuk pengelolaan data dan pelayanan kepada masyarakat desa.',scene:'village'},
+  {cat:'web',stack:'Web Application',title:'Web Booking Nikah',desc:'Website untuk melakukan pemesanan (booking) layanan pernikahan secara online.',scene:'wedding'},
+  {cat:'web',stack:'Company Profile',title:'Website Company Profile',desc:'Website company profile untuk memperkenalkan profil, layanan, dan informasi perusahaan.',scene:'company'},
+  {cat:'data',stack:'Sentiment Analysis',title:'Analisis Sentimen Performa Dosen',desc:'Sistem analisis sentimen untuk menilai performa dosen berdasarkan umpan balik yang diberikan.',scene:'sentiment'},
+  {cat:'mobile',stack:'Mobile App',title:'Aplikasi Mobile Ujian &amp; Fasilitas Kampus',desc:'Aplikasi mobile untuk kebutuhan ujian dan fasilitas di lingkungan kampus.',scene:'mobile'},
+];
 
-    const TINT = { '#2B50FF': '#6366F1', '#FFD43B': '#F472B6', '#2FBF8F': '#22D3EE', '#FF7A66': '#A855F7', '#0F1B3D': '#241B4E', '#FFF2B8': '#FDE6F3', '#D3F5E6': '#EAE8FD' };
-    const tint = (svg) => svg.replace(/#(2B50FF|FFD43B|2FBF8F|FF7A66|0F1B3D|FFF2B8|D3F5E6)/gi, (m) => TINT[m.toUpperCase()]);
+/* ilustrasi mini dari HTML/CSS, animasi jalan saat kartu muncul */
+const bar=(w,d,c='')=>`<i class="b ${c}" style="width:${w};--d:${d}"></i>`;
+const chrome=`<div class="bar"><i></i><i></i><i></i></div>`;
+const scenes={
+  pos:()=>`<div class="pos"><div class="g">${[0,1,2,3,4,5].map(i=>`<span class="b" style="--d:${i*70}"></span>`).join('')}</div>
+    <div class="pn">${bar('70%',300,'a')}${bar('90%',380)}${bar('60%',440)}${bar('80%',500)}${bar('100%',600,'a')}</div></div>`,
+  inventory:()=>`<div class="pn">${[80,55,18,65].map((w,i)=>`<div class="row" style="animation:pop .6s var(--ease) both;animation-delay:${i*110}ms"><span class="sq"></span><span class="ln"><i style="width:75%"></i><i style="width:40%"></i></span><span class="lv ${w<30?'low':''}" style="width:${w*.7}px"></span></div>`).join('')}</div>`,
+  village:()=>`<div class="pn"><div class="vl"><div class="donut"></div><div class="ln" style="gap:.55rem">${bar('100%',200,'a')}${bar('75%',280)}${bar('55%',360)}</div></div></div>`,
+  wedding:()=>`<div class="pn" style="width:62%"><i class="b a" style="width:50%;--d:0"></i><div class="cal">${Array.from({length:28},(_,i)=>`<span class="${i===17?'hi':''}" style="--d:${100+i*18}"></span>`).join('')}</div></div>`,
+  company:()=>`<div class="win">${chrome}<div class="pg">${bar('70%',100,'a')}${bar('90%',180,'')}${bar('55%',240)}
+    <i class="b a" style="width:4.5rem;height:1.4rem;--d:320"></i>
+    <div class="g3">${[0,1,2].map(i=>`<i class="b" style="height:2.8rem;border-radius:10px;--d:${420+i*90}"></i>`).join('')}</div></div></div>`,
+  sentiment:()=>`<div class="pn" style="width:78%"><div class="vl" style="align-items:stretch">
+    <div style="flex:1;display:grid;gap:.6rem">${['var(--aqua)','#FBBF24','var(--pink)'].map((c,i)=>`<div class="row" style="animation:pop .6s var(--ease) both;animation-delay:${i*120}ms"><span class="face" style="background:${c}"></span><span class="ln"><i style="width:${85-i*15}%"></i><i style="width:45%"></i></span></div>`).join('')}</div>
+    <div class="chart" style="flex:.8;align-self:end">${[['var(--aqua)',90],['#FBBF24',55],['var(--pink)',30]].map(([c,h],i)=>`<span style="--h:${h}%;--d:${400+i*120};background:${c}"></span>`).join('')}</div></div></div>`,
+  mobile:()=>`<div class="phone">${bar('55%',0,'a')}${[0,1,2].map(i=>`<div class="row" style="animation:pop .6s var(--ease) both;animation-delay:${150+i*120}ms"><span class="sq" style="border-radius:50%;width:1.3rem;height:1.3rem"></span><span class="ln"><i style="width:${85-i*14}%"></i><i style="width:45%"></i></span></div>`).join('')}${bar('100%',600,'a')}</div>`,
+};
+const lock=`<svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>`;
+const visual=(p)=>p.images?`<div class="snap">${p.images.map((n,k)=>`<img src="${typeof n==='number'?`img/${n}.png`:n}" alt="${p.title}, screenshot ${k+1}" loading="lazy">`).join('')}</div>`:scenes[p.scene]();
 
-    const covers = {
-      pos: () => {
-        const cols = ['#2B50FF', '#FF7A66', '#2FBF8F'];
-        let tiles = '';
-        for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
-          const x = 60 + c * 140, y = 70 + r * 125;
-          tiles += `<rect x="${x}" y="${y}" width="120" height="105" rx="20" fill="#fff"/>
-            <circle cx="${x + 60}" cy="${y + 40}" r="22" fill="${cols[(r + c) % 3]}"/>
-            <rect x="${x + 24}" y="${y + 76}" width="72" height="10" rx="5" fill="#0F1B3D" opacity=".15"/>`;
-        }
-        const rows = [0, 1, 2].map((i) => `
-          <rect x="520" y="${140 + i * 44}" width="${120 - i * 14}" height="10" rx="5" fill="#fff" opacity=".45"/>
-          <rect x="660" y="${140 + i * 44}" width="50" height="10" rx="5" fill="#FFD43B"/>`).join('');
-        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">${tiles}
-          <rect x="490" y="50" width="250" height="400" rx="28" fill="#0F1B3D"/>
-          <rect x="520" y="86" width="120" height="14" rx="7" fill="#fff" opacity=".9"/>${rows}
-          <rect x="520" y="290" width="190" height="2" fill="#fff" opacity=".2"/>
-          <rect x="520" y="316" width="90" height="16" rx="8" fill="#fff"/>
-          <rect x="630" y="316" width="80" height="16" rx="8" fill="#FFD43B"/>
-          <rect x="520" y="376" width="190" height="48" rx="24" fill="#2B50FF"/>
-        </svg>`;
-      },
+$('#projects').innerHTML=projects.map(p=>`
+  <article class="cd rv" data-cat="${p.cat}">
+    <div class="vis" role="img" aria-label="Ilustrasi proyek ${p.title}"></div>
+    <div class="txt">
+      <span class="chip">${p.stack}</span>
+      <h2>${p.title}</h2>
+      <p lang="id">${p.desc}</p>
+      <p class="pv">${lock} Private project, source code is not public</p>
+    </div>
+  </article>`).join('');
 
-      inventory: () => {
-        const shelves = [
-          { y: 170, boxes: [[80, 90, 60, '#2B50FF'], [185, 70, 50, '#FFD43B'], [270, 100, 70, '#2FBF8F']] },
-          { y: 290, boxes: [[80, 80, 80, '#FF7A66'], [175, 90, 60, '#2B50FF'], [280, 100, 50, '#FFD43B']] },
-          { y: 410, boxes: [[80, 100, 70, '#2FBF8F'], [195, 70, 90, '#FFD43B'], [280, 90, 55, '#FF7A66']] },
-        ];
-        const shelfSvg = shelves.map((sh) => `<rect x="60" y="${sh.y}" width="370" height="10" rx="5" fill="#0F1B3D"/>` +
-          sh.boxes.map(([x, w, h, c]) => `<rect x="${x}" y="${sh.y - h}" width="${w}" height="${h}" rx="8" fill="${c}"/>
-            <rect x="${x + w / 2 - 5}" y="${sh.y - h}" width="10" height="${h * 0.4}" fill="#0F1B3D" opacity=".15"/>`).join('')).join('');
-        const rows = [0, 1, 2, 3].map((i) => {
-          const y = 110 + i * 74;
-          const low = i === 2;
-          return `<rect x="500" y="${y}" width="40" height="40" rx="10" fill="${['#2B50FF', '#FFD43B', '#FF7A66', '#2FBF8F'][i]}"/>
-            <rect x="556" y="${y + 6}" width="90" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
-            <rect x="556" y="${y + 24}" width="60" height="8" rx="4" fill="#0F1B3D" opacity=".12"/>
-            <rect x="664" y="${y + 7}" width="50" height="26" rx="13" fill="${low ? '#FFD43B' : '#D3F5E6'}"/>`;
-        }).join('');
-        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">${shelfSvg}
-          <rect x="470" y="60" width="270" height="380" rx="28" fill="#fff"/>
-          <rect x="500" y="84" width="110" height="14" rx="7" fill="#0F1B3D" opacity=".2"/>${rows}
-        </svg>`;
-      },
+/* isi visual hanya saat kartu terlihat supaya animasinya terlihat */
+const cards=$$('.cd');
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const c=e.target,i=cards.indexOf(c),vis=$('.vis',c);
+  if(!vis.innerHTML)vis.innerHTML=visual(projects[i]);
+  c.classList.add('on');io.unobserve(c);
+}),{threshold:.2});
+cards.forEach(c=>io.observe(c));
+$$('.rv:not(.cd)').forEach(el=>{const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){el.classList.add('on');o.disconnect()}},{threshold:.2});o.observe(el)});
 
-      village: () => `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
-        <defs><clipPath id="village-clip"><rect x="60" y="70" width="420" height="360" rx="28"/></clipPath></defs>
-        <g clip-path="url(#village-clip)">
-          <rect x="60" y="70" width="420" height="360" fill="#fff"/>
-          <circle cx="410" cy="140" r="34" fill="#FFD43B"/>
-          <rect x="60" y="380" width="420" height="50" fill="#2FBF8F"/>
-          <path d="M82 310 L127 273 L172 310 Z" fill="#0F1B3D"/><rect x="90" y="310" width="74" height="70" fill="#FFD43B"/><rect x="118" y="338" width="18" height="42" rx="3" fill="#0F1B3D" opacity=".25"/>
-          <path d="M202 326 L242 292 L282 326 Z" fill="#0F1B3D"/><rect x="210" y="326" width="64" height="54" fill="#FF7A66"/><rect x="232" y="346" width="16" height="34" rx="3" fill="#0F1B3D" opacity=".25"/>
-          <path d="M302 292 L357 244 L412 292 Z" fill="#0F1B3D"/><rect x="312" y="292" width="90" height="88" fill="#2B50FF"/><rect x="345" y="326" width="24" height="54" rx="4" fill="#fff" opacity=".85"/>
-          <circle cx="450" cy="352" r="22" fill="#2FBF8F"/><rect x="446" y="360" width="8" height="26" fill="#0F1B3D" opacity=".4"/>
-        </g>
-        <rect x="510" y="100" width="230" height="300" rx="28" fill="#fff"/>
-        <circle cx="625" cy="188" r="48" fill="none" stroke="#2FBF8F" stroke-width="22"/>
-        <circle cx="625" cy="188" r="48" fill="none" stroke="#FFD43B" stroke-width="22" stroke-dasharray="90 302" transform="rotate(-90 625 188)"/>
-        <circle cx="625" cy="188" r="48" fill="none" stroke="#FF7A66" stroke-width="22" stroke-dasharray="50 302" stroke-dashoffset="-90" transform="rotate(-90 625 188)"/>
-        ${[0, 1, 2].map((i) => `<circle cx="545" cy="${290 + i * 36}" r="7" fill="${['#2FBF8F', '#FFD43B', '#FF7A66'][i]}"/><rect x="563" y="${284 + i * 36}" width="${150 - i * 20}" height="12" rx="6" fill="#0F1B3D" opacity=".18"/>`).join('')}
-      </svg>`,
+/* filter */
+$('#filters').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  $$('#filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.f;let n=0;
+  cards.forEach(c=>{
+    const ok=f==='all'||c.dataset.cat===f;
+    c.classList.toggle('off',!ok);c.classList.remove('show');
+    if(ok){c.classList.add('on');const vis=$('.vis',c);if(!vis.innerHTML)vis.innerHTML=visual(projects[cards.indexOf(c)]);
+      void c.offsetWidth;c.style.animationDelay=(n++*70)+'ms';c.classList.add('show')}
+  });
+});
 
-      wedding: () => {
-        let days = '';
-        for (let r = 0; r < 4; r++) for (let c = 0; c < 7; c++) {
-          const cx = 258 + c * 47, cy = 220 + r * 56;
-          days += (r === 1 && c === 3)
-            ? `<circle cx="${cx}" cy="${cy}" r="22" fill="#FFD43B"/>
-               <path transform="translate(${cx} ${cy - 12}) scale(.5)" d="M0,12 C-4,2 -22,4 -22,18 C-22,32 -4,40 0,46 C4,40 22,32 22,18 C22,4 4,2 0,12 Z" fill="#fff"/>`
-            : `<circle cx="${cx}" cy="${cy}" r="6" fill="#0F1B3D" opacity=".18"/>`;
-        }
-        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
-          <defs><clipPath id="wedding-clip"><rect x="210" y="60" width="380" height="380" rx="32"/></clipPath></defs>
-          <g clip-path="url(#wedding-clip)">
-            <rect x="210" y="60" width="380" height="380" fill="#fff"/>
-            <rect x="210" y="60" width="380" height="100" fill="#2B50FF"/>
-          </g>
-          <rect x="300" y="40" width="16" height="48" rx="8" fill="#0F1B3D"/>
-          <rect x="484" y="40" width="16" height="48" rx="8" fill="#0F1B3D"/>
-          <rect x="250" y="106" width="150" height="16" rx="8" fill="#fff" opacity=".9"/>
-          ${days}
-        </svg>`;
-      },
+/* spotlight kartu */
+cards.forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
 
-      company: () => `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
-        <rect x="80" y="55" width="640" height="390" rx="24" fill="#fff"/>
-        <rect x="80" y="55" width="640" height="56" rx="24" fill="#E3EAFF"/>
-        <rect x="80" y="85" width="640" height="26" fill="#E3EAFF"/>
-        <circle cx="112" cy="83" r="7" fill="#0F1B3D" opacity=".25"/><circle cx="134" cy="83" r="7" fill="#0F1B3D" opacity=".25"/><circle cx="156" cy="83" r="7" fill="#0F1B3D" opacity=".25"/>
-        <rect x="520" y="77" width="50" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="584" y="77" width="50" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="648" y="77" width="44" height="12" rx="6" fill="#0F1B3D" opacity=".2"/>
-        <rect x="120" y="150" width="300" height="22" rx="11" fill="#0F1B3D"/>
-        <rect x="120" y="186" width="240" height="22" rx="11" fill="#0F1B3D"/>
-        <rect x="120" y="232" width="300" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
-        <rect x="120" y="252" width="260" height="10" rx="5" fill="#0F1B3D" opacity=".25"/>
-        <rect x="120" y="290" width="130" height="44" rx="22" fill="#2B50FF"/>
-        <circle cx="570" cy="235" r="85" fill="#FFD43B"/>
-        <circle cx="625" cy="292" r="46" fill="#2B50FF"/>
-        <circle cx="520" cy="190" r="22" fill="#fff" opacity=".7"/>
-        <rect x="120" y="366" width="170" height="60" rx="16" fill="#E3EAFF"/>
-        <rect x="315" y="366" width="170" height="60" rx="16" fill="#FFF2B8"/>
-        <rect x="510" y="366" width="170" height="60" rx="16" fill="#D3F5E6"/>
-      </svg>`,
-
-      sentiment: () => `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
-        <rect x="50" y="70" width="320" height="100" rx="30" fill="#fff"/>
-        ${face(102, 120, '#2FBF8F', 'M90 122 Q102 136 114 122')}
-        <rect x="146" y="104" width="190" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="146" y="128" width="130" height="12" rx="6" fill="#0F1B3D" opacity=".12"/>
-        <rect x="50" y="190" width="320" height="100" rx="30" fill="#fff"/>
-        ${face(102, 240, '#FFD43B', 'M91 244 L113 244')}
-        <rect x="146" y="224" width="170" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="146" y="248" width="110" height="12" rx="6" fill="#0F1B3D" opacity=".12"/>
-        <rect x="50" y="310" width="320" height="100" rx="30" fill="#fff"/>
-        ${face(102, 360, '#FF7A66', 'M90 368 Q102 354 114 368')}
-        <rect x="146" y="344" width="200" height="12" rx="6" fill="#0F1B3D" opacity=".2"/><rect x="146" y="368" width="120" height="12" rx="6" fill="#0F1B3D" opacity=".12"/>
-        <rect x="420" y="60" width="320" height="380" rx="28" fill="#fff"/>
-        <rect x="460" y="95" width="120" height="14" rx="7" fill="#0F1B3D" opacity=".2"/>
-        <rect x="460" y="150" width="64" height="230" rx="14" fill="#2FBF8F"/>
-        <rect x="555" y="240" width="64" height="140" rx="14" fill="#FFD43B"/>
-        <rect x="650" y="300" width="64" height="80" rx="14" fill="#FF7A66"/>
-        <rect x="450" y="388" width="270" height="3" rx="1.5" fill="#0F1B3D" opacity=".15"/>
-      </svg>`,
-
-      mobile: () => {
-        const rows = [0, 1, 2, 3].map((i) => {
-          const y = 164 + i * 58;
-          return `<circle cx="334" cy="${y + 14}" r="14" fill="${i < 2 ? '#2FBF8F' : '#0F1B3D'}" ${i < 2 ? '' : 'opacity=".12"'}/>
-            ${i < 2 ? `<path d="M327 ${y + 14} l5 5 l9 -10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>` : ''}
-            <rect x="360" y="${y + 8}" width="${110 - i * 10}" height="12" rx="6" fill="#0F1B3D" opacity=".2"/>`;
-        }).join('');
-        return `<svg viewBox="0 0 800 500" class="h-full w-full" aria-hidden="true">
-          <rect x="80" y="150" width="170" height="76" rx="22" fill="#fff"/>
-          <circle cx="120" cy="188" r="18" fill="#FFD43B"/>
-          <rect x="150" y="174" width="80" height="10" rx="5" fill="#0F1B3D" opacity=".25"/><rect x="150" y="194" width="56" height="10" rx="5" fill="#0F1B3D" opacity=".15"/>
-          <rect x="550" y="290" width="170" height="76" rx="22" fill="#fff"/>
-          <circle cx="590" cy="328" r="18" fill="#2FBF8F"/>
-          <rect x="620" y="314" width="80" height="10" rx="5" fill="#0F1B3D" opacity=".25"/><rect x="620" y="334" width="56" height="10" rx="5" fill="#0F1B3D" opacity=".15"/>
-          <rect x="290" y="30" width="220" height="440" rx="40" fill="#0F1B3D"/>
-          <rect x="302" y="42" width="196" height="416" rx="30" fill="#fff"/>
-          <rect x="302" y="42" width="196" height="100" rx="30" fill="#2B50FF"/>
-          <rect x="302" y="100" width="196" height="42" fill="#2B50FF"/>
-          <rect x="352" y="54" width="96" height="10" rx="5" fill="#0F1B3D"/>
-          <rect x="326" y="92" width="110" height="14" rx="7" fill="#fff"/>
-          ${rows}
-          <rect x="326" y="404" width="148" height="40" rx="20" fill="#FFD43B"/>
-        </svg>`;
-      },
-    };
-
-    const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush';
-
-    const swiperHtml = (p) => {
-      const slides = p.images.map((n, k) => {
-        const src = typeof n === 'number' ? `img/${n}.png` : n;
-        return `
-        <div class="swiper-slide">
-          <img src="${src}" alt="${p.title}, screenshot ${k + 1}" loading="lazy" class="h-full w-full object-cover">
-        </div>`;
-      }).join('');
-      return `
-        <div class="swiper project-swiper relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-brand/20 bg-white" style="transform: translateZ(0)">
-          <div class="swiper-wrapper">${slides}</div>
-          <div class="swiper-button-prev" role="button" aria-label="Previous screenshot"></div>
-          <div class="swiper-button-next" role="button" aria-label="Next screenshot"></div>
-          <div class="swiper-pagination"></div>
-        </div>`;
-    };
-
-    const coverHtml = (p) => `
-        <div role="img" aria-label="Ilustrasi proyek ${p.title}" class="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-brand/15 shadow-[0_40px_70px_-30px_rgba(99,102,241,.6)] ${p.coverBg}">${tint(covers[p.cover]())}</div>`;
-
-    const privateNote = `
-        <p class="mt-6 flex items-center gap-2 text-sm text-ink/55"><i class="fas fa-lock text-xs"></i> Private project, source code is not public</p>`;
-
-    const render = (p, i) => {
-      const flip = i % 2 === 1;
-
-      const links = p.links.map((l) => `
-        <a href="${l.href}" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 ${l.style} ${focus}">
-          <i class="${l.icon}"></i> ${l.label}
-        </a>`).join('');
-
-      // Tiap proyek = tumpukan lapisan 3D: blok warna (belakang) → ilustrasi (depan), miring mengikuti kursor
-      return `
-        <article class="stage3d grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          <div data-tilt class="tilt relative lg:col-span-7 ${flip ? 'lg:order-2' : ''}">
-            <div aria-hidden="true" class="absolute -bottom-3 h-full w-full rounded-[2rem] ${flip ? '-left-3' : '-right-3'} ${p.block}" style="transform: translateZ(-50px)"></div>
-            ${p.images ? swiperHtml(p) : coverHtml(p)}
-          </div>
-
-          <div class="lg:col-span-5">
-            <p class="inline-block rounded-full px-3.5 py-1.5 text-sm font-semibold ${p.chip}">${p.stack}</p>
-            <h2 class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">${p.title}</h2>
-            <p lang="id" class="mt-4 max-w-md leading-relaxed text-ink/70">${p.desc}</p>
-            ${links ? `<div class="mt-7 flex flex-wrap gap-3">${links}</div>` : ''}
-            ${p.private ? privateNote : ''}
-          </div>
-        </article>`;
-    };
-
-    document.getElementById('projects').innerHTML = projects.map(render).join('');
-
-    // Kartu miring mengikuti kursor (mati di layar sentuh)
-    document.querySelectorAll('[data-tilt]').forEach((el) => {
-      el.addEventListener('pointermove', (e) => {
-        if (e.pointerType === 'touch') return;
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = `perspective(1100px) rotateX(${(-y * 9).toFixed(2)}deg) rotateY(${(x * 11).toFixed(2)}deg)`;
-      });
-      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
-    });
-
-    // Satu instance Swiper per proyek (dipakai kalau proyek punya `images`)
-    document.querySelectorAll('.project-swiper').forEach((el) => {
-      new Swiper(el, {
-        loop: true,
-        keyboard: { enabled: true },
-        navigation: {
-          nextEl: el.querySelector('.swiper-button-next'),
-          prevEl: el.querySelector('.swiper-button-prev'),
-        },
-        pagination: {
-          el: el.querySelector('.swiper-pagination'),
-          type: 'fraction',
-        },
-      });
-    });
-  </script>
+/* cahaya kursor + tombol magnetik */
+if(fine&&!reduce){
+  const g=$('#glow');let x=innerWidth/2,y=200,tx=x,ty=y;
+  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+  (function f(){x+=(tx-x)*.08;y+=(ty-y)*.08;g.style.transform=`translate3d(${x}px,${y}px,0)`;requestAnimationFrame(f)})();
+  $$('.mag').forEach(el=>{
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`});
+    el.addEventListener('pointerleave',()=>{el.style.transform=''});
+  });
+}else $('#glow').style.display='none';
+</script>
 </body>
 </html>
