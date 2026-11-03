@@ -1,368 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Pengalaman kerja dan sertifikat Ahmad Rizal E.S sebagai web dan backend developer.">
-  <meta name="theme-color" content="#F6F3FE">
-  <title>Experience - Ahmad Rizal E.S</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Pengalaman kerja dan sertifikat Ahmad Rizal E.S sebagai web dan backend developer.">
+<meta name="theme-color" content="#0C0A24">
+<title>Experience | Ahmad Rizal E.S</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0A24;--surf:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);
+  --ink:#F3F1FF;--muted:#A7A3C9;--accent:#8B7CFF;--aqua:#4FE3F5;--pink:#F472B6;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#0C0A24}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:4px;border-radius:8px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+main{position:relative;z-index:1}
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:40rem;height:40rem;left:-12rem;top:-14rem;background:#4B3BE0}
+.aurora i:nth-child(2){width:32rem;height:32rem;right:-10rem;top:24rem;background:#0E8FA8;animation-duration:28s;opacity:.3}
+@keyframes drift{to{transform:translate3d(6rem,5rem,0) scale(1.15)}}
+.glow{position:fixed;left:0;top:0;width:32rem;height:32rem;margin:-16rem 0 0 -16rem;border-radius:50%;background:radial-gradient(closest-side,rgba(139,124,255,.2),transparent);pointer-events:none;z-index:0;will-change:transform}
 
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        },
-        colors: {
-          paper: '#F6F3FE',
-          ink: '#241B4E',
-          brand: { DEFAULT: '#6366F1', deep: '#4338CA', soft: '#EAE8FD', mid: '#C9C3F7' },
-          violet: { DEFAULT: '#A855F7', deep: '#7E22CE', soft: '#F3E8FF', mid: '#DCC9FB' },
-          aqua: { DEFAULT: '#22D3EE', deep: '#0E7490', soft: '#DEFAFF', mid: '#A8ECFA' },
-          blush: { DEFAULT: '#F472B6', deep: '#DB2777', soft: '#FDE6F3' },
-        },
-      } },
-    }
-  </script>
+header{position:fixed;top:max(.75rem,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:20;width:max-content;max-width:calc(100% - 1.5rem)}
+.pill{display:flex;align-items:center;gap:1.5rem;padding:.45rem .5rem .45rem 1.3rem;border:1px solid var(--line);border-radius:999px;background:rgba(18,14,52,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.logo{font:700 1rem var(--display);letter-spacing:-.01em}
+.pill nav{display:flex;gap:1.4rem;font-size:.92rem;color:var(--muted)}
+.pill nav a{transition:color .3s}.pill nav a:hover,.pill nav a[aria-current]{color:var(--ink)}
+@media(max-width:700px){.pill nav .opt{display:none}.pill,.pill nav{gap:1rem}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--surf);color:var(--ink);transition:transform .35s var(--ease),border-color .3s;will-change:transform}
+.btn:hover{border-color:rgba(255,255,255,.4)}
+.btn.p{background:linear-gradient(120deg,var(--accent),#6AA8FF);color:#0C0A24;border-color:transparent}
+.btn.s{padding:.55rem 1.1rem;font-size:.88rem}
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      background:
-        radial-gradient(1100px 560px at 8% -8%, rgba(199,195,247,.55) 0%, rgba(246,243,254,0) 60%),
-        radial-gradient(900px 540px at 108% 8%, rgba(253,230,243,.5) 0%, rgba(246,243,254,0) 55%),
-        radial-gradient(900px 620px at 50% 115%, rgba(222,250,255,.5) 0%, rgba(246,243,254,0) 55%),
-        #F6F3FE;
-      background-attachment: fixed;
-    }
-    .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
-    @keyframes rise { to { opacity: 1; transform: none; } }
+.top{padding:clamp(7.5rem,14vw,10rem) 0 3rem}
+h1{margin:0;font:800 clamp(2.6rem,7.4vw,5.6rem)/1 var(--display);letter-spacing:-.04em}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.w>span{display:inline-block;transform:translateY(112%);animation:up .95s var(--ease) forwards;animation-delay:calc(var(--i)*80ms + 100ms)}
+@keyframes up{to{transform:none}}
+.lead{margin:1.4rem 0 0;max-width:34rem;color:var(--muted);font-size:1.12rem}
+.fade{opacity:0;animation:fade .9s var(--ease) forwards;animation-delay:calc(var(--i)*90ms + 500ms)}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-    .stage3d { perspective: 1200px; }
-    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out, box-shadow .2s ease-out; will-change: transform; }
-    .tz1 { transform: translateZ(14px); } .tz2 { transform: translateZ(26px); }
-    .card3d { background: #fff; border: 1px solid rgba(36,87,255,.14); box-shadow: 0 1px 0 #fff inset, 0 24px 40px -24px rgba(99,102,241,.45); }
-    .card3d:hover { box-shadow: 0 1px 0 #fff inset, 0 34px 50px -24px rgba(99,102,241,.55); }
+h2{margin:0;font:800 clamp(1.9rem,4.2vw,3rem)/1.05 var(--display);letter-spacing:-.035em}
 
-    /* kubus 3D murni CSS untuk hiasan header */
-    .cube-wrap { --s: 84px; width: var(--s); height: var(--s); perspective: 700px; flex-shrink: 0; }
-    @media (min-width: 640px) { .cube-wrap { --s: 120px; } }
-    .cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: spin 16s linear infinite; }
-    .face { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: calc(var(--s) * .32); border-radius: calc(var(--s) * .16); border: 2px solid rgba(255,255,255,.4); }
-    .face:nth-child(1) { background: #6366F1; transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(2) { background: #F472B6; transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(3) { background: #4338CA; transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(4) { background: #DB2777; transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(5) { background: #A855F7; transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
-    .face:nth-child(6) { background: #22D3EE; transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
-    @keyframes spin { from { transform: rotateX(-22deg) rotateY(0deg); } to { transform: rotateX(-22deg) rotateY(360deg); } }
+/* timeline */
+.tl{--p:0;position:relative;list-style:none;margin:2.5rem 0 0;padding:0 0 0 2.8rem;max-width:52rem}
+.tl::before,.tl::after{content:"";position:absolute;left:.5rem;top:1rem;bottom:1rem;width:2px;background:var(--line)}
+.tl::after{background:linear-gradient(var(--accent),var(--aqua));transform:scaleY(var(--p));transform-origin:top}
+.tl>li{position:relative;padding-bottom:1.5rem}
+.tl>li::before{content:"";position:absolute;left:-2.8rem;top:1.7rem;width:1.1rem;height:1.1rem;border-radius:50%;background:var(--bg);border:2px solid var(--line);transition:all .6s var(--ease)}
+.tl>li.on::before{background:var(--aqua);border-color:var(--aqua);box-shadow:0 0 0 6px rgba(79,227,245,.16)}
+.tl>li.now::before{background:var(--pink);border-color:var(--pink);box-shadow:0 0 0 6px rgba(244,114,182,.2)}
+.cd{position:relative;padding:1.6rem;border:1px solid var(--line);border-radius:24px;background:var(--surf);overflow:hidden;transition:border-color .4s,transform .5s var(--ease)}
+.cd>*{position:relative}
+.cd::before{content:"";position:absolute;inset:0;background:radial-gradient(460px circle at var(--mx,50%) var(--my,0%),rgba(139,124,255,.25),transparent 60%);opacity:0;transition:opacity .4s}
+.cd:hover{border-color:rgba(139,124,255,.5);transform:translateY(-3px)}.cd:hover::before{opacity:1}
+.hd{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between}
+.cd h3{margin:0;font:700 1.45rem/1.2 var(--display);letter-spacing:-.02em}
+.org{margin:.2rem 0 0;color:var(--aqua);font-weight:600}.org small{color:var(--muted);font-weight:500;font-size:.9em}
+.dt{margin:0;color:var(--muted);font-size:.9rem;text-align:right;line-height:1.5}
+@media(max-width:560px){.dt{text-align:left}}
+.live{display:inline-flex;align-items:center;gap:.5rem;padding:.2rem .8rem;border-radius:999px;background:rgba(244,114,182,.14);color:var(--pink);font-size:.78rem;font-weight:600;margin-bottom:.35rem}
+.live i{width:.45rem;height:.45rem;border-radius:50%;background:var(--pink);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 .5rem rgba(244,114,182,0)}0%{box-shadow:0 0 0 0 rgba(244,114,182,.6)}}
+.cd ul.bl{margin:1.1rem 0 0;padding-left:1.2rem;color:var(--muted)}
+.bl li{margin:.35rem 0}.bl li::marker{color:var(--accent)}.bl ul{margin:.3rem 0;padding-left:1.1rem}
+.cd p.tx{margin:1.1rem 0 0;color:var(--muted)}
+.tg{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.2rem 0 0;padding:0;list-style:none}
+.tg li{padding:.3rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:var(--muted)}
+.shot{margin:1.1rem 0 0;max-width:20rem}
+.shot img{display:block;width:100%;height:11rem;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.lk{display:inline-flex;align-items:center;gap:.4rem;margin-top:.7rem;font-weight:600;font-size:.9rem;color:var(--aqua);transition:gap .3s var(--ease)}
+.lk:hover{gap:.7rem}
+.lk svg{width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .hero-in { animation: none; opacity: 1; transform: none; }
-      .tilt { transform: none !important; transition: none; }
-      .cube { animation: none; transform: rotateX(-22deg) rotateY(-30deg); }
-    }
-  </style>
+/* certificates */
+section{padding:clamp(4rem,9vw,7rem) 0 0}
+.certs{display:grid;gap:1.25rem;margin-top:2.2rem;grid-template-columns:1fr}
+@media(min-width:700px){.certs{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.certs{grid-template-columns:repeat(3,1fr)}}
+.cert{display:flex;flex-direction:column;padding:.8rem .8rem 1.5rem}
+.cert .im{display:grid;place-items:center;height:11rem;padding:.8rem;border-radius:16px;background:linear-gradient(160deg,rgba(139,124,255,.2),rgba(79,227,245,.06));border:1px solid var(--line)}
+.cert img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .6s var(--ease)}
+.cert:hover img{transform:scale(1.06)}
+.cert .t{display:flex;flex-direction:column;flex:1;padding:1.1rem .6rem 0}
+.cert h3{font-size:1.15rem}
+.cert p{margin:.5rem 0 0;color:var(--muted);font-size:.93rem}
+.cert .lk{margin-top:auto;padding-top:1rem}
+
+.cta{text-align:center;padding:clamp(4rem,9vw,7rem) 0 6rem}
+.cta h2{margin:0 auto;max-width:14ch;font-size:clamp(2.2rem,6.5vw,4.6rem);line-height:1}
+.cta p{color:var(--muted);margin:1.2rem auto 0;max-width:28rem}
+.cta .btn{margin-top:2rem}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:1.8rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer a:hover{color:var(--ink)}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .w>span{transform:none}.fade,.js .rv{opacity:1;transform:none}
+}
+</style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-blush selection:text-white">
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
 
-  <main class="relative overflow-hidden pb-40">
-    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -right-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[62rem] -left-32 h-[22rem] w-[22rem] rounded-full bg-blush-soft"></div>
+<header>
+  <div class="pill">
+    <a href="index.html" class="logo">Ahmad Rizal</a>
+    <nav aria-label="Main">
+      <a href="index.html" class="opt">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="experience.html" aria-current="page">Experience</a>
+    </nav>
+    <a href="services.html#consult" class="btn p s mag">Let’s talk</a>
+  </div>
+</header>
 
-    <div class="relative mx-auto max-w-6xl px-5 pt-12 sm:px-8 md:pt-20">
-
-      <header class="hero-in flex items-center justify-between gap-6">
-        <div>
-          <h1 class="font-display text-[2.25rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl sm:leading-[1.05]">Experience &amp; Certificates</h1>
-          <p class="mt-4 max-w-xl text-lg text-ink/70">My journey in web development and technology.</p>
-        </div>
-        <div class="cube-wrap hidden min-[420px]:block" aria-hidden="true">
-          <div class="cube">
-            <div class="face"><i class="fas fa-briefcase"></i></div>
-            <div class="face"><i class="fas fa-code"></i></div>
-            <div class="face"><i class="fas fa-graduation-cap"></i></div>
-            <div class="face"><i class="fas fa-globe"></i></div>
-            <div class="face"><i class="fas fa-certificate"></i></div>
-            <div class="face"><i class="fas fa-server"></i></div>
-          </div>
-        </div>
-      </header>
-
-      <!-- ================= EXPERIENCE (timeline) ================= -->
-      <section id="experience" class="mt-14 md:mt-20">
-        <div class="stage3d relative max-w-4xl">
-          <div aria-hidden="true" class="absolute bottom-4 left-4 top-4 w-px bg-gradient-to-b from-brand via-brand/30 to-transparent sm:left-5"></div>
-
-          <ol class="space-y-8">
-
-            <!-- Freelance (sekarang) -->
-            <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-blush text-sm text-white shadow-lg shadow-blush/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
-              <article data-tilt class="tilt card3d rounded-3xl border-blush/30 p-5 sm:p-8">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div class="tz1">
-                    <h3 class="font-display text-xl font-bold sm:text-2xl">Frontend Developer</h3>
-                    <p class="mt-1 font-semibold text-blush-deep">Freelance <span class="font-medium text-ink/60">(Self-employed)</span></p>
-                  </div>
-                  <div class="sm:text-right">
-                    <span class="inline-flex items-center gap-2 rounded-full bg-blush-soft px-3 py-1 text-xs font-semibold text-blush-deep"><span class="h-2 w-2 animate-pulse rounded-full bg-blush"></span>Present</span>
-                    <p class="mt-2 text-sm leading-6 text-ink/60">Nov 2026 - Present</p>
-                  </div>
-                </div>
-
-                <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Freelance</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Frontend Development</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">React.js</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Vue.js</li>
-                </ul>
-              </article>
-            </li>
-
-            <!-- BANTU -->
-            <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-brand text-sm text-white shadow-lg shadow-brand/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-code-branch"></i></span>
-              <article data-tilt class="tilt card3d rounded-3xl p-5 sm:p-8">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div class="tz1">
-                    <h3 class="font-display text-xl font-bold sm:text-2xl">Backend Developer</h3>
-                    <p class="mt-1 font-semibold text-brand-deep">BANTU <span class="font-medium text-ink/60">(Internship)</span></p>
-                  </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Apr 2025 - Jun 2025<br>3 months · Remote</p>
-                </div>
-
-                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-ink/75 marker:text-brand">
-                  <li>Developed secure login API with authentication and token management.</li>
-                  <li>Implemented refresh token mechanism for access token renewal.</li>
-                  <li>Built freelancer order creation with validation and database handling.</li>
-                  <li>Integrated RabbitMQ for asynchronous tasks:
-                    <ul class="mt-2 list-[circle] space-y-1 pl-6">
-                      <li>Create Complaint</li>
-                      <li>Create Negotiation</li>
-                    </ul>
-                  </li>
-                  <li>Conducted full feature testing and validation before deployment.</li>
-                </ul>
-
-                <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">Laravel</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">API Development</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">RabbitMQ</li>
-                </ul>
-              </article>
-            </li>
-
-            <!-- Brand In -->
-            <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-blush text-sm text-white shadow-lg shadow-blush/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-laptop-code"></i></span>
-              <article data-tilt class="tilt card3d rounded-3xl p-5 sm:p-8">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div class="tz1">
-                    <h3 class="font-display text-xl font-bold sm:text-2xl">Frontend Web Developer</h3>
-                    <p class="mt-1 font-semibold text-blush-deep">Brand In <span class="font-medium text-ink/60">(Internship)</span></p>
-                  </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Sep 2024 - Dec 2024<br>4 months · Remote</p>
-                </div>
-
-                <figure class="tz2 mt-5 max-w-xs">
-                  <div class="overflow-hidden rounded-2xl border border-brand/15 bg-paper shadow-xl shadow-brand/20">
-                    <img src="img/projek3.png" alt="HOME BASED ORGANIC SKIN CARE" loading="lazy" class="h-48 w-full object-cover">
-                  </div>
-                  <figcaption class="mt-3">
-                    <a href="https://template03-five.vercel.app/" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
-                      <i class="fas fa-arrow-up-right-from-square"></i> Live demo
-                    </a>
-                  </figcaption>
-                </figure>
-
-                <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-ink/75 marker:text-blush">
-                  <li>Developed and optimized landing pages with responsive design.</li>
-                  <li>Designed and implemented intuitive UI components for web projects.</li>
-                </ul>
-
-                <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">React.js</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">UI/UX Design</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Web Development</li>
-                </ul>
-              </article>
-            </li>
-
-            <!-- Dicoding -->
-            <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-brand text-sm text-white shadow-lg shadow-brand/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-graduation-cap"></i></span>
-              <article data-tilt class="tilt card3d rounded-3xl p-5 sm:p-8">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div class="tz1">
-                    <h3 class="font-display text-xl font-bold sm:text-2xl">Student</h3>
-                    <p class="mt-1 font-semibold text-brand-deep">Dicoding Indonesia <span class="font-medium text-ink/60">(Apprenticeship)</span></p>
-                  </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Feb 2024 - Jul 2024<br>6 months</p>
-                </div>
-
-                <p class="mt-5 leading-relaxed text-ink/75">Participated in intensive training for web development with React.js and backend technologies, including project-based learning and software development best practices.</p>
-
-                <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">React.js</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">Project Management</li>
-                  <li class="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-semibold text-brand-deep">Backend Integration</li>
-                </ul>
-              </article>
-            </li>
-
-            <!-- GarapDigital -->
-            <li class="relative pl-12 sm:pl-16">
-              <span class="absolute left-0 top-2 grid h-8 w-8 place-items-center rounded-full bg-blush text-sm text-white shadow-lg shadow-blush/40 ring-4 ring-paper sm:h-10 sm:w-10 sm:text-base"><i class="fas fa-globe"></i></span>
-              <article data-tilt class="tilt card3d rounded-3xl p-5 sm:p-8">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div class="tz1">
-                    <h3 class="font-display text-xl font-bold sm:text-2xl">Web Developer</h3>
-                    <p class="mt-1 font-semibold text-blush-deep">GarapDigital.id <span class="font-medium text-ink/60">(Internship)</span></p>
-                  </div>
-                  <p class="text-sm leading-6 text-ink/60 sm:text-right">Aug 2023 - Oct 2023<br>3 months · Remote</p>
-                </div>
-
-                <p class="mt-5 leading-relaxed text-ink/75">Designed and developed a village information system web application, focusing on efficient data management and user-friendly interface for local community services.</p>
-
-                <ul class="tz2 mt-6 flex flex-wrap gap-2">
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Laravel</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">MySQL</li>
-                  <li class="rounded-full bg-blush-soft px-3.5 py-1.5 text-sm font-semibold text-blush-deep">Web System Design</li>
-                </ul>
-              </article>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- ================= CERTIFICATES ================= -->
-      <section id="certificate" class="mt-24 md:mt-32">
-        <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Certificates</h2>
-
-        <div class="stage3d mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-          <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-brand-soft p-4">
-              <img src="img/dico.png" alt="Certificate Dicoding - React &amp; Backend MSIB 6" loading="lazy" class="h-44 w-full object-contain">
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-bold leading-snug">Dicoding - React &amp; Backend MSIB 6</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Training in modern web application development using React for the frontend and backend integration. The curriculum covers JavaScript fundamentals, React Hooks, and hands-on practice building fullstack applications.</p>
-            </div>
-          </article>
-
-          <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-blush-soft p-4">
-              <img src="img/serti2.png" alt="Certificate Dicoding - React Web Developer Expert" loading="lazy" class="h-44 w-full object-contain">
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-bold leading-snug">React Web Developer Expert</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Advanced training to master React.js, including complex state management, performance optimization, and the application of best practices in modern web application development.</p>
-              <a href="https://www.dicoding.com/certificates/98XWLG3R4ZM3" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
-                <i class="fas fa-arrow-up-right-from-square"></i> View certificate
-              </a>
-            </div>
-          </article>
-
-          <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-brand-soft p-4">
-              <img src="img/serti3.png" alt="Certificate Certiport - IT Specialist" loading="lazy" class="h-44 w-full object-contain">
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-bold leading-snug">Certiport - IT Specialist</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">IT Certiport HTML and CSS certification confirms expertise in HTML and CSS website development.</p>
-            </div>
-          </article>
-
-          <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-blush-soft p-4">
-              <img src="img/serti4.png" alt="Certificate Dicoding - Fundamentals of Web Applications with React" loading="lazy" class="h-44 w-full object-contain">
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-bold leading-snug">Learn the Fundamentals of Web Applications with React</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Comprehensive training on building web applications using React.js, covering component-based architecture, state management, and best practices for modern frontend development.</p>
-              <a href="https://www.dicoding.com/certificates/GRX5Q51QRZ0M" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
-                <i class="fas fa-arrow-up-right-from-square"></i> View certificate
-              </a>
-            </div>
-          </article>
-
-          <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-brand-soft p-4">
-              <img src="img/serti5.png" alt="Certificate Dicoding - Fundamental Backend App" loading="lazy" class="h-44 w-full object-contain">
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-bold leading-snug">Learn Fundamental Backend App</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Training on backend application development fundamentals, including server-side programming, database management, and API creation using modern backend frameworks.</p>
-              <a href="https://www.dicoding.com/certificates/N9ZOM70D6PG5" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
-                <i class="fas fa-arrow-up-right-from-square"></i> View certificate
-              </a>
-            </div>
-          </article>
-
-          <article data-tilt class="tilt card3d flex flex-col overflow-hidden rounded-3xl">
-            <div class="tz1 bg-blush-soft p-4">
-              <img src="img/serti6.png" alt="Certificate Dicoding - Fundamental of Web Programming" loading="lazy" class="h-44 w-full object-contain">
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-display text-lg font-bold leading-snug">Learn Fundamental of Web Programming</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink/70">Training on the basics of web programming, covering HTML, CSS, and JavaScript to build foundational skills for creating interactive and responsive web applications.</p>
-              <a href="https://www.dicoding.com/certificates/N9ZOORG70ZG5" target="_blank" rel="noopener"
-                 class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand transition hover:text-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blush">
-                <i class="fas fa-arrow-up-right-from-square"></i> View certificate
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </section>
+<main>
+  <div class="wrap">
+    <div class="top">
+      <h1 aria-label="Experience and certificates">
+        <span class="w"><span style="--i:0">Experience</span></span>
+        <span class="w"><span style="--i:1">&amp;</span></span>
+        <span class="w"><span style="--i:2">certificates</span></span>
+      </h1>
+      <p class="lead fade" style="--i:0">My journey in web development and technology.</p>
     </div>
-  </main>
 
-  <!-- Navigasi bawah -->
-  <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
-      <a href="index.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
-        <i class="fas fa-home text-base sm:text-sm"></i> Home
-      </a>
-      <a href="experience.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
-        <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
-      </a>
-      <a href="portfolio.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush">
-        <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
-      </a>
+    <ol class="tl" id="tl" aria-label="Work experience"></ol>
+
+    <section id="certificate">
+      <h2 class="rv">Certificates</h2>
+      <div class="certs" id="certs"></div>
+    </section>
+
+    <div class="cta rv">
+      <h2>Let’s put this experience to work for you.</h2>
+      <p>See what I offer, check the pricing, and book a consultation.</p>
+      <a href="services.html" class="btn p mag">View services &amp; pricing</a>
     </div>
-  </nav>
+  </div>
+</main>
 
-  <script>
-    // Kartu miring mengikuti kursor (mati di layar sentuh)
-    document.querySelectorAll('[data-tilt]').forEach((el) => {
-      el.addEventListener('pointermove', (e) => {
-        if (e.pointerType === 'touch') return;
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = `perspective(1000px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateZ(6px)`;
-      });
-      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
-    });
-  </script>
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Ahmad Rizal E.S</span>
+    <span><a href="index.html">Home</a> &nbsp;&nbsp; <a href="portfolio.html">Projects</a></span>
+  </div>
+</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fine=matchMedia('(pointer:fine)').matches,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#year').textContent=new Date().getFullYear();
+
+const ext=`<svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>`;
+const exp=[
+  {role:'Frontend Developer',org:'Freelance',kind:'Self-employed',date:'Nov 2026 - Present',now:true,tags:['Freelance','Frontend Development','React.js','Vue.js']},
+  {role:'Backend Developer',org:'BANTU',kind:'Internship',date:'Apr 2025 - Jun 2025',meta:'3 months · Remote',
+    bullets:['Developed secure login API with authentication and token management.','Implemented refresh token mechanism for access token renewal.','Built freelancer order creation with validation and database handling.','Integrated RabbitMQ for asynchronous tasks:<ul><li>Create Complaint</li><li>Create Negotiation</li></ul>','Conducted full feature testing and validation before deployment.'],
+    tags:['Laravel','API Development','RabbitMQ']},
+  {role:'Frontend Web Developer',org:'Brand In',kind:'Internship',date:'Sep 2024 - Dec 2024',meta:'4 months · Remote',
+    shot:{src:'img/projek3.png',alt:'HOME BASED ORGANIC SKIN CARE',href:'https://template03-five.vercel.app/'},
+    bullets:['Developed and optimized landing pages with responsive design.','Designed and implemented intuitive UI components for web projects.'],
+    tags:['React.js','UI/UX Design','Web Development']},
+  {role:'Student',org:'Dicoding Indonesia',kind:'Apprenticeship',date:'Feb 2024 - Jul 2024',meta:'6 months',
+    text:'Participated in intensive training for web development with React.js and backend technologies, including project-based learning and software development best practices.',
+    tags:['React.js','Project Management','Backend Integration']},
+  {role:'Web Developer',org:'GarapDigital.id',kind:'Internship',date:'Aug 2023 - Oct 2023',meta:'3 months · Remote',
+    text:'Designed and developed a village information system web application, focusing on efficient data management and user-friendly interface for local community services.',
+    tags:['Laravel','MySQL','Web System Design']},
+];
+$('#tl').innerHTML=exp.map(e=>`
+  <li class="rv ${e.now?'now':''}"><article class="cd">
+    <div class="hd">
+      <div><h3>${e.role}</h3><p class="org">${e.org} <small>(${e.kind})</small></p></div>
+      <p class="dt">${e.now?'<span class="live"><i></i>Present</span><br>':''}${e.date}${e.meta?'<br>'+e.meta:''}</p>
+    </div>
+    ${e.shot?`<figure class="shot"><img src="${e.shot.src}" alt="${e.shot.alt}" loading="lazy"><a class="lk" href="${e.shot.href}" target="_blank" rel="noopener">Live demo ${ext}</a></figure>`:''}
+    ${e.bullets?`<ul class="bl">${e.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`:''}
+    ${e.text?`<p class="tx">${e.text}</p>`:''}
+    <ul class="tg">${e.tags.map(t=>`<li>${t}</li>`).join('')}</ul>
+  </article></li>`).join('');
+
+const certs=[
+  {t:'Dicoding - React &amp; Backend MSIB 6',d:'Training in modern web application development using React for the frontend and backend integration. The curriculum covers JavaScript fundamentals, React Hooks, and hands-on practice building fullstack applications.',img:'dico.png'},
+  {t:'React Web Developer Expert',d:'Advanced training to master React.js, including complex state management, performance optimization, and the application of best practices in modern web application development.',img:'serti2.png',href:'https://www.dicoding.com/certificates/98XWLG3R4ZM3'},
+  {t:'Certiport - IT Specialist',d:'IT Certiport HTML and CSS certification confirms expertise in HTML and CSS website development.',img:'serti3.png'},
+  {t:'Learn the Fundamentals of Web Applications with React',d:'Comprehensive training on building web applications using React.js, covering component-based architecture, state management, and best practices for modern frontend development.',img:'serti4.png',href:'https://www.dicoding.com/certificates/GRX5Q51QRZ0M'},
+  {t:'Learn Fundamental Backend App',d:'Training on backend application development fundamentals, including server-side programming, database management, and API creation using modern backend frameworks.',img:'serti5.png',href:'https://www.dicoding.com/certificates/N9ZOM70D6PG5'},
+  {t:'Learn Fundamental of Web Programming',d:'Training on the basics of web programming, covering HTML, CSS, and JavaScript to build foundational skills for creating interactive and responsive web applications.',img:'serti6.png',href:'https://www.dicoding.com/certificates/N9ZOORG70ZG5'},
+];
+$('#certs').innerHTML=certs.map(c=>`
+  <article class="cd cert rv"><div class="im"><img src="img/${c.img}" alt="Certificate ${c.t}" loading="lazy"></div>
+    <div class="t"><h3>${c.t}</h3><p>${c.d}</p>${c.href?`<a class="lk" href="${c.href}" target="_blank" rel="noopener">View certificate ${ext}</a>`:''}</div></article>`).join('');
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+
+/* scroll-linked timeline line */
+const tl=$('#tl');
+function prog(){const r=tl.getBoundingClientRect();tl.style.setProperty('--p',Math.min(1,Math.max(0,(innerHeight*.75-r.top)/r.height)).toFixed(3))}
+addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);prog();
+
+/* spotlight */
+$$('.cd').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+
+/* cursor glow + magnetic buttons */
+if(fine&&!reduce){
+  const g=$('#glow');let x=innerWidth/2,y=200,tx=x,ty=y;
+  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+  (function f(){x+=(tx-x)*.08;y+=(ty-y)*.08;g.style.transform=`translate3d(${x}px,${y}px,0)`;requestAnimationFrame(f)})();
+  $$('.mag').forEach(el=>{
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`});
+    el.addEventListener('pointerleave',()=>{el.style.transform=''});
+  });
+}else $('#glow').style.display='none';
+</script>
 </body>
 </html>
