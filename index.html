@@ -1,592 +1,226 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Portofolio Ahmad Rizal, seorang Web Developer yang berfokus pada Laravel, Vue, Flutter, dan teknologi web modern.">
-  <meta name="keywords" content="Ahmad Rizal, Web Developer, Laravel, Vue, Flutter, Mobile Developer, Portfolio">
-  <meta name="author" content="Ahmad Rizal">
-  <meta name="theme-color" content="#F6F3FE">
-  <title>Ahmad Rizal | Web Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Ahmad Rizal E.S builds company websites, mobile apps, web apps, and APIs with Laravel, Golang, Vue, React, and Flutter.">
+<meta name="keywords" content="Ahmad Rizal, Web Developer, Company Website, Mobile App, Laravel, Golang, Vue, React, Flutter">
+<meta name="author" content="Ahmad Rizal">
+<meta name="theme-color" content="#FAFAFB">
+<title>Ahmad Rizal | Websites, Mobile Apps &amp; Backend</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-46379W1K1M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-46379W1K1M');
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-46379W1K1M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-46379W1K1M');
+</script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            paper: '#F6F3FE',
-            ink: '#241B4E',
-            brand: { DEFAULT: '#6366F1', deep: '#4338CA', soft: '#EAE8FD', mid: '#C9C3F7' },
-          violet: { DEFAULT: '#A855F7', deep: '#7E22CE', soft: '#F3E8FF', mid: '#DCC9FB' },
-          aqua: { DEFAULT: '#22D3EE', deep: '#0E7490', soft: '#DEFAFF', mid: '#A8ECFA' },
-          },
-        },
-      },
-    }
-  </script>
+<style>
+  :root {
+    --bg: #FAFAFB;
+    --ink: #15151C;
+    --muted: #6B6B78;
+    --line: #E7E7EC;
+    --accent: #4F46E5;
+    --accent-ink: #fff;
+    --ease: cubic-bezier(.22,.8,.24,1);
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0F0F14; --ink: #F2F2F6; --muted: #9A9AA8; --line: #24242E; --accent: #8B85FF; --accent-ink: #0F0F14; }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 17px/1.6 "Hanken Grotesk", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      background:
-        radial-gradient(1100px 560px at 8% -8%, rgba(199,195,247,.55) 0%, rgba(246,243,254,0) 60%),
-        radial-gradient(900px 540px at 108% 8%, rgba(253,230,243,.5) 0%, rgba(246,243,254,0) 55%),
-        radial-gradient(900px 620px at 50% 115%, rgba(222,250,255,.5) 0%, rgba(246,243,254,0) 55%),
-        #F6F3FE;
-      background-attachment: fixed;
-    }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
 
-    .hero-in { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
-    @keyframes rise { to { opacity: 1; transform: none; } }
+  /* header */
+  header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+  .brand { font-weight: 700; letter-spacing: -.01em; }
+  nav { display: flex; gap: 1.75rem; font-size: .95rem; color: var(--muted); }
+  nav a { transition: color .3s var(--ease); }
+  nav a:hover { color: var(--ink); }
+  @media (max-width: 560px) { nav { gap: 1.1rem; font-size: .9rem; } nav .opt { display: none; } }
 
-    /* kartu 3D yang miring mengikuti kursor */
-    .stage3d { perspective: 1200px; }
-    .tilt { transform-style: preserve-3d; transition: transform .2s ease-out, box-shadow .2s ease-out; will-change: transform; }
-    .tz1 { transform: translateZ(16px); } .tz2 { transform: translateZ(30px); }
-    .card3d { background: #fff; border: 1px solid rgba(36,87,255,.14); box-shadow: 0 1px 0 #fff inset, 0 24px 40px -24px rgba(99,102,241,.45); }
-    .card3d:hover { box-shadow: 0 1px 0 #fff inset, 0 34px 50px -24px rgba(99,102,241,.55); }
+  /* hero */
+  .hero { padding: clamp(4rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem); }
+  .me { display: flex; align-items: center; gap: .75rem; color: var(--muted); font-size: .95rem; }
+  .avatar { position: relative; width: 2.5rem; height: 2.5rem; border-radius: 50%; overflow: hidden; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-size: .75rem; font-weight: 700; }
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  h1 { margin: 1.75rem 0 0; max-width: 16ch; font-size: clamp(2.5rem, 7.5vw, 5.25rem); line-height: 1.02; letter-spacing: -.035em; font-weight: 700; }
+  .lead { margin: 1.75rem 0 0; max-width: 34rem; color: var(--muted); font-size: 1.15rem; }
+  .actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: .95rem; border: 1px solid var(--line); transition: transform .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease); }
+  .btn:hover { transform: translateY(-2px); border-color: var(--ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { filter: brightness(1.08); }
 
-    /* panggung model 3D */
-    .viewer {
-      background:
-        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px) 0 0 / 44px 44px,
-        linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px) 0 0 / 44px 44px,
-        radial-gradient(120% 90% at 50% 12%, #A78BFA 0%, #6366F1 52%, #4338CA 100%);
-      box-shadow: 0 40px 70px -30px rgba(99,102,241,.7);
-    }
-    #scene { touch-action: pan-y; cursor: grab; }
-    #scene.grabbing { cursor: grabbing; }
+  /* one orchestrated entrance */
+  .in { opacity: 0; transform: translateY(14px); animation: in .9s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 90ms); }
+  @keyframes in { to { opacity: 1; transform: none; } }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .hero-in { animation: none; opacity: 1; transform: none; }
-      .tilt { transform: none !important; transition: none; }
-    }
-  </style>
+  /* sections */
+  section { padding: clamp(3.5rem, 8vw, 6rem) 0; border-top: 1px solid var(--line); }
+  .split { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .split { grid-template-columns: 1fr 2fr; gap: 4rem; } }
+  h2 { margin: 0; font-size: clamp(1.6rem, 3.4vw, 2.25rem); line-height: 1.15; letter-spacing: -.025em; font-weight: 700; }
+  .sub { margin: 1rem 0 0; color: var(--muted); max-width: 22rem; }
+
+  /* services */
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { border-bottom: 1px solid var(--line); }
+  .list li:first-child { border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: 1.6rem 0; align-items: baseline; transition: padding .45s var(--ease); }
+  .row h3 { margin: 0; font-size: 1.3rem; letter-spacing: -.015em; font-weight: 600; transition: color .3s var(--ease); }
+  .row p { margin: .4rem 0 0; color: var(--muted); max-width: 32rem; font-size: 1rem; }
+  .row .arrow { color: var(--muted); transition: transform .45s var(--ease), color .3s var(--ease); }
+  .row:hover { padding-left: .6rem; }
+  .row:hover h3, .row:hover .arrow { color: var(--accent); }
+  .row:hover .arrow { transform: translateX(4px); }
+
+  /* process */
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
+  @media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); gap: 2rem 3rem; } }
+  .steps li { counter-increment: s; padding-top: 1rem; border-top: 1px solid var(--line); }
+  .steps li::before { content: counter(s); display: block; color: var(--accent); font-weight: 700; font-size: .9rem; margin-bottom: .35rem; }
+  .steps h3 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+  .steps p { margin: .35rem 0 0; color: var(--muted); font-size: .98rem; }
+
+  /* stack */
+  .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+  .tags li { padding: .45rem 1rem; border: 1px solid var(--line); border-radius: 999px; font-size: .95rem; transition: border-color .3s var(--ease), color .3s var(--ease); }
+  .tags li:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* contact */
+  .cta h2 { font-size: clamp(2rem, 5.5vw, 3.75rem); line-height: 1.05; letter-spacing: -.035em; max-width: 14ch; }
+  .cta p { color: var(--muted); max-width: 30rem; margin: 1.25rem 0 0; font-size: 1.1rem; }
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  footer a:hover { color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .in { animation: none; opacity: 1; transform: none; }
+    * { transition: none !important; }
+  }
+</style>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-brand selection:text-white">
+<body>
+<header>
+  <div class="wrap">
+    <a href="index.html" class="brand">Ahmad Rizal</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="experience.html" class="opt">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="relative overflow-hidden pb-40">
-
-    <div aria-hidden="true" class="pointer-events-none absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-[46rem] -right-32 h-[22rem] w-[22rem] rounded-full bg-brand-soft"></div>
-
-    <!-- ================= HERO ================= -->
-    <section id="home" class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pt-10 sm:px-8 md:pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
-
-      <div class="relative z-10">
-        <p class="hero-in inline-flex items-center gap-3 rounded-full border border-brand/15 bg-white p-1.5 pr-4 text-sm font-semibold shadow-sm" style="--d:.05s">
-          <span class="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-brand text-xs font-bold text-white">
-            AR
-            <img src="img/fot.jpeg" alt="Foto Ahmad Rizal E.S" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'">
-          </span>
-          Hi, I'm Ahmad Rizal E.S
-        </p>
-
-        <h1 class="hero-in mt-6 font-display text-[2.5rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl sm:leading-[1.02] lg:text-[3.5rem] xl:text-7xl" style="--d:.15s">
-          I build backends that hold up, and interfaces people enjoy using.
-        </h1>
-
-        <p class="hero-in mt-6 max-w-xl text-lg leading-relaxed text-ink/70" style="--d:.25s">
-          Web &amp; backend developer working with Laravel and Golang on the server, Vue.js or React on the front, and Flutter for mobile apps. I take on independent projects, keep sharpening my craft, and contribute to open-source along the way.
-        </p>
-
-        <div class="hero-in mt-9 flex flex-wrap items-center gap-3" style="--d:.35s">
-          <a href="portfolio.html"
-             class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-[0_6px_0_#4338CA,0_18px_30px_-8px_rgba(99,102,241,.55)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
-            <i class="fas fa-project-diagram"></i> See my projects
-          </a>
-          <a href="experience.html"
-             class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep shadow-[0_6px_0_#DAD5FB] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
-            <i class="fas fa-briefcase"></i> My experience
-          </a>
-          <div class="ml-1 flex items-center gap-2">
-            <a href="https://github.com/rizalsy17" target="_blank" rel="noopener" aria-label="GitHub Ahmad Rizal"
-               class="grid h-12 w-12 place-items-center rounded-full border border-brand/15 bg-white text-lg transition hover:bg-ink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ahmad-rizal-a54890226/" target="_blank" rel="noopener" aria-label="LinkedIn Ahmad Rizal"
-               class="grid h-12 w-12 place-items-center rounded-full border border-brand/15 bg-white text-lg transition hover:bg-[#0A66C2] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Model 3D interaktif (three.js) + kartu API -->
-      <div class="hero-in relative" style="--d:.25s">
-        <div id="stage" class="viewer relative h-[400px] overflow-hidden rounded-[2rem] sm:h-[500px] lg:h-[560px]">
-          <canvas id="scene" class="absolute inset-0 h-full w-full" role="img" aria-label="Model 3D interaktif: server, ponsel, jendela browser, dan kubus teknologi. Geser untuk memutar."></canvas>
-
-          <!-- mode tampilan, seperti model viewer -->
-          <div id="modes" class="absolute left-4 top-4 inline-flex gap-1 rounded-full border border-white/30 bg-white/15 p-1 backdrop-blur-md">
-            <button type="button" data-mode="textured" aria-pressed="true" class="rounded-full px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20 aria-pressed:bg-white aria-pressed:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">Textured</button>
-            <button type="button" data-mode="clay" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20 aria-pressed:bg-white aria-pressed:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">Clay</button>
-            <button type="button" data-mode="wire" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20 aria-pressed:bg-white aria-pressed:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">Wireframe</button>
-          </div>
-
-          <p id="stats" class="absolute bottom-4 left-4 rounded-full bg-white/15 px-3 py-1.5 font-mono text-[11px] text-white backdrop-blur-md sm:text-xs"></p>
-          <p id="hint" class="absolute bottom-4 right-4 rounded-full bg-white/15 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-md sm:text-xs"><i class="fas fa-arrows-left-right mr-1.5"></i>Drag to rotate</p>
-
-          <div id="fallback" class="absolute inset-0 hidden place-items-center p-8 text-center text-white">
-            <p class="max-w-xs text-sm text-white/90">Pratinjau 3D tidak tersedia di perangkat ini. Bagian lain halaman tetap berfungsi normal.</p>
-          </div>
-        </div>
-
-        <!-- Kartu API: hal paling khas dari seorang backend developer -->
-        <div class="stage3d mt-4">
-          <div data-tilt class="tilt card3d rounded-2xl p-4 sm:p-5">
-            <div class="flex items-center justify-between gap-3 text-xs">
-              <span class="font-mono text-ink/60">GET /api/developer/rizal</span>
-              <span class="rounded-full bg-brand-soft px-2.5 py-1 font-mono font-medium text-brand-deep">200 OK</span>
-            </div>
-<pre class="mt-3 overflow-x-auto font-mono text-[11px] leading-5 text-ink/80 sm:text-[12.5px] sm:leading-6"><code>{
-  <span class="text-brand">"name"</span>: <span class="text-brand-deep">"Ahmad Rizal E.S"</span>,
-  <span class="text-brand">"role"</span>: <span class="text-brand-deep">"Web &amp; Backend Developer"</span>,
-  <span class="text-brand">"backend"</span>: [<span class="text-brand-deep">"Laravel"</span>, <span class="text-brand-deep">"Golang"</span>],
-  <span class="text-brand">"frontend"</span>: [<span class="text-brand-deep">"Vue.js"</span>, <span class="text-brand-deep">"React"</span>],
-  <span class="text-brand">"mobile"</span>: [<span class="text-brand-deep">"Flutter"</span>],
-  <span class="text-brand">"database"</span>: <span class="text-brand-deep">"MySQL"</span>
-}</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= STACK ================= -->
-    <section id="stack" class="relative mx-auto mt-28 max-w-6xl px-5 sm:px-8 md:mt-36">
-      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div>
-          <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">What I work with</h2>
-          <p class="mt-4 max-w-md leading-relaxed text-ink/70">
-            Backend is where I spend most of my time. I add enough frontend, mobile, and design-system skill to take a feature from database to screen, on the web or on a phone.
-          </p>
-        </div>
-
-        <div class="stage3d grid gap-4 sm:grid-cols-2">
-          <!-- Backend -->
-          <div data-tilt class="tilt card3d rounded-3xl p-6 sm:col-span-2">
-            <div class="tz1 flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-white shadow-lg shadow-brand/40"><i class="fas fa-server"></i></span>
-              <h3 class="font-display text-lg font-bold">Backend</h3>
-            </div>
-            <ul class="tz2 mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fab fa-laravel mr-2"></i>Laravel</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep">Golang</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-plug mr-2"></i>API Programming</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-database mr-2"></i>MySQL</li>
-            </ul>
-          </div>
-
-          <!-- Frontend -->
-          <div data-tilt class="tilt card3d rounded-3xl p-6">
-            <div class="tz1 flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-deep text-white shadow-lg shadow-brand-deep/40"><i class="fas fa-laptop-code"></i></span>
-              <h3 class="font-display text-lg font-bold">Frontend</h3>
-            </div>
-            <ul class="tz2 mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fab fa-vuejs mr-2"></i>Vue.js</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fab fa-react mr-2"></i>React.js</li>
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-paint-brush mr-2"></i>Tailwind CSS</li>
-            </ul>
-          </div>
-
-          <!-- Mobile -->
-          <div data-tilt class="tilt card3d rounded-3xl p-6">
-            <div class="tz1 flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-white shadow-lg shadow-brand/40"><i class="fas fa-mobile-screen-button"></i></span>
-              <h3 class="font-display text-lg font-bold">Mobile</h3>
-            </div>
-            <ul class="tz2 mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-mobile-screen mr-2"></i>Flutter</li>
-            </ul>
-          </div>
-
-          <!-- Design -->
-          <div data-tilt class="tilt card3d rounded-3xl p-6 sm:col-span-2">
-            <div class="tz1 flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-deep text-white shadow-lg shadow-brand-deep/40"><i class="fas fa-swatchbook"></i></span>
-              <h3 class="font-display text-lg font-bold">Design</h3>
-            </div>
-            <ul class="tz2 mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-deep"><i class="fas fa-layer-group mr-2"></i>Design System</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CARA KERJA ================= -->
-    <section class="relative mx-auto mt-20 max-w-6xl px-5 sm:px-8 md:mt-28">
-      <div class="stage3d grid gap-4 md:grid-cols-3">
-        <div data-tilt class="tilt card3d rounded-3xl p-7">
-          <i class="tz2 fas fa-seedling text-2xl text-brand"></i>
-          <h3 class="tz1 mt-3 font-display text-xl font-bold">Always learning</h3>
-          <p class="mt-2 leading-relaxed text-ink/70">I keep improving my skills with every project I take on.</p>
-        </div>
-        <div data-tilt class="tilt card3d rounded-3xl p-7">
-          <i class="tz2 fas fa-code-branch text-2xl text-brand-deep"></i>
-          <h3 class="tz1 mt-3 font-display text-xl font-bold">Open-source minded</h3>
-          <p class="mt-2 leading-relaxed text-ink/70">I like giving back to the communities whose tools I rely on.</p>
-        </div>
-        <div data-tilt class="tilt card3d rounded-3xl p-7">
-          <i class="tz2 fas fa-circle-check text-2xl text-brand"></i>
-          <h3 class="tz1 mt-3 font-display text-xl font-bold">Quality in every project</h3>
-          <p class="mt-2 leading-relaxed text-ink/70">Clean code, clear APIs, and details that hold up after launch.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONNECT ================= -->
-    <section id="connect" class="relative mx-auto mt-20 max-w-6xl px-5 sm:px-8 md:mt-28">
-      <div class="relative overflow-hidden rounded-[2rem] bg-brand p-8 text-white sm:p-12 md:p-16">
-        <!-- bola biru bergaya 3D -->
-        <div aria-hidden="true" class="absolute -bottom-12 -right-10 h-40 w-40 rounded-full sm:-bottom-24 sm:-right-16 sm:h-72 sm:w-72"
-             style="background: radial-gradient(circle at 32% 28%, #D6CCFB 0%, #8B7CF0 48%, #4338CA 100%); box-shadow: 0 30px 50px -20px rgba(0,0,0,.45)"></div>
-        <div aria-hidden="true" class="absolute -bottom-10 right-40 hidden h-24 w-24 rounded-full md:block"
-             style="background: radial-gradient(circle at 32% 28%, #ffffff 0%, #C9C3F7 55%, #8B7CF0 100%); box-shadow: 0 20px 30px -12px rgba(0,0,0,.35)"></div>
-
-        <div class="relative max-w-xl">
-          <h2 class="font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">Have a project in mind? Let's talk.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-white/85">Message me on LinkedIn, or look through my code on GitHub.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://www.linkedin.com/in/ahmad-rizal-a54890226/" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-deep shadow-[0_5px_0_rgba(0,0,0,.22)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-              <i class="fab fa-linkedin"></i> Message on LinkedIn
-            </a>
-            <a href="https://github.com/rizalsy17" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-brand-deep px-6 py-3.5 text-sm font-semibold text-white shadow-[0_5px_0_#241B4E] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-              <i class="fab fa-github"></i> View GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <p class="mt-10 text-center text-sm text-ink/50">&copy; <span id="year">2026</span> Ahmad Rizal E.S</p>
-    </section>
-  </main>
-
-  <!-- ================= NAVIGASI BAWAH ================= -->
-  <nav aria-label="Main" class="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-3 sm:px-4">
-    <div class="flex gap-0.5 rounded-3xl border border-brand/15 bg-white/85 p-1.5 shadow-xl shadow-brand/20 backdrop-blur-xl sm:gap-1 sm:rounded-full">
-      <a href="index.html" aria-current="page"
-         class="flex flex-col items-center gap-1 rounded-2xl bg-brand px-3.5 py-2 text-[11px] font-semibold text-white sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
-        <i class="fas fa-home text-base sm:text-sm"></i> Home
-      </a>
-      <a href="experience.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
-        <i class="fas fa-briefcase text-base sm:text-sm"></i> Experience
-      </a>
-      <a href="portfolio.html"
-         class="flex flex-col items-center gap-1 rounded-2xl px-3.5 py-2 text-[11px] font-semibold text-ink/70 transition hover:bg-brand-soft hover:text-brand-deep sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2.5 sm:text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
-        <i class="fas fa-project-diagram text-base sm:text-sm"></i> Projects
-      </a>
+<main>
+  <div class="wrap hero">
+    <div class="me in" style="--i:0">
+      <span class="avatar">AR<img src="img/fot.jpeg" alt="Ahmad Rizal E.S" onerror="this.style.display='none'"></span>
+      Ahmad Rizal E.S, web &amp; backend developer
     </div>
-  </nav>
+    <h1 class="in" style="--i:1">Websites and apps that feel simple to use.</h1>
+    <p class="lead in" style="--i:2">I design and build company websites, mobile apps, and the backends behind them, for businesses that want something reliable and easy to grow.</p>
+    <div class="actions in" style="--i:3">
+      <a href="#contact" class="btn primary">Start a project</a>
+      <a href="portfolio.html" class="btn">See my work</a>
+    </div>
+  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <section id="services">
+    <div class="wrap split">
+      <div>
+        <h2>What I can build for you</h2>
+        <p class="sub">From a first company website to a full product with its own app and API.</p>
+      </div>
+      <ul class="list">
+        <li><a class="row" href="#contact">
+          <div><h3>Company website</h3><p>A fast, clear site that presents your business, works on every screen, and is easy to update.</p></div>
+          <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="row" href="#contact">
+          <div><h3>Mobile app</h3><p>Android and iOS apps from one Flutter codebase, connected to your own backend.</p></div>
+          <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="row" href="#contact">
+          <div><h3>Web app &amp; dashboard</h3><p>Admin panels, booking and ordering systems, and internal tools built with Laravel, Vue, or React.</p></div>
+          <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="row" href="#contact">
+          <div><h3>API &amp; backend</h3><p>Clean, documented APIs and databases in Laravel or Golang that stay stable as you grow.</p></div>
+          <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+    </div>
+  </section>
 
-    // Kartu miring mengikuti kursor (mati di layar sentuh)
-    document.querySelectorAll('[data-tilt]').forEach((el) => {
-      el.addEventListener('pointermove', (e) => {
-        if (e.pointerType === 'touch') return;
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = `perspective(900px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateZ(6px)`;
-      });
-      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
-    });
+  <section id="process">
+    <div class="wrap split">
+      <div>
+        <h2>How we work together</h2>
+        <p class="sub">Simple steps, clear communication.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Talk</h3><p>We go over your goals, audience, and budget, then agree on scope.</p></li>
+        <li><h3>Design</h3><p>You review a layout and flow before any code is written.</p></li>
+        <li><h3>Build</h3><p>I develop in small steps and share progress so nothing surprises you.</p></li>
+        <li><h3>Launch &amp; support</h3><p>I deploy, test, and stay available for fixes and improvements.</p></li>
+      </ol>
+    </div>
+  </section>
 
-    // ===== Model viewer 3D (three.js r128) =====
-    // Model dibuat dari geometri prosedural: tumpukan server, ponsel, jendela browser, dan kubus teknologi yang mengorbit.
-    // Mode Textured / Clay / Wireframe seperti viewer model 3D; jumlah segitiga dihitung dari geometri aslinya.
-    (function () {
-      const stage = document.getElementById('stage');
-      const canvas = document.getElementById('scene');
-      const statsEl = document.getElementById('stats');
-      const fallback = document.getElementById('fallback');
-      const buttons = document.querySelectorAll('[data-mode]');
+  <section id="stack">
+    <div class="wrap split">
+      <div>
+        <h2>Tools I use</h2>
+        <p class="sub">Chosen for stability, speed, and long-term maintainability.</p>
+      </div>
+      <ul class="tags">
+        <li>Laravel</li><li>Golang</li><li>MySQL</li><li>REST API</li>
+        <li>Vue.js</li><li>React</li><li>Tailwind CSS</li><li>Flutter</li><li>Design system</li>
+      </ul>
+    </div>
+  </section>
 
-      function fail() {
-        fallback.classList.remove('hidden'); fallback.classList.add('grid');
-        ['modes', 'stats', 'hint'].forEach((id) => { document.getElementById(id).style.display = 'none'; });
-        canvas.style.display = 'none';
-      }
-      if (!window.THREE) { fail(); return; }
-      let renderer;
-      try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); } catch (e) { fail(); return; }
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <h2>Have a project in mind?</h2>
+      <p>Tell me what you need. I’ll reply with ideas, a rough timeline, and next steps.</p>
+      <div class="actions">
+        <a href="https://www.linkedin.com/in/ahmad-rizal-a54890226/" target="_blank" rel="noopener" class="btn primary">Message on LinkedIn</a>
+        <a href="https://github.com/rizalsy17" target="_blank" rel="noopener" class="btn">View GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      renderer.outputEncoding = THREE.sRGBEncoding;
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.05;
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Ahmad Rizal E.S</span>
+    <span><a href="portfolio.html">Projects</a> &nbsp;&middot;&nbsp; <a href="experience.html">Experience</a></span>
+  </div>
+</footer>
 
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const BLUE = 0x6366ff, CRIM = 0x4338ca, INK = 0x241b4e, VIOLET = 0xa855f7, AQUA = 0x22d3ee, BLUSH = 0xf472b6;
-      const BLUE_S = '#6366F1', CRIM_S = '#4338CA', INK_S = '#241B4E', MID_S = '#C9C3F7', SOFT_S = '#EAE8FD';
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
-      const rig = new THREE.Group();
-      scene.add(rig);
-
-      scene.add(new THREE.HemisphereLight(0xffffff, 0x9b8aff, 0.95));
-      const key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(4, 6, 6); scene.add(key);
-      const rim = new THREE.PointLight(0xb088f5, 1.4, 30); rim.position.set(-6, 2, -4); scene.add(rim);
-      const fill = new THREE.PointLight(0xa99cf7, 0.8, 30); fill.position.set(6, -1, 4); scene.add(fill);
-
-      // ---------- bahan ----------
-      const std = (color, rough, metal) => new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal });
-      const clayMat = new THREE.MeshStandardMaterial({ color: 0xf0ecfd, roughness: 0.9, metalness: 0 });
-      const wireWhite = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.85 });
-      const wireRose = new THREE.MeshBasicMaterial({ color: 0xe4d4fb, wireframe: true, transparent: true, opacity: 0.95 });
-
-      const meshes = [];
-      function make(geo, mat, accent) {
-        const m = new THREE.Mesh(geo, mat);
-        m.userData.mats = { textured: mat, clay: clayMat, wire: accent ? wireRose : wireWhite };
-        meshes.push(m);
-        return m;
-      }
-
-      // ---------- geometri ----------
-      function roundedShape(w, h, r) {
-        const s = new THREE.Shape(), x = -w / 2, y = -h / 2;
-        s.moveTo(x + r, y);
-        s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
-        s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-        s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
-        s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
-        return s;
-      }
-      function slab(w, h, d, r, bevel) {
-        const b = bevel || 0.04;
-        const g = new THREE.ExtrudeGeometry(roundedShape(w, h, r), {
-          depth: d, bevelEnabled: true, bevelThickness: b, bevelSize: b, bevelSegments: 3, curveSegments: 8,
-        });
-        g.translate(0, 0, -d / 2);
-        return g;
-      }
-
-      // ---------- tekstur kanvas ----------
-      function tex(w, h, draw) {
-        const c = document.createElement('canvas'); c.width = w; c.height = h;
-        const x = c.getContext('2d'); draw(x, w, h);
-        const t = new THREE.CanvasTexture(c);
-        t.encoding = THREE.sRGBEncoding; t.anisotropy = 4;
-        return t;
-      }
-      function rr(x, a, b, w, h, r) {
-        x.beginPath(); x.moveTo(a + r, b);
-        x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r);
-        x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath();
-      }
-      const fillRR = (x, a, b, w, h, r, c) => { x.fillStyle = c; rr(x, a, b, w, h, r); x.fill(); };
-      const dot = (x, cx, cy, r, c) => { x.fillStyle = c; x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.fill(); };
-
-      const phoneTex = () => tex(256, 512, (x, w, h) => {
-        x.fillStyle = '#fff'; x.fillRect(0, 0, w, h);
-        x.fillStyle = BLUE_S; x.fillRect(0, 0, w, 150);
-        fillRR(x, 24, 62, 110, 16, 8, 'rgba(255,255,255,.92)');
-        fillRR(x, 24, 92, 70, 10, 5, 'rgba(255,255,255,.55)');
-        for (let i = 0; i < 3; i++) {
-          const y = 182 + i * 70;
-          dot(x, 46, y + 22, 18, i === 1 ? CRIM_S : MID_S);
-          fillRR(x, 78, y + 8, 130 - i * 14, 14, 7, '#C9D4F2');
-          fillRR(x, 78, y + 30, 90, 10, 5, SOFT_S);
-        }
-        fillRR(x, 24, 420, w - 48, 52, 26, CRIM_S);
-      });
-      const browserTex = () => tex(512, 320, (x, w, h) => {
-        x.fillStyle = '#fff'; x.fillRect(0, 0, w, h);
-        x.fillStyle = SOFT_S; x.fillRect(0, 0, w, 44);
-        dot(x, 24, 22, 7, CRIM_S); dot(x, 46, 22, 7, BLUE_S); dot(x, 68, 22, 7, MID_S);
-        fillRR(x, 40, 86, 230, 24, 12, INK_S); fillRR(x, 40, 124, 180, 24, 12, INK_S);
-        fillRR(x, 40, 168, 240, 10, 5, MID_S); fillRR(x, 40, 188, 200, 10, 5, MID_S);
-        fillRR(x, 40, 226, 120, 40, 20, BLUE_S);
-        dot(x, 400, 170, 70, CRIM_S); dot(x, 440, 212, 34, BLUE_S); dot(x, 350, 118, 18, MID_S);
-      });
-      const cubeTex = (label, color) => tex(256, 256, (x, w, h) => {
-        x.fillStyle = '#fff'; x.fillRect(0, 0, w, h);
-        x.strokeStyle = color; x.lineWidth = 14; rr(x, 16, 16, w - 32, h - 32, 28); x.stroke();
-        x.fillStyle = color; x.textAlign = 'center'; x.textBaseline = 'middle';
-        x.font = '800 ' + (label.length > 5 ? 50 : 70) + 'px "Bricolage Grotesque", sans-serif';
-        x.fillText(label, w / 2, h / 2 + 4);
-      });
-      const shadowTex = () => tex(256, 256, (x, w, h) => {
-        const g = x.createRadialGradient(128, 128, 8, 128, 128, 128);
-        g.addColorStop(0, 'rgba(28,18,62,.5)'); g.addColorStop(1, 'rgba(28,18,62,0)');
-        x.fillStyle = g; x.fillRect(0, 0, w, h);
-      });
-
-      // ---------- rakitan model ----------
-      const cubes = [];
-      const orbit = new THREE.Group();
-      const phone = new THREE.Group();
-      const browser = new THREE.Group();
-      let shadow;
-
-      function serverUnit(y, plateColor) {
-        const g = new THREE.Group(); g.position.y = y;
-        const body = make(slab(2.6, 1.7, 0.5, 0.22), std(0xffffff, 0.3, 0.05));
-        body.rotation.x = -Math.PI / 2; g.add(body);
-        const plate = make(new THREE.BoxGeometry(2.2, 0.3, 0.05), std(plateColor, 0.4, 0.2));
-        plate.position.set(0, 0, 0.92); g.add(plate);
-        [0xd4c9fb, 0xffffff, 0xa99cf7].forEach((c, i) => {
-          const led = make(new THREE.SphereGeometry(0.055, 16, 12), new THREE.MeshBasicMaterial({ color: c }), true);
-          led.position.set(-0.95 + i * 0.18, 0, 0.965); g.add(led);
-        });
-        for (let i = 0; i < 5; i++) {
-          const v = make(new THREE.BoxGeometry(0.04, 0.16, 0.02), std(0xffffff, 0.5, 0));
-          v.position.set(0.45 + i * 0.14, 0, 0.955); g.add(v);
-        }
-        return g;
-      }
-
-      function build() {
-        // platform + cincin biru muda
-        const plat = make(new THREE.CylinderGeometry(3, 3.15, 0.25, 64), std(0xffffff, 0.4, 0.05));
-        plat.position.y = -2.1; rig.add(plat);
-        const ring = make(new THREE.TorusGeometry(3.18, 0.045, 10, 128), new THREE.MeshBasicMaterial({ color: 0xd4c9fb }), true);
-        ring.rotation.x = Math.PI / 2; ring.position.y = -1.93; rig.add(ring);
-
-        // tumpukan server
-        rig.add(serverUnit(-1.685, BLUE));
-        rig.add(serverUnit(-1.005, CRIM));
-        rig.add(serverUnit(-0.325, BLUE));
-
-        // ponsel
-        const pBody = make(slab(0.95, 1.8, 0.1, 0.17, 0.03), std(INK, 0.35, 0.3));
-        const pScreen = make(new THREE.PlaneGeometry(0.84, 1.68), new THREE.MeshBasicMaterial({ map: phoneTex() }));
-        pScreen.position.z = 0.085;
-        phone.add(pBody, pScreen);
-        phone.position.set(1.95, -0.4, 0.95); phone.rotation.set(0.08, -0.5, 0.05);
-        rig.add(phone);
-
-        // jendela browser
-        const bBody = make(slab(2.2, 1.45, 0.1, 0.12, 0.03), std(0xffffff, 0.35, 0.1));
-        const bScreen = make(new THREE.PlaneGeometry(2.0, 1.25), new THREE.MeshBasicMaterial({ map: browserTex() }));
-        bScreen.position.z = 0.085;
-        browser.add(bBody, bScreen);
-        browser.position.set(-1.9, 0.75, -1.3); browser.rotation.set(0, 0.45, 0);
-        rig.add(browser);
-
-        // kubus teknologi yang mengorbit
-        const items = [['Laravel', VIOLET_S], ['Go', BLUE_S], ['Vue', AQUA_S], ['React', BLUSH_S], ['Flutter', BLUE_S], ['MySQL', VIOLET_S], ['API', AQUA_S]];
-        const ys = [0.8, 1.9, 0.1, 1.4, 0.5, 2.0, -0.4];
-        items.forEach(([label, color], i) => {
-          const m = make(new THREE.BoxGeometry(0.52, 0.52, 0.52), new THREE.MeshStandardMaterial({ map: cubeTex(label, color), roughness: 0.3, metalness: 0.05 }), i % 2 === 0);
-          const a = (i / items.length) * Math.PI * 2;
-          m.position.set(Math.cos(a) * 3.3, ys[i], Math.sin(a) * 3.3);
-          m.userData.y = ys[i];
-          m.rotation.set(i * 0.6, i * 0.9, 0);
-          orbit.add(m); cubes.push(m);
-        });
-        rig.add(orbit);
-
-        // bayangan kontak
-        shadow = new THREE.Mesh(new THREE.PlaneGeometry(9, 9), new THREE.MeshBasicMaterial({ map: shadowTex(), transparent: true, depthWrite: false }));
-        shadow.rotation.x = -Math.PI / 2; shadow.position.y = -2.3; scene.add(shadow);
-
-        // statistik asli dari geometri
-        let tris = 0;
-        meshes.forEach((m) => { const g = m.geometry; tris += (g.index ? g.index.count : g.attributes.position.count) / 3; });
-        statsEl.textContent = 'Tris ' + Math.round(tris).toLocaleString('en-US') + ' · Objects ' + meshes.length;
-      }
-
-      // ---------- mode tampilan ----------
-      function setMode(mode) {
-        meshes.forEach((m) => { m.material = m.userData.mats[mode]; });
-        if (shadow) shadow.visible = mode !== 'wire';
-        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
-        if (reduce) draw(0);
-      }
-      buttons.forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode)));
-
-      // ---------- interaksi: geser untuk memutar ----------
-      let yaw = 0.6, pitch = 0.1, vyaw = 0, dragging = false, lx = 0, ly = 0;
-      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-      canvas.addEventListener('pointerdown', (e) => {
-        dragging = true; lx = e.clientX; ly = e.clientY;
-        canvas.setPointerCapture(e.pointerId); canvas.classList.add('grabbing');
-      });
-      canvas.addEventListener('pointermove', (e) => {
-        if (!dragging) return;
-        const dx = e.clientX - lx, dy = e.clientY - ly; lx = e.clientX; ly = e.clientY;
-        yaw += dx * 0.01; vyaw = dx * 0.01; pitch = clamp(pitch + dy * 0.005, -0.3, 0.5);
-        if (reduce) draw(0);
-      });
-      const endDrag = () => { dragging = false; canvas.classList.remove('grabbing'); };
-      canvas.addEventListener('pointerup', endDrag);
-      canvas.addEventListener('pointercancel', endDrag);
-
-      // ---------- render ----------
-      function draw(t) {
-        rig.rotation.y = yaw; rig.rotation.x = pitch;
-        if (!reduce) {
-          orbit.rotation.y = t * 0.22;
-          cubes.forEach((c, i) => {
-            c.rotation.x = t * 0.3 + i; c.rotation.y = t * 0.4 + i * 0.7;
-            c.position.y = c.userData.y + Math.sin(t * 0.9 + i * 1.3) * 0.15;
-          });
-          phone.position.y = -0.4 + Math.sin(t * 1.1) * 0.1;
-          browser.position.y = 0.75 + Math.sin(t * 0.8 + 1) * 0.1;
-        }
-        renderer.render(scene, camera);
-      }
-
-      let running = false, raf = 0, last = 0, time = 0;
-      function loop(now) {
-        if (!running) return;
-        const dt = Math.min((now - last) / 1000, 0.05); last = now; time += dt;
-        if (!dragging) { yaw += dt * 0.35 + vyaw; vyaw *= 0.94; }
-        draw(time);
-        raf = requestAnimationFrame(loop);
-      }
-      function start() { if (running || reduce) return; running = true; last = performance.now(); raf = requestAnimationFrame(loop); }
-      function stop() { running = false; cancelAnimationFrame(raf); }
-      new IntersectionObserver((entries) => { entries[0].isIntersecting ? start() : stop(); }).observe(stage);
-
-      function resize() {
-        const w = stage.clientWidth, h = stage.clientHeight;
-        if (!w || !h) return;
-        renderer.setSize(w, h, false);
-        camera.aspect = w / h;
-        const fit = Math.min(1, camera.aspect / 1.15);
-        camera.position.set(0, 1.6 / fit, 11 / fit);
-        camera.lookAt(0, -0.2, 0);
-        camera.updateProjectionMatrix();
-        if (reduce) draw(time);
-      }
-      new ResizeObserver(resize).observe(stage);
-
-      (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => {
-        build(); setMode('textured'); resize(); draw(0);
-      });
-    })();
-  </script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
