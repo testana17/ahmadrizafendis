@@ -81,7 +81,7 @@ h1{margin:0;font:800 clamp(2.8rem,8vw,6rem)/1 var(--display);letter-spacing:-.04
 .vis>*{transition:transform .7s var(--ease)}
 .cd:hover .vis>*{transform:scale(1.05)}
 .snap{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;height:100%;scrollbar-width:none}.snap::-webkit-scrollbar{display:none}
-.snap img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;object-position:top;scroll-snap-align:start}
+.snap img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;object-position:top center;scroll-snap-align:start;background:#100D33}
 .b{display:block;height:.7rem;border-radius:8px;background:rgba(255,255,255,.14);animation:pop .7s var(--ease) both;animation-delay:calc(var(--d)*1ms)}
 .b.a{background:linear-gradient(90deg,var(--accent),var(--aqua))}
 @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.94)}}
@@ -188,7 +188,7 @@ $('#year').textContent=new Date().getFullYear();
    images: ['img/pos-1.png','img/pos-2.png'] dan ilustrasi diganti slider gambar. */
 const projects=[
   {cat:'web',stack:'Point of Sale',title:'Aplikasi POS',desc:'Aplikasi kasir (Point of Sale) untuk mencatat dan mengelola transaksi penjualan.',scene:'pos'},
-  {cat:'web',stack:'Inventory System',title:'Sistem Inventaris Stok',desc:'Aplikasi untuk mencatat dan memantau stok barang, termasuk barang masuk dan keluar.',scene:'inventory',images:['img/inventoris.PNG']},
+  {cat:'web',stack:'Inventory System',title:'Sistem Inventaris Stok',desc:'Aplikasi untuk mencatat dan memantau stok barang, termasuk barang masuk dan keluar.',scene:'inventory',images:['img/inventaris.PNG']},
   {cat:'web',stack:'Information System',title:'Sistem Informasi Desa',desc:'Aplikasi web sistem informasi desa untuk pengelolaan data dan pelayanan kepada masyarakat desa.',scene:'village'},
   {cat:'web',stack:'Web Application',title:'Web Booking',desc:'Website untuk melakukan pemesanan (booking) layanan secara online.',scene:'wedding',images:['img/booking.PNG']},
   {cat:'web',stack:'Company Profile',title:'Website Company Profile',desc:'Website company profile untuk memperkenalkan profil, layanan, dan informasi perusahaan.',scene:'company',images:['img/company_profile.PNG']},
