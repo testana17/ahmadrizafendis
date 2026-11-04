@@ -76,6 +76,9 @@ h1{margin:0;font:800 clamp(2.8rem,8vw,6rem)/1 var(--display);letter-spacing:-.04
 
 /* visual panels */
 .vis{position:relative;aspect-ratio:16/10;border-radius:20px;border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;background:linear-gradient(160deg,rgba(139,124,255,.22),rgba(79,227,245,.06)),#100D33}
+.vis.photo{aspect-ratio:auto;display:block}
+.vis.photo .snap{display:block;height:auto}
+.vis.photo .snap img{display:block;width:100%;height:auto;object-fit:initial}
 .vis::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/32px 32px;opacity:.3;mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent)}
 .vis>*{position:relative}
 .vis>*{transition:transform .7s var(--ease)}
@@ -218,7 +221,7 @@ const visual=(p)=>p.images?`<div class="snap">${p.images.map((n,k)=>`<img src="$
 
 $('#projects').innerHTML=projects.map(p=>`
   <article class="cd rv" data-cat="${p.cat}">
-    <div class="vis" role="img" aria-label="${p.images?"Tampilan":"Ilustrasi"} proyek ${p.title}"></div>
+    <div class="vis${p.images?' photo':''}" role="img" aria-label="${p.images?"Tampilan":"Ilustrasi"} proyek ${p.title}"></div>
     <div class="txt">
       <span class="chip">${p.stack}</span>
       <h2>${p.title}</h2>
